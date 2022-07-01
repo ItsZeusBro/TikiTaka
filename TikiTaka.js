@@ -4,7 +4,7 @@ import * as fs from "node:fs"
 
 
 export class TikiTaka{
-  constructor(file_defender=true){
+  constructor(file_defender=true, strongLeft=true){
     this.defender=file_defender //every move should be scrutinized more when there is no defender
     //Primitives
     TikiTaka.prototype.firstTouch = this.firstTouch;
@@ -22,6 +22,10 @@ export class TikiTaka{
     TikiTaka.prototype.bicicleta = this.bicicleta;
     TikiTaka.prototype.cuauhteminha = this.cuauhteminha;
     TikiTaka.prototype.aurelio = aurelio;
+    //these are STACKS if strongLeft is true, otherwise queues
+    this.strongLeft=strongLeft
+    this.readstreams = []
+    this.writestreams = []
 
   }
 
@@ -47,11 +51,17 @@ export class TikiTaka{
     throw Error("doubleTouch has a bug, shouldn't be here")
   }
 
-  dribble(){
+  dribble(somepath){
+    this.readstreams.push(somepath)
     return this
   }
-  
+
   passare(a, b){
+    if(!a){
+      //it suggests we have a read stream that we wish to pipe into a writestream
+    }else{
+
+    }
     //This should mean append to file
     return this
   }
