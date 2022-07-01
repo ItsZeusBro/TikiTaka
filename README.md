@@ -45,80 +45,83 @@ Set up a write stream (Takka)
 ![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
 
 ### Passare 
-Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data)
+Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data, do not overwrite)
 
 ![Passare](https://thumbs.gfycat.com/DearestDismalAustraliankelpie-size_restricted.gif)
 
 ### "Backwards Pass" 
-Remove the origin file after passing the data to another file 
+Remove the origin file after passing the data to another file (append the data, do not overwrite)
 - even though this ended up being a shot, it's typically a pass.
 
 ![BackPass](https://c.tenor.com/J1O91U8m0_YAAAAC/ronaldo-vs-hungary-ronaldo-goal-vs-hungary.gif)
 
 ### Blind Pass
-Pass data without looking to see if the recipient (file) is there (only do this if confident)
+Pass data (append) to a presumably existing file without looking to see if the recipient file is there. If it is not there your script fails. (be careful)
 
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
 
-### Long Pass
-Copy data from local filesystem file to another filesystem's file
-![LongPass](https://i.gifer.com/8Rpb.gif)
-
 ### Butt Pass
-pass blind, but doesn't throw an exception if it fails
+Pass data (append) to a presumably existing file without looking to see if the recipient file is there. If it is not there script does NOT fail, it just keeps going...and going...
 
 ![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
 
-### Chapeu (Chip Pass)
+### Long Pass
+Copy data from local filesystem file to another filesystem's file. Append it to the end of that file, does not overwrite.
+
+![LongPass](https://i.gifer.com/8Rpb.gif)
+
+
+
+### Chapeu (All Chip Pass's overwrite, becareful)
 "Pass over the file defender" (overwrite) a file with origins contents changing destination to the origins name if file exists. If it doesn't exist, just move the origin file with its original name to that directory.
 ![ChipPass](https://68.media.tumblr.com/25e2d76dfbc9c24b3f27d867cb45d0ec/tumblr_o7pf4jesjf1vrq5lso1_500.gif)
 
 
-### Rabona Chapeu
+### Rabona Chapeu (All Chip Pass's overwrite, becareful)
 "Pass over the file defender" (overwrite) a file with origins contents changing destination to the origins name if file exists. If it doesn't exist, move the origin to the destination with the destination's name.
 
 
 ![Rabona](https://c.tenor.com/9tH5GAo0jsEAAAAM/robert-lewandowski-lewandowski.gif)
 
 ### Fakey
-Delete a file
+Deletes a file if it exists. Creates the file if it doesn't.
 
 ![fakey](http://25.media.tumblr.com/tumblr_mekqr4Bdjf1rjdfzto1_500.gif)
 
 ### Faux (fake pass)
-Take the file data, put into buffer, delete the origin
+Take the file data, put into buffer, delete the origin if the file exists. If it does not, remove anything from the buffer (if present) and put into file. If buffer empty, just keep going.
 
 ![fake pass](https://64.media.tumblr.com/5df3e0260385ea86c22d9dfa5d3255a1/8f68b6b7a4e53f11-52/s540x810/75d40cee9e6ed66149acca81816255c12fac72fd.gifv)
 
+### "Aurelio" 
+a faux (fake pass) in one direction (takes file data, puts into buffer), and dribble to the other side (creates a writestream but does not write to it yet)
+
+![Aurelio](https://media4.giphy.com/media/DbCErKp9tO14VpcA8j/giphy.gif)
 
 ### Marseille Turn 
-To set up a circle file stream
+Sets up a circle file stream.
 
 ![Marseille](https://thumbs.gfycat.com/SilentFluidImago-max-1mb.gif)
 
 
-
 ### Showta (arabish for shot) 
-To set up a socket or ipc to write to (shoot through)
+To set up a socket or ipc to write to. Does not write (score) yet.
 
 ![Showta](https://thumbs.gfycat.com/AgileViciousEastrussiancoursinghounds-size_restricted.gif)
 
 ### Bicicleta (bicycle shot in Portuguese)
-To set up a socket or ipc to read from (backwards shot)
+To set up a socket or ipc to read from (backwards shot). Does not read into buffer yet (does not score).
 
 ![Bicicleta](https://i.gifer.com/origin/3b/3b1d9a9ae1ba42041f655cd7925cb0c2.gif)
 
 
 ### "Cuauhteminha" 
-#### we mean a trick pass to self. (moving the file to another location)
+trick pass to self. (moving the file to another location keeping its name). If that location already has the same file, don't do it.
 
 ![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
 
-### "Aurelio" 
-#### we mean fakePass in one direction, and dribble to the other (put in buffer and create a writestream)
 
-![Aurelio](https://media4.giphy.com/media/DbCErKp9tO14VpcA8j/giphy.gif)
 
 
 ### "goooal!" or "gooooal!" 
