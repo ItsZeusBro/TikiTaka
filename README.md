@@ -34,11 +34,15 @@ Take an extra touch to create the path for the play, and then its location
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
 
-### Dribble
+### Tikki
 Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
 
-![Dribble](https://i.pinimg.com/originals/60/d9/9e/60d99e9935ea39dd1f84e9e6e58744c6.gif)
+![Tikki](https://i.pinimg.com/originals/60/d9/9e/60d99e9935ea39dd1f84e9e6e58744c6.gif)
 
+### Takka 
+Set up a write stream (so, if i do a dribble to long pass, its a read to write stream)
+
+![DribbleToLongPass](http://www.whoateallthepies.tv/wp-content/uploads/2013/08/isco-pass.gif)
 
 ### Passare 
 Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data)
@@ -55,11 +59,6 @@ Remove the origin file after passing the data to another file
 Pass data without looking to see if the recipient (file) is there (only do this if confident)
 
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
-
-### Long Pass 
-Set up a write stream (so, if i do a dribble to long pass, its a read to write stream)
-
-![DribbleToLongPass](http://www.whoateallthepies.tv/wp-content/uploads/2013/08/isco-pass.gif)
 
 
 ### Chapeu (Chip Pass)
