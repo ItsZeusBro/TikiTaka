@@ -2,120 +2,121 @@ import * as path from "node:path"
 const time = new Date();
 import * as fs from "node:fs"
 
+
 export class TikiTaka{
-  constructor(){
-    TikiTaka.prototype.pass = function(){
-      console.log("pass...")
-      return this
-    }
-    TikiTaka.prototype.blindPass = function(){
-      console.log("blind pass...")
-      return this
-    }
-    TikiTaka.prototype.rabona = function(){
-      console.log("rabona...")
-      return this
-    }
-    TikiTaka.prototype.fakePass = function(){
-      console.log("fake pass...")
-      return this
-    }
-    TikiTaka.prototype.touch = function(){
-      console.log("touch...")
-      return this
-    }
-    TikiTaka.prototype.touchTouch = function(){
-      console.log("touch touch...")
-      return this
-    }
-    TikiTaka.prototype.touchTouchPass = function(){
-      console.log("touch touch...")
-      return this
-    }
-
-    TikiTaka.prototype.touchTouchChipPass = function(){
-      console.log("touch touch chip pass...")
-      return this
-    }
-
-    TikiTaka.prototype.touchChipPass = function(){
-      console.log("touch chip pass...")
-      return this
-    }
-
-    TikiTaka.prototype.dribble = function(){
-      console.log("dribble...")
-      return this
-    }
-
+  constructor(file_defender=true){
+    this.defender=file_defender //every move should be scrutinized more when there is no defender
+    //Primitives
+    TikiTaka.prototype.firstTouch = this.firstTouch;
+    TikiTaka.prototype.doubleTouch = this.doubleTouch;
+    TikiTaka.prototype.dribble = this.dribble;
+    TikiTaka.prototype.passare = this.passare;
+    TikiTaka.prototype.backwardsPass = this.backwardsPass;
+    TikiTaka.prototype.blindPass = this.blindPass;
+    TikiTaka.prototype.longPass = this.longPass;
+    TikiTaka.prototype.chapeu = this.chapeu;
+    TikiTaka.prototype.rabona = this.rabona;
+    TikiTaka.prototype.faux = this.faux;
+    TikiTaka.prototype.marseilleTurn = this.marseilleTurn;
+    TikiTaka.prototype.showta = this.showta;
+    TikiTaka.prototype.bicicleta = this.bicicleta;
+    TikiTaka.prototype.cuauhteminha = this.cuauhteminha;
+    TikiTaka.prototype.aurelio = aurelio;
 
   }
 
-    // //this is a blind pass, it assumes the recipient file is ready to recieve it
-    // pass(origin, dest){
-    //
-    // }
-    // blindPass(origin, dest){
-    // }
-    //
-    // rabona(origin, dest){
-    //
-    // }
-    // fakePass(){
-    //
-    // }
-    // touch(filepath){
-    //     fs.closeSync(fs.openSync(filepath, 'w'));
-    // }
-    // touchTouch(somepath, file=false, overwrite=false){
-    //
-    //   this.somepath=somepath
-    //   console.log(somepath)
-    //   try{
-    //       fs.mkdirSync(this.somepath)
-    //   } catch(err){
-    //       console.log("dir already exists")
-    //   }
-    //   if (file){
-    //
-    //   this.filename = path.basename(this.somepath)
-    //   this.extension = this.filename.split('.').pop()
-    //   this.dirname = path.dirname(this.somepath)+'/'
-    //
-    //       if(!fs.existsSync(this.somepath)){
-    //
-    //           return this.touch(this.somepath)
-    //       }else if(overwrite){
-    //
-    //           return this.touchChipPass(this.somepath)
-    //       }else{
-    //
-    //           return
-    //       }
-    //   }
-    // }
-    //
-    // touchTouchPass(orgin, dest, file=false){
-    //   this.touchTouch(dest, false, false)
-    //   this.pass(origin, dest)
-    // }
-    //
-    // touchTouchChipPass(origin, dest, file=false){
-    //   this.touchTouch(dest, file, true)
-    //   this.chipPass(origin, dest)
-    // }
-    //
-    // touchChipPass(filepath){
-    //   try {                                           //fs.utimesSync is used here to prevent existing
-    //       fs.utimesSync(filepath, time, time);        //file contents from being overwritten.                                                        //It also updates the last modification timestamp
-    //     } catch (err) {                               //of the file, which is consistent with what POSIX
-    //       fs.closeSync(fs.openSync(filepath, 'w'));   //touch does. (Thanks Remarkable Mark!)
-    //     }
-    // }
+  firstTouch(somepath, dir=false){
+    //this can be on a dir, or a file
+    if(this._checkPath(somepath, false, true)){
+      if(dir){
+        fs.mkdirSync(path.dirname(somepath))
+      }else{
+        fs.closeSync(fs.openSync(somepath, 'w'));
+      }
+      return this
+    }
+    throw Error("firstTouch has a bug, shouldn't be here")
+  }
 
+  doubleTouch(somepath){
+    if(this._checkPath(somepath, false, true)){
+      fs.mkdirSync(path.dirname(somepath))
+      fs.closeSync(fs.openSync(somepath, 'w'));
+      return this
+    }
+    throw Error("doubleTouch has a bug, shouldn't be here")
+  }
+
+  dribble(){
+    return this
+  }
+  
+  passare(a, b){
+    //This should mean append to file
+    return this
+  }
+  backwardsPass(){
+
+  }
+  blindPass(){
+
+  }
+  longPass(){
+
+  }
+  chapeu(a, b){
+    //this should mean chip over the defender (dont stub your toe--see the docs)
+    return this
+  }
+  rabona(){
+    //where we "pass over" (chip-pass) the defender blind
+    return this
+  }
+  faux(){
+     return this
+  }
+  marseilleTurn(){
+    return this
+  }
+  showta(){
+
+  }
+  bicicleta(){
+
+  }
+
+  cuauhteminha(){
+
+  }
+
+  aurelio(){
+
+  }
+
+  _checkPath(somepath, rok, wok){
+    if (!wok && !rok){
+      throw new Error("invalid path, please check permissions or path string")
+    }else{
+      if(rok){
+        try{
+          fs.accessSync(somepath, fs.constants.R_OK)
+        }catch{
+          throw Error("read permissions not granted or your path string sucks")
+        }
+      }
+      if(wok){
+        try{
+          fs.accessSync(somepath, fs.constants.W_OK)
+        }catch{
+          throw Error("write permissions not granted or your path string sucks")
+        }
+      }
+    }
+    return true
+  }
 }
 
 
 var play = new TikiTaka("./sometest/some.test", true, true)
 
-console.log(play.pass().touchChipPass().touchTouchChipPass().rabona())
+console.log(play.pass("123", "456").blindPass("653", "lkdsfj"))
