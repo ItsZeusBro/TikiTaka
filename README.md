@@ -8,8 +8,7 @@ passes.
 
 ## Some Basic Terminology
 
-### Tiki Taka
-The whole process of using a Tiki Taka chain of events
+
 
 ### Pelota 
 We mean data
@@ -33,14 +32,21 @@ Take an extra touch to create the path for the play, and then its location
 
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
+### Tikki Takka
+This is a playful feature. Basically the TikkiTakka class holds a stack and a queue. It uses the stack if you have a strong left foot.
+It uses the queue if you don't. The stack (or queue) holds one of the previous tikki or takka. This all depends on what you chose first.
 
 ### Tikki
-Set up an fs Read Stream (Tikki)
+Set up an fs Read Stream (Tikki). 
+- If you have a strong left, and if there was a writestream in the writestream stack, pop it off and pipe the readstream to writestream. 
+- If you don't have a strong left, and there was a writestream in the writestream queue, pop it off the queue and pipe the readstream to the writestream.
 
 ![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
 
 ### Takka 
-Set up a write stream (Takka)
+Set up a write stream (Takka). 
+- If you have a strong left, and if there was a readstream in the readstream stack, pop it off and pipe the readstream to writestream. 
+- If you don't have a strong left, and there was a readstream in the readstream queue, pop it off the queue and pipe the readstream to the writestream.
 
 ![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
 
