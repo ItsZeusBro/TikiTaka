@@ -6,38 +6,41 @@ passes.
 
 ![TikiTaka](https://media.balls.ie/uploads/2013/09/barcatikitaka.gif)
 
-### Basic Terminology
-
+## Some Basic Terminology
 
 ### Tiki Taka
-#### The whole process of using Tiki Taka call
-
+The whole process of using a Tiki Taka chain of events
 
 ### Pelota 
-#### We mean data
+We mean data
 
+### Goalie 
+We mean the file guard that prevents us from overwriting a file
 
-### Defender 
-#### We mean the file guard that prevents us from overwriting it
+### Getting passed the Defender
+Using a function properly, without mistakes, otherwise you could lose the opportunity
 
-### Touch 
-#### we mean setting up a location for the ball to stop at (file location)
+## Moves (function primitives that you can chain together)
+
+### First Touch 
+Setting up a location for the ball to stop at (file location)
+- In Futbol, your first touch needs to be good to make the defender miss
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
 ### Double Touch 
-#### we mean take an extra touch to create the path for the play, and then its location
+Take an extra touch to create the path for the play, and then its location
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
 ### Passare 
-#### We mean normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data)
+Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data)
 ![Passare](https://thumbs.gfycat.com/DearestDismalAustraliankelpie-size_restricted.gif)
 
 ### Dribble
-#### Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
+Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
 ![Dribble](https://i.pinimg.com/originals/60/d9/9e/60d99e9935ea39dd1f84e9e6e58744c6.gif)
 
 ### Long Pass 
-#### We mean to set up a write stream" (so, if i do a dribble to long pass, its a read to write stream)
+Set up a write stream" (so, if i do a dribble to long pass, its a read to write stream)
 
 ![DribbleToLongPass](http://www.whoateallthepies.tv/wp-content/uploads/2013/08/isco-pass.gif)
 
@@ -58,8 +61,6 @@ passes.
 
 
 
-
-
 ### Faux (fake pass)
 #### we mean take the file data, put into buffer, delete the origin
 ![fake pass](https://64.media.tumblr.com/5df3e0260385ea86c22d9dfa5d3255a1/8f68b6b7a4e53f11-52/s540x810/75d40cee9e6ed66149acca81816255c12fac72fd.gifv)
@@ -69,7 +70,6 @@ passes.
 #### we mean to set up a circle file stream
 
 ![Marseille](https://thumbs.gfycat.com/SilentFluidImago-max-1mb.gif)
-
 
 
 
@@ -92,10 +92,12 @@ passes.
 
 ![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
+
 ### "Aurelio" 
 #### we mean fakePass in one direction, and dribble to the other (put in buffer and create a writestream)
 
 ![Aurelio](https://media4.giphy.com/media/DbCErKp9tO14VpcA8j/giphy.gif)
+
 
 ### "goooal!" or "gooooal!" 
 #### is console logged on the difficult play with three passes. "gooooal" for a difficult play with 4 passes, etc
