@@ -60,6 +60,14 @@ Pass data without looking to see if the recipient (file) is there (only do this 
 
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
 
+### Long Pass
+Copy data from local filesystem file to another filesystem's file
+![LongPass](https://i.gifer.com/8Rpb.gif)
+
+### Butt Pass
+pass blind, but doesn't throw an exception if it fails
+
+![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
 
 ### Chapeu (Chip Pass)
 "Pass over" or to "write over" the file from origin (while checking to see if the file exists)
