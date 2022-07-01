@@ -3,6 +3,9 @@
 - Tiki Taka is a Spanish Football Style that is dynamic and unpredictable
 characterized by small pelota touches in small spaces, and hard to reason about
 passes.
+
+![TikiTaka](https://j.gifs.com/vV0MbG.gif)
+
 ### Basic Terminology
 - The whole process of using Tiki Taka is called a "play"
 - By "ball" we mean data
