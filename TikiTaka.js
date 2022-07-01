@@ -9,11 +9,11 @@ export class TikiTaka{
     //Primitives
     TikiTaka.prototype.firstTouch = this.firstTouch;
     TikiTaka.prototype.doubleTouch = this.doubleTouch;
-    TikiTaka.prototype.dribble = this.dribble;
+    TikiTaka.prototype.tikki = this.tikki;
+    TikiTaka.prototype.takka = this.takka;
     TikiTaka.prototype.passare = this.passare;
     TikiTaka.prototype.backwardsPass = this.backwardsPass;
     TikiTaka.prototype.blindPass = this.blindPass;
-    TikiTaka.prototype.longPass = this.longPass;
     TikiTaka.prototype.chapeu = this.chapeu;
     TikiTaka.prototype.rabona = this.rabona;
     TikiTaka.prototype.faux = this.faux;
@@ -51,8 +51,24 @@ export class TikiTaka{
     throw Error("doubleTouch has a bug, shouldn't be here")
   }
 
-  dribble(somepath){
-    this.readstreams.push(somepath)
+  tikki(somepath){
+    if(this.strongLeft && this.writestreams.length){
+        this.fs.createReadStream(somepath).pipe(this.writestreams.pop(0))
+    }else if((!this.strongLeft) && this.writestreams.length){
+        this.fs.createReadStream(somepath).pipe(this.writestreams.pop())
+    }else{
+      this.readstreams.push(fs.createReadStream(somepath))
+    }
+    return this
+  }
+  takka(somepath){
+    if(this.strongLeft && this.readstreams.length){
+        this.readstreams.pop(0).pipe(this.fs.createWriteStream(somepath))
+    }else if((!this.strongLeft) && this.readstreams.length){
+        this.readstreams.pop().pipe(this.fs.createWriteStream(somepath))
+    }else{
+      this.writestreams.push(fs.createWriteStream(somepath))
+    }
     return this
   }
 
