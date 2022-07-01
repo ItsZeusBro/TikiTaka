@@ -25,6 +25,7 @@ Using a function properly, without mistakes, otherwise you could lose the opport
 ### First Touch 
 Setting up a location for the ball to stop at (file location)
 - In Futbol, your first touch needs to be good to make the defender miss
+
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
 ### Double Touch 
@@ -50,7 +51,7 @@ Set up a write stream" (so, if i do a dribble to long pass, its a read to write 
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
 
 
-### Chip Pass 
+### Chip Pass (Chapeu)
 #### We mean to "pass over" or to "write over" the file (while checking to see if the file exists)
 ![ChipPass](https://68.media.tumblr.com/25e2d76dfbc9c24b3f27d867cb45d0ec/tumblr_o7pf4jesjf1vrq5lso1_500.gif)
 
