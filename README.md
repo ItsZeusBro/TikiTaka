@@ -22,7 +22,7 @@ Using a function properly, without mistakes, otherwise you could lose the opport
 
 ## Moves (function primitives that you can chain together)
 
-### First Touch 
+### First Touch (or just Touch)
 Setting up a location for the ball to stop at (file location)
 - In Futbol, your first touch needs to be good to make the defender miss
 
