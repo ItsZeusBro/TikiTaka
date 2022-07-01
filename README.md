@@ -70,13 +70,13 @@ pass blind, but doesn't throw an exception if it fails
 ![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
 
 ### Chapeu (Chip Pass)
-"Pass over" or to "write over" a file from origin with origin name if destination file exists
-
+"Pass over the file defender" (overwrite) a file with origins contents changing destination to the origins name if file exists. If it doesn't exist, just move the origin file with its original name to that directory.
 ![ChipPass](https://68.media.tumblr.com/25e2d76dfbc9c24b3f27d867cb45d0ec/tumblr_o7pf4jesjf1vrq5lso1_500.gif)
 
 
 ### Rabona Chapeu
-Blind chip pass, we mean to "write over" a ***possible*** file with the origin contents regardless if destination exists, changing the name to the origins  name if it does exist (only do this if really confident)
+"Pass over the file defender" (overwrite) a file with origins contents changing destination to the origins name if file exists. If it doesn't exist, move the origin to the destination with the destination's name.
+
 
 ![Rabona](https://c.tenor.com/9tH5GAo0jsEAAAAM/robert-lewandowski-lewandowski.gif)
 
