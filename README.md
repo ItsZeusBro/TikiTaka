@@ -127,7 +127,10 @@ trick pass to self. (moving the file to another location keeping its name). If t
 
 ![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
+### Chop
+chops a file from a starting position to an ending position, and puts into class's buffer stack (or queue, depending on strong left).
 
+![Chop](https://github.com/ItsZeusBro/TikiTaka/blob/4ed7ebc8375397d99fd1f525611e658a73a85a16/Gifs/chop.gif)
 
 
 
