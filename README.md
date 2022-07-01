@@ -19,7 +19,7 @@ We mean the file guard that prevents us from overwriting a file
 ### Getting passed the Defender
 Using a function properly, without mistakes, otherwise you could lose the opportunity
 
-## Moves (function primitives that you can chain together)
+## Beginner Moves
 
 ### First Touch (or just Touch)
 Setting up a location for the ball to stop at (file location)
@@ -54,11 +54,12 @@ Pass data (append) to a presumably existing file without looking to see if the r
 
 ![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
 
+## Semi-Pro Moves
+
 ### Long Pass
 Copy data from local filesystem file to another filesystem's file. Append it to the end of that file, does not overwrite.
 
 ![LongPass](https://i.gifer.com/8Rpb.gif)
-
 
 
 ### Chapeu (All Chip passes and flick passes overwrite, becareful)
@@ -77,7 +78,6 @@ Copy data from local filesystem file to another filesystem's file. Append it to 
 "Pass over the file defender" (overwrite) a file with origins contents changing destination name to the origins name if destination file exists. If it doesn't exist, change the origin file's name with the destinations name in place.
 
 ![Rainbow](Gifs/rainbow.gif)
-
 
 
 ### Fakey
@@ -117,12 +117,16 @@ trick pass to self. (moving the file to another location keeping its name). If t
 
 ![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
+
+
+## Professional Moves
+
 ### Chop
 chops a file from a starting position to an ending position, and puts into class's buffer stack (or queue, depending on strong left).
 
 ![Chop](https://github.com/ItsZeusBro/TikiTaka/blob/4ed7ebc8375397d99fd1f525611e658a73a85a16/Gifs/chop.gif)
 
-## Super Advanced
+
 ### Tikki Takka
 This is a playful feature. Basically the TikkiTakka class holds a stack and a queue. It uses the stack if you have a strong left foot.
 It uses the queue if you don't. The stack (or queue) holds one of the previous tikki or takka. This all depends on what you chose first.
