@@ -14,6 +14,7 @@ export class TikiTaka{
     TikiTaka.prototype.passare = this.passare;
     TikiTaka.prototype.backwardsPass = this.backwardsPass;
     TikiTaka.prototype.blindPass = this.blindPass;
+    TikiTaka.prototype.longPass = this.longPass;
     TikiTaka.prototype.chapeu = this.chapeu;
     TikiTaka.prototype.rabona = this.rabona;
     TikiTaka.prototype.fakey = this.fakey;
@@ -23,6 +24,7 @@ export class TikiTaka{
     TikiTaka.prototype.bicicleta = this.bicicleta;
     TikiTaka.prototype.cuauhteminha = this.cuauhteminha;
     TikiTaka.prototype.aurelio = aurelio;
+    TikiTaka.prototype.chop = chop;
     //these are STACKS if strongLeft is true, otherwise queues
     this.strongLeft=strongLeft
     this.readstreams = []
@@ -87,33 +89,59 @@ export class TikiTaka{
     //just a simple touch and pass from a to b
     if (!blind){
       this.firstTouch(b)
-      fs.copyFileSync(a, b)
+      var buffer = fs.readFileSync(a)
+      fs.appendFileSync(b, buffer)
+
     }else{
-      this.copyFileSync(a,b)
+      try{
+        var buffer = fs.readFileSync(a)
+        fs.appendFileSync(b, buffer)
+      }catch(err){
+        throw Error(err)
+      }
     }
 
     return this
   }
   backwardsPass(a, b){
-    //remove the origin file after passing a to b
+    //This is a touch and pass(append to dest), remove origin solution
+    //this means we need to make sure a exists, if it doesn't, we cant use it.
+    fs.existsSync(a)
+    //remove the origin file after passing a to b (append a to b, do not overwrite)
     this.passare(a, b)
+
     this.fakey(a)
     return this
   }
   fakey(a){
-    fs.unlinkSync(a)
+    //this creates a file if it does not exist, or deletes if it does.
+      if(fs.existsSync(a)){
+        fs.unlinkSync(a)
+      }else{
+        this.firstTouch(a)
+      }
     return this
+  }
+  outOfBounds(a){
+    //just deletes a file if it exists
+    try{
+      fs.unlinkSync(a)
+    }catch(err){
+      //try not to err
+      throw new Error(err)
+    }
   }
   blindPass(a, b){
     this.passare(a, b, true)
   }
 
-  // longPass(){
-  //   //This copies a files contents and pastes them to another filesystem
-  //
-  // }
+  longPass(){
+    //This copies a files contents and pastes them to another filesystem
+
+  }
   chapeu(a, b){
-    //this should mean chip over the defender (dont stub your toe--see the docs)
+    //this should mean chip over the defender ()
+    fs.copyFileSync(a, b);
     return this
   }
   rabona(){
@@ -144,6 +172,9 @@ export class TikiTaka{
 
   }
   createPitch(somepath){
+
+  }
+  chop(){
 
   }
   //how do we do a replay of what happened? Some sort of animation that helps us debug?
