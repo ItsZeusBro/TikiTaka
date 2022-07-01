@@ -36,11 +36,11 @@ Take an extra touch to create the path for the play, and then its location
 
 ### Tikki
 Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
-
+![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
 
 ### Takka 
 Set up a write stream (so, if i do a dribble to long pass, its a read to write stream)
-
+![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
 
 ### Passare 
 Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data)
