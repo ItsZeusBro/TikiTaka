@@ -17,7 +17,12 @@ passes.
 - By "touch" we mean setting up a location for the ball to stop at (file location)
 - By "touch touch" we mean take an extra touch to create the path for the play, and then its location
 - By "fake pass" we mean take the file data, put into buffer, delete the origin
-- By "dribble" we mean to set up a "read stream"
+- By "dribble" we mean to set up a "duplex stream"
 - By "dribbleLongPass" we mean to set up a "read stream to write stream"
 - By "shoot" we mean to set up a socket or ipc for the data to shoot through
 - By "goal" it means we've succeeded on the difficult shot
+
+- By "backwardsPass" we mean remove the origin file after passing the data
+- By "Cuauhteminha" we mean a trick pass to self. (moving the file to another location)
+- By "Aurelio" we mean fakePass in one direction, and dribble to the other (put in buffer and create a writestream)
+![Aurelio](https://media4.giphy.com/media/DbCErKp9tO14VpcA8j/giphy.gif)
