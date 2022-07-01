@@ -9,8 +9,8 @@ passes.
 ### Basic Terminology
 - The whole process of using Tiki Taka is called a "play"
 - By "ball" we mean data
-- By "rabona" we mean passing ball down a path (directory) and to stop at the intended location (file)
-- By "blindPass" we mean pass without looking to see if the recipient (file) is there
+- By "pass" we mean passing ball down a path (directory) and to stop at the intended location (file)
+- By "rabona" we mean pass without looking to see if the recipient (file) is there
 - By "defender" we mean the file guard that prevents us from overwriting it
 - By "chipPass" we mean "pass over" or "write over" the defender
 - By "blindChipPass" assumes the recipient file is ready to recieve the ball and passes the ball over the defender (overwrites the file if it exists)
