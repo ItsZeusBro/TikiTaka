@@ -37,7 +37,7 @@ passes.
 ![Dribble](https://i.pinimg.com/originals/60/d9/9e/60d99e9935ea39dd1f84e9e6e58744c6.gif)
 
 
-### Blind Pass
+### Blind Passare
 #### We mean pass without looking to see if the recipient (file) is there (only do this if confident)
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
 
