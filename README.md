@@ -72,6 +72,10 @@ Blind chip pass, we mean to "pass over" or to "write over" the file without chec
 
 ![Rabona](https://c.tenor.com/9tH5GAo0jsEAAAAM/robert-lewandowski-lewandowski.gif)
 
+### Fakey
+Delete a file
+
+![fakey](http://25.media.tumblr.com/tumblr_mekqr4Bdjf1rjdfzto1_500.gif)
 
 ### Faux (fake pass)
 Take the file data, put into buffer, delete the origin
