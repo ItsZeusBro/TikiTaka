@@ -53,36 +53,43 @@ export class TikiTaka{
 
   tikki(somepath){
     if(this.strongLeft && this.writestreams.length){
+      //if player is strong left, and takka was already performed, tikki the last takka
+      //(pass it to the last takka passer)
         this.fs.createReadStream(somepath).pipe(this.writestreams.pop(0))
     }else if((!this.strongLeft) && this.writestreams.length){
+      //if player is not strong left, and takka was already performed, tikki the first takka
+      //(pass it to the first takka passer)
         this.fs.createReadStream(somepath).pipe(this.writestreams.pop())
     }else{
+      //there was no takka to tikki, only a tikki that needs a takka, remember the tikki
       this.readstreams.push(fs.createReadStream(somepath))
     }
     return this
   }
   takka(somepath){
     if(this.strongLeft && this.readstreams.length){
+      //if player is strong left, and tikki was already performed, takka the last tikki
+      //(pass it to the last tikki passer)
         this.readstreams.pop(0).pipe(this.fs.createWriteStream(somepath))
     }else if((!this.strongLeft) && this.readstreams.length){
+      //if player is not strong left, and tikki was already performed, takka the first tikki
+      //(pass it to the first tikki passer)
         this.readstreams.pop().pipe(this.fs.createWriteStream(somepath))
     }else{
+      //there was no tikki to takka, only a takka that needs a tikki, remember the takka
       this.writestreams.push(fs.createWriteStream(somepath))
     }
     return this
   }
 
   passare(a, b){
-    if(!a){
-      //it suggests we have a read stream that we wish to pipe into a writestream
-    }else{
-
-    }
-    //This should mean append to file
+    //just a simple touch and pass from a to b
     return this
   }
-  backwardsPass(){
-
+  backwardsPass(a, b){
+    //remove the origin file after passing a to b
+    this.passare(a, b)
+    this.remove(a)
   }
   blindPass(){
 
