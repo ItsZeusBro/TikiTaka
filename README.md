@@ -70,7 +70,7 @@ pass blind, but doesn't throw an exception if it fails
 ![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
 
 ### Chapeu (Chip Pass)
-"Pass over" or to "write over" the file from origin (while checking to see if the file exists)
+"Pass over" or to "write over" the file from origin
 
 ![ChipPass](https://68.media.tumblr.com/25e2d76dfbc9c24b3f27d867cb45d0ec/tumblr_o7pf4jesjf1vrq5lso1_500.gif)
 
