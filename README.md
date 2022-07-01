@@ -116,6 +116,10 @@ To set up a socket or ipc to read from (backwards shot). Does not read into buff
 ![Bicicleta](https://i.gifer.com/origin/3b/3b1d9a9ae1ba42041f655cd7925cb0c2.gif)
 
 
+### Toe the Line
+Deletes a file if it exists, otherwise throws an error
+
+![ToeTheLine](https://github.com/ItsZeusBro/TikiTaka/blob/8e3acf1772a2650658c5725087bcb184f8527310/Gifs/toetheline.gif)
 
 
 
