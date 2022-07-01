@@ -57,7 +57,7 @@ Pass data without looking to see if the recipient (file) is there (only do this 
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
 
 ### Long Pass 
-Set up a write stream" (so, if i do a dribble to long pass, its a read to write stream)
+Set up a write stream (so, if i do a dribble to long pass, its a read to write stream)
 
 ![DribbleToLongPass](http://www.whoateallthepies.tv/wp-content/uploads/2013/08/isco-pass.gif)
 
