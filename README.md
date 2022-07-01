@@ -32,23 +32,6 @@ Take an extra touch to create the path for the play, and then its location
 
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
-### Tikki Takka
-This is a playful feature. Basically the TikkiTakka class holds a stack and a queue. It uses the stack if you have a strong left foot.
-It uses the queue if you don't. The stack (or queue) holds one of the previous tikki or takka. This all depends on what you chose first.
-
-### Tikki
-Set up an fs Read Stream (Tikki). 
-- If you have a strong left, and if there was a writestream in the writestream stack, pop it off and pipe the readstream to writestream. 
-- If you don't have a strong left, and there was a writestream in the writestream queue, pop it off the queue and pipe the readstream to the writestream.
-
-![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
-
-### Takka 
-Set up a write stream (Takka). 
-- If you have a strong left, and if there was a readstream in the readstream stack, pop it off and pipe the readstream to writestream. 
-- If you don't have a strong left, and there was a readstream in the readstream queue, pop it off the queue and pipe the readstream to the writestream.
-
-![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
 
 ### Passare 
 Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data, do not overwrite)
@@ -138,6 +121,25 @@ trick pass to self. (moving the file to another location keeping its name). If t
 chops a file from a starting position to an ending position, and puts into class's buffer stack (or queue, depending on strong left).
 
 ![Chop](https://github.com/ItsZeusBro/TikiTaka/blob/4ed7ebc8375397d99fd1f525611e658a73a85a16/Gifs/chop.gif)
+
+## Super Advanced
+### Tikki Takka
+This is a playful feature. Basically the TikkiTakka class holds a stack and a queue. It uses the stack if you have a strong left foot.
+It uses the queue if you don't. The stack (or queue) holds one of the previous tikki or takka. This all depends on what you chose first.
+
+### Tikki
+Set up an fs Read Stream (Tikki). 
+- If you have a strong left, and if there was a writestream in the writestream stack, pop it off and pipe the readstream to writestream. 
+- If you don't have a strong left, and there was a writestream in the writestream queue, pop it off the queue and pipe the readstream to the writestream.
+
+![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
+
+### Takka 
+Set up a write stream (Takka). 
+- If you have a strong left, and if there was a readstream in the readstream stack, pop it off and pipe the readstream to writestream. 
+- If you don't have a strong left, and there was a readstream in the readstream queue, pop it off the queue and pipe the readstream to the writestream.
+
+![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
 
 
 
