@@ -16,6 +16,7 @@ export class TikiTaka{
     TikiTaka.prototype.blindPass = this.blindPass;
     TikiTaka.prototype.chapeu = this.chapeu;
     TikiTaka.prototype.rabona = this.rabona;
+    TikiTaka.prototype.fakey = this.fakey;
     TikiTaka.prototype.faux = this.faux;
     TikiTaka.prototype.marseilleTurn = this.marseilleTurn;
     TikiTaka.prototype.showta = this.showta;
@@ -82,21 +83,35 @@ export class TikiTaka{
     return this
   }
 
-  passare(a, b){
+  passare(a, b, blind=false){
     //just a simple touch and pass from a to b
+    if (!blind){
+      this.firstTouch(b)
+      fs.copyFileSync(a, b)
+    }else{
+      this.copyFileSync(a,b)
+    }
+
     return this
   }
   backwardsPass(a, b){
     //remove the origin file after passing a to b
     this.passare(a, b)
-    this.remove(a)
+    this.fakey(a)
+    return this
   }
-  blindPass(){
+  fakey(a){
+    fs.unlinkSync(a)
+    return this
+  }
+  blindPass(a, b){
+    this.passare(a, b, true)
+  }
 
-  }
-  longPass(){
-
-  }
+  // longPass(){
+  //   //This copies a files contents and pastes them to another filesystem
+  //
+  // }
   chapeu(a, b){
     //this should mean chip over the defender (dont stub your toe--see the docs)
     return this
@@ -125,6 +140,13 @@ export class TikiTaka{
   aurelio(){
 
   }
+  createBall(somepath){
+
+  }
+  createPitch(somepath){
+
+  }
+  //how do we do a replay of what happened? Some sort of animation that helps us debug?
 
   _checkPath(somepath, rok, wok){
     if (!wok && !rok){
