@@ -36,6 +36,11 @@ passes.
 #### Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
 ![Dribble](https://i.pinimg.com/originals/60/d9/9e/60d99e9935ea39dd1f84e9e6e58744c6.gif)
 
+### Long Pass 
+#### We mean to set up a write stream" (so, if i do a dribble to long pass, its a read to write stream)
+
+![DribbleToLongPass](http://www.whoateallthepies.tv/wp-content/uploads/2013/08/isco-pass.gif)
+
 
 ### Blind Passare
 #### We mean pass without looking to see if the recipient (file) is there (only do this if confident)
@@ -65,10 +70,7 @@ passes.
 
 ![Marseille](https://thumbs.gfycat.com/SilentFluidImago-max-1mb.gif)
 
-### Dribble to Long Pass 
-#### we mean to set up a "read stream to write stream"
 
-![DribbleToLongPass](http://www.whoateallthepies.tv/wp-content/uploads/2013/08/isco-pass.gif)
 
 
 ### Showta (arabish for shot) 
