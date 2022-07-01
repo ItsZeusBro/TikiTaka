@@ -20,9 +20,9 @@ passes.
 ### Defender 
 #### We mean the file guard that prevents us from overwriting it
 
-### Good Touch 
+### Great Touch 
 #### we mean setting up a location for the ball to stop at (file location)
-![GreatTouchInFact](https://media2.giphy.com/media/f8WCufXdHbl1gDMPHv/giphy.gif)
+![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
 ### Double Touch 
 #### we mean take an extra touch to create the path for the play, and then its location
