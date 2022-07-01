@@ -51,7 +51,7 @@ Remove the origin file after passing the data to another file
 
 ![BackPass](https://c.tenor.com/J1O91U8m0_YAAAAC/ronaldo-vs-hungary-ronaldo-goal-vs-hungary.gif)
 
-### Blind Passare
+### Blind Pass
 Pass data without looking to see if the recipient (file) is there (only do this if confident)
 
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
