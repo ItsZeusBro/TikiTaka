@@ -20,7 +20,7 @@ passes.
 ### Defender 
 #### We mean the file guard that prevents us from overwriting it
 
-### Great Touch 
+### Touch 
 #### we mean setting up a location for the ball to stop at (file location)
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
