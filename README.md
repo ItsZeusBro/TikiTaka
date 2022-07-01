@@ -1,5 +1,5 @@
 # TikiTaka
-## Playing Spanish Football with Files and Data
+## Playing Spanish Futbol with Files and Data
 - Tiki Taka is a Spanish Football Style that is dynamic and unpredictable
 characterized by small pelota touches in small spaces, and hard to reason about
 passes.
