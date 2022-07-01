@@ -79,7 +79,7 @@ Copy data from local filesystem file to another filesystem's file. Append it to 
 
 
 ### Chapeu (All Chip Pass's overwrite, becareful)
-"Pass over the file defender" (overwrite) a file with origins contents changing destination to the origins name if file exists. If it doesn't exist, just move the origin file with its original name to that directory.
+"Pass over the file defender" (overwrite) a file with origins contents changing destination name to the origins name if destination file exists. If it doesn't exist, just move the origin file with the origins name to that directory.
 
 ![ChipPass](https://68.media.tumblr.com/25e2d76dfbc9c24b3f27d867cb45d0ec/tumblr_o7pf4jesjf1vrq5lso1_500.gif)
 
@@ -87,8 +87,15 @@ Copy data from local filesystem file to another filesystem's file. Append it to 
 ### Rabona Chapeu (All Chip Pass's overwrite, becareful)
 "Pass over the file defender" (overwrite) a file with origins contents changing destination to the origins name if file exists. If it doesn't exist, move the origin to the destination with the destination's name.
 
-
 ![Rabona](https://c.tenor.com/9tH5GAo0jsEAAAAM/robert-lewandowski-lewandowski.gif)
+
+
+### Rainbow 
+"Pass over the file defender" (overwrite) a file with origins contents changing destination name to the origins name if destination file exists. If it doesn't exist, change the origin file's name with the destinations name in place.
+
+![Rainbow](Gifs/rainbow.gif)
+
+
 
 ### Fakey
 Deletes a file if it exists. Creates the file if it doesn't.
