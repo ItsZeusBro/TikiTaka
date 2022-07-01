@@ -32,6 +32,11 @@ passes.
 #### We mean normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data)
 ![Passare](https://thumbs.gfycat.com/DearestDismalAustraliankelpie-size_restricted.gif)
 
+### Dribble
+#### Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
+![Dribble](https://i.pinimg.com/originals/60/d9/9e/60d99e9935ea39dd1f84e9e6e58744c6.gif)
+
+
 ### Blind Pass
 #### We mean pass without looking to see if the recipient (file) is there (only do this if confident)
 ![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
