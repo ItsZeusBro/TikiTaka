@@ -79,6 +79,10 @@ Copy data from local filesystem file to another filesystem's file. Append it to 
 
 ![Rainbow](Gifs/rainbow.gif)
 
+### "Cuauhteminha" (like a safer version of an mv command to another dir with same name)
+trick pass to self. (moving the file to another location keeping its name). If that location already has the same file, don't do it.
+
+![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
 ### Fakey
 Deletes a file if it exists. Creates the file if it doesn't.
@@ -112,10 +116,7 @@ To set up a socket or ipc to read from (backwards shot). Does not read into buff
 ![Bicicleta](https://i.gifer.com/origin/3b/3b1d9a9ae1ba42041f655cd7925cb0c2.gif)
 
 
-### "Cuauhteminha" 
-trick pass to self. (moving the file to another location keeping its name). If that location already has the same file, don't do it.
 
-![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
 
 
