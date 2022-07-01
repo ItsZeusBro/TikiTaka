@@ -35,11 +35,11 @@ Take an extra touch to create the path for the play, and then its location
 
 
 ### Tikki
-Set up an fs Read Stream (If you need to read the pitch before knowing what to do with it)
+Set up an fs Read Stream (Tikki)
 ![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
 
 ### Takka 
-Set up a write stream (so, if i do a dribble to long pass, its a read to write stream)
+Set up a write stream (Takka)
 ![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
 
 ### Passare 
