@@ -1,5 +1,6 @@
 # TikiTaka
 WARNING: Please do not invest time in the names of these functions yet, as they are subject to change. Its too early. It's just to give you an idea.
+
 ## Playing Spanish Futbol with Files and Data
 - Tiki Taka is a Spanish Football Style that is dynamic and unpredictable
 characterized by small pelota touches in small spaces, with hard to reason about
@@ -58,6 +59,7 @@ With these primitive functions you can do all the aforementioned patterns. If yo
 
 
 # Compound actions (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
+I believe that using this type of scheme we would eventually see terminals with graphical replays one day (just for fun)
 
 ## Touches
 
