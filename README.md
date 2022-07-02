@@ -14,34 +14,35 @@ Or
 ## File Operation Primitives:
 These are the primitive use cases that can be performed locally or over a network
 
-### Creation Actions
+### Creation Actions (ball touches)
 1. Create file with name x
 2. Create file with name y
 
-### Renaming Actions
+### Renaming Actions (a path run)
 1. Rename x to y
 2. Rename y to x
 3. Substitute y name with z
 4. Substitute x name with z
 
-### Copy Actions
+### Copy Actions (Basic Pass Types or Basic Shot Tyoes, depending on modifiers used and exception possibilities)
 1. Append Copy x to y (append x data to y file)
 2. Append Copy y to x (append y data to x file)
 3. Substitute append z (buff or file) to y (append z data to y file)
 4. Substitute append z (buff or file) to x (append z data to x file)
 
-### Streaming and buffer Actions
+### Streaming and buffer Actions (TikiTaka plays, Dribbles, and Passes, into shots) 
 1. Stream from a directly to b
 2. Stream from a, filter the buffer or truncate b, stream to b
 3. Stream from a, push streamable on stack or queue, pop [optionally read and filter], then stream to b [optionally truncate first]
 4. Read a, place in buffer, push buffer on stack, pop later [optionally read and filter], then write to b [optionally truncate first]
 5. Read a, place in buffer, push to queue, pop queue immediately [optionally read and filter], write to a or b [optionally truncate first]
 
-### Cleaning Actions
+### Cleaning Actions (Pass or Shot modifiers)
 1. Truncate x
 2. Truncate y
 3. Destroy x
 4. Destroy y
+
 
 ## File Operation Function Primitives:
 With these primitive functions you can do all the aforementioned patterns. If you wish to do these over a network use an options parameter
