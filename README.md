@@ -65,80 +65,82 @@ This acts like a touch, but over a network.
 ### Long Touch (double touch over a network)
 This acts like a double touch but over a network.
 
-# Passes
+# Passes and Shots
 A pass at its most basic level is just moving a file's contents 
 - this is an abstract move, don't care too much about it. The following passes have meaning.
 
 ![normalPasses](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/normalPass.gif)
 
-## IF A and B FILES EXISTS, this is a perfect pass and you can do the following:
+A shot at its most basic level is just moving a file's contents without mitigation guards
 
-***Passare***
+## IF A and B FILES EXISTS, this is a perfect pass or shot:
+
+***Ground Passare or Shot***
 
 ![passare](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/Passare.gif)
 
 
-***Backward Pass***
+***Backward Passare or Shot***
 
 ![backwardPass](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/BackPass.gif)
 
-***Inside Pass***
+***Inside Pass or Shot***
 
-***Outside Pass***
+***Outside***
 
-***High Cross***
+***High Cross or Shot***
 
 ![highCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/highCross.gif)
 
-***Low Cross***
+***Low Cross of Shot***
 
 ![lowCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/lowcross.gif)
 
-***Blind Pass***
+***Blind Pass or Shot***
 
 ![blindPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/blindpass.gif)
 
-***Butt Pass***
+***Butt Pass or Shot***
 
 ![buttPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/buttpass.gif)
 
-***Knee Pass***
+***Knee Pass or Shot***
 
-***Head Pass***
+***Head Pass or Shot***
 
-***Right Shoulder Pass***
+***Right Shoulder Pass or Shot***
 
-***Left Shoulder Pass***
+***Left Shoulder Pass or Shot***
 
 
 ##### WARNING: Chips and flicks overwrite
 
-***Chapeu Pass***
+***Chapeu Pass or Shot***
 
 ![chipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chip.gif)
 
-***Reverse Chapeu ***
+***Reverse Chapeu Pass or Shot***
 
 ![backwardChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chippass.gif)
 
-***Inside Chapeu***
+***Inside Chapeu Pass or Shot***
 
-***Outside Chapeu***
+***Outside Chapeu Pass or Shot***
 
-***High Chapeu***
+***High Chapeu Pass or Shot***
 
-***Low Chapeu***
+***Low Chapeu Pass or Shot***
 
 ![lowChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/lowchip.gif)
 
-***Rabona Inside Chip***
+***Rabona Inside Chip or Shot***
 
 ![RabonaFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Rabona.gif)
 
-***Rabona Outside Chip***
+***Rabona Outside Chip or Shot***
 
 
-***Rainbow Flick to Self***
+***Rainbow Flick to Self or Shot***
 
 ***Head Run***
 
@@ -147,7 +149,7 @@ A pass at its most basic level is just moving a file's contents
 
 
 
-## IF A or B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" or "Faux" options
+## IF A or B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
 
 ***Spin Up***
 
@@ -165,6 +167,10 @@ A pass at its most basic level is just moving a file's contents
 ***Cuauhteminha***
 
 ![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
+
+## Fake Move Modifiers (Mitigation Substitutions)
+These substitute C data or C name as a mitigation in case A or B does not exist
+
 
 ## Productivity mode sometimes forces us to break things, so if you don't mititgate it breaks
 If b or a is not an existing file (or both), and you wish to break the program just ***dont add spin options*** to the contexts above.
