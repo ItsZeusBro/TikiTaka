@@ -192,12 +192,9 @@ All together 8+6+20 = 44. But that's not all! If you do long passes (over a tcp 
 If you add modifiers, which substitute a buffer for a file, then you can add another 8 patterns, leaving us at 96.
 If you add modifiers, and b doesn't exist and a is a buffer, then you can add another 20. This leaves us at 116.
 
-This does not include the filtering (pattern matching and what not) you can do on the buffers before the passes. These filter types are endless, and add to the complexity of the game to complete "objectives" and score "goals".
-
 This does not include all the things that Tiki Taka does with streams (which is not a touch then pass, they are single touch passes with endless combinations).
 
-If you add tricks like Chopping, that create buffers, you still end up in the same modifier patterns above, but the combinations of real things
-you could do are also endless.
+If you do dribbling tricks like Chopping, they create the aforementioned buffer replacements on the pass. T buffers allow you to "process the data" before a pass or shot, you still end up in the same pass numbers above, but the combinations of real things you could before the pass are endless. These filters add to the complexity of the game to complete "objectives" and score "goals".
 
 
 ## Some Prophecy:
