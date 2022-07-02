@@ -62,156 +62,46 @@ With these primitive functions you can do all the aforementioned patterns. If yo
 ## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
 I believe that using this type of scheme we would eventually see terminals with graphical replays one day (just for fun)
 
-## Touches
-
-### One Touch (or just Touch)
-This is basically an independent move from a touch pass which combines the two. You can take a touch to set up a pass later in your move. This touches a file, so that a player moves to that location for the pass.
-
-![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
-
-
-### Two Touch 
-This acts like a touch, but it just creates a dir if not present for the file.
-
-![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
-
-
-# Passes and Shots
-A pass at its most basic level is just moving a file's contents 
-- this is an abstract move, don't care too much about it. The following passes have meaning.
-
-![normalPasses](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/normalPass.gif)
-
-A shot at its most basic level is just moving a file's contents without mitigation guards
-
-![shot](https://github.com/ItsZeusBro/TikiTaka/blob/da23304114bbf392486f81f1c3443a42ca1d20d9/Gifs/Showta.gif)
-
-## IF A and B FILES EXISTS, this is a perfect pass or shot:
-
-***Ground Passare or Shot***
-
-![passare](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/Passare.gif)
-
-
-***Backward Passare or Shot***
-
-![backwardPass](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/BackPass.gif)
-
-***Inside Pass or Shot***
-
-***Outside***
-
-***High Cross or Shot***
-
-![highCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/highCross.gif)
-
-***Low Cross of Shot***
-
-![lowCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/lowcross.gif)
-
-***Blind Pass or Shot***
-
-![blindPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/blindpass.gif)
-
-***Butt Pass or Shot***
-
-![buttPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/buttpass.gif)
-
-***Knee Pass or Shot***
-
-***Head Pass or Shot***
-
-***Right Shoulder Pass or Shot***
-
-***Left Shoulder Pass or Shot***
-
-
-##### WARNING: Chips and flicks overwrite
-
-***Chapeu Pass or Shot***
-
-![chipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chip.gif)
-
-***Reverse Chapeu Pass or Shot***
-
-![backwardChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chippass.gif)
-
-***Inside Chapeu Pass or Shot***
-
-***Outside Chapeu Pass or Shot***
-
-***High Chapeu Pass or Shot***
-
-***Low Chapeu Pass or Shot***
-
-![lowChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/lowchip.gif)
-
-***Rabona Inside Chip or Shot***
-
-![RabonaFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Rabona.gif)
-
-***Rabona Outside Chip or Shot***
-
-***Bicicleta Pass or Shot***
-
-![Bicileta](https://github.com/ItsZeusBro/TikiTaka/blob/e4d697bb5f478d31c6825c47f8237b9410c30994/Gifs/Bicicleta.gif)
-
-***Rainbow Flick to Self or Shot***
-
-![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
-
-***Head Run***
-
-![HeadRun](https://github.com/ItsZeusBro/TikiTaka/blob/9acfca686ec2618131c746c15e8156d3db6e35b4/Gifs/headRun.gif)
-
-
-
-
-## IF A or B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
-
-***Spin Up***
-
-***Spin Up Diagonal Right***
-
-***Spin Up Diagonal Left***
-
-***Spin Down Diagonal Right***
-
-***Spin Down Diagonal Left***
-
-
-## IF A AND B FILES DO NOT Exist. Then you cant pass anything, Do this instead:
-
-***Cuauhteminha***
-
-![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
-
-## Fake Move Modifiers (Mitigation Substitutions)
-These substitute C data or C name as a mitigation in case A or B does not exist
-
-
-## Productivity mode sometimes forces us to break things, so if you don't mititgate it breaks
-If b or a is not an existing file (or both), and you wish to break the program just ***dont add spin options*** to the contexts above.
-
-## Dribbles
-These are filter and position/offset logic for buffer substitution on A, if A is a stored buffer in a queue or stack (depending on if your left foot or right foot player)
-
-***Dribble***
-This is a pattern matching game to match patterns on a buffer and forward to files
-
-![Dribble](https://github.com/ItsZeusBro/TikiTaka/blob/da23304114bbf392486f81f1c3443a42ca1d20d9/Gifs/dribble.gif)
-
-***Chopping***
-This chops files from a position to an offset
-
-![Chopping](https://github.com/ItsZeusBro/TikiTaka/blob/27f5a9c220bd4ea491e1d1326cd32dcd5fee9c72/Gifs/chop.gif)
-
-
-## TikiTaka
-This is advanced subject about substituting streams for files. It uses a stack or queue for advanced moves that are round about pass schemes that are like dynamic plays. Very difficult to reason about and execute.
-
-![TikiTaka](https://github.com/ItsZeusBro/TikiTaka/blob/da23304114bbf392486f81f1c3443a42ca1d20d9/Gifs/TikiTaka.gif)
-
+| **Touches**                      | Parameters | Fs Explanation                                                         | Futbol Explanation | Gifs |
+|----------------------------------|------------|------------------------------------------------------------------------|--------------------|------|
+| oneTouch(a, options)             |            |                                                                        |                    |      |
+| twoTouch(a, b, [options])        |            |                                                                        |                    |      |
+| **Passes and Shots**             |            |                                                                        |                    |      |
+| passare(a, b [options])          |            |                                                                        |                    |      |
+| passagioInverso(a, b, [options]) |            |                                                                        |                    |      |
+| hoherTritt(a, b, [options])      |            |                                                                        |                    |      |
+| niedrigerTritt(a, b, [options])  |            |                                                                        |                    |      |
+| noLooker(a, b, [options])        |            |                                                                        |                    |      |
+| butter(a, b, [options])          |            |                                                                        |                    |      |
+| chapeu(a, b, [options])          |            |                                                                        |                    |      |
+| chapeuInverso(a, b, [options])   |            |                                                                        |                    |      |
+| rabona(a, b, [options])          |            |                                                                        |                    |      |
+| bicicleta(a, b, [options])       |            |                                                                        |                    |      |
+| **Dribbles**                     |            | All Dribbles are basically special purpose filters on a buffer         |                    |      |
+| dribble(a, [options])            |            | Meant to be used to push data into buffer for filtering and processing |                    |      |
+| faux((result)=>{})               |            |                                                                        |                    |      |
+| shimmy((result)=>{})             |            |                                                                        |                    |      |
+| legWiggle((result)=>{})          |            |                                                                        |                    |      |
+| marseilleTurn((result)=>{})      |            |                                                                        |                    |      |
+| ronaldoChop((result)=>{})        |            |                                                                        |                    |      |
+| nutmeg((result)=>{})             |            |                                                                        |                    |      |
+| aurelio((result)=>{})            |            |                                                                        |                    |      |
+| cruyffTurn((result)=>{})         |            |                                                                        |                    |      |
+| elastico((result)=>{})           |            |                                                                        |                    |      |
+| okocha((result)=>{})             |            |                                                                        |                    |      |
+| revelino((result)=>{})           |            |                                                                        |                    |      |
+| fakePullBack((result)=>{})       |            |                                                                        |                    |      |
+| cut((result)=>{})                |            |                                                                        |                    |      |
+| cuauhteminha((result)=>{})       |            |                                                                        |                    |      |
+| insideHook((result)=>{})         |            |                                                                        |                    |      |
+| mathewsCut((result)=>{})         |            |                                                                        |                    |      |
+| pullBackV((result)=>{})          |            |                                                                        |                    |      |
+| stepOver((result)=>{})           |            |                                                                        |                    |      |
+| singleLunge((result)=>{})        |            |                                                                        |                    |      |
+| doubleLunge((result)=>{})        |            |                                                                        |                    |      |
+| **Tiki Taka**                    |            |                                                                        |                    |      |
+| tiki()                           |            |                                                                        |                    |      |
+| taka()                           |            |                                                                        |                    |      |
 
 ## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
 
