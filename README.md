@@ -24,7 +24,7 @@ These are the primitive use cases that can be performed locally or over a networ
 3. Substitute y name with z
 4. Substitute x name with z
 
-### Copy Actions (Basic Pass Types or Basic Shot Tyoes, depending on modifiers used and exception possibilities)
+### Copy Actions (Basic Pass Types or Basic Shot Types, depending on modifiers used and exception possibilities)
 1. Append Copy x to y (append x data to y file)
 2. Append Copy y to x (append y data to x file)
 3. Substitute append z (buff or file) to y (append z data to y file)
