@@ -29,9 +29,9 @@ export class TikiTaka{
     this.strongLeft=strongLeft
     this.readstreams = []
     this.writestreams = []
-
   }
-
+//All of the write functions should allow you to use the buffer stack (or queue)
+//if you don't have an origin file.
   firstTouch(somepath, dir=false){
     //this can be on a dir, or a file
     if(this._checkPath(somepath, false, true)){
@@ -93,12 +93,12 @@ export class TikiTaka{
       fs.appendFileSync(b, buffer)
 
     }else{
-      try{
-        var buffer = fs.readFileSync(a)
-        fs.appendFileSync(b, buffer)
-      }catch(err){
-        throw Error(err)
-      }
+        if(fs.existsSync(b)){
+          var buffer = fs.readFileSync(a)
+          fs.appendFileSync(b, buffer)
+        }else{
+          throw new Error("Cant do a blind pass if there is no recipient, your team will lose the ball!")
+        }
     }
 
     return this
@@ -122,30 +122,43 @@ export class TikiTaka{
       }
     return this
   }
-  outOfBounds(a){
-    //just deletes a file if it exists
+  toeTheLine(a){
+    //just deletes a file if it exists, otherwise throws an error
     try{
       fs.unlinkSync(a)
     }catch(err){
       //try not to err
-      throw new Error(err)
+      throw new Error("Don't go out of bounds with the ball!")
     }
   }
   blindPass(a, b){
     this.passare(a, b, true)
   }
 
-  longPass(){
-    //This copies a files contents and pastes them to another filesystem
-
+  longPass(a,b){
+    //IF b exists...Copy data from local filesystem's a to remote filesystem's b and
+    //append contents to end of b, if b does not exist, move a there
+    //and have it take on b's name
   }
   chapeu(a, b){
-    //this should mean chip over the defender ()
+    //IF b exists...overwrite b with a's contents
+    //changing b's name to the a's name.
+    //IF b doesn't exist, just move the a with the contents and its name
+    //to that directory.
     fs.copyFileSync(a, b);
     return this
   }
-  rabona(){
-    //where we "pass over" (chip-pass) the defender blind
+  rabona(a,b){
+    //IF b exists...overwrite b with a's contents
+    //changing b's name to the a's name.
+    if(fs.existsSync(b)){
+      this.chapeu(a, b)
+    }else{
+
+    }
+    //ELSE, move the a to the b's location taking on
+    //b's name.
+
     return this
   }
   faux(){
