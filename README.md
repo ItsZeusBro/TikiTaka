@@ -73,133 +73,98 @@ A pass at its most basic level is just moving a file's contents
 
 ## IF A and B FILES EXISTS, this is a perfect pass and you can do the following:
 
-1. keep b's file name, append a data to b file, keep a's old file in tact  (***Passare***)
+(***Passare***)
 
 ![passare](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/Passare.gif)
 
 
-2. rename b's file name to a's name,  append a data to b file, keep a's old file in tact  (***Backward Pass***)
+(***Backward Pass***)
 
 ![backwardPass](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/BackPass.gif)
 
-3. keep b's file name, append a data to b file, truncate a's old file  (***Inside Pass***)
+(***Inside Pass***)
 
+(***Outside Pass***)
 
-4. rename b's file name to a's name,  append a data to b file, truncate a's old file  (***Outside Pass***)
-
-
-5. keep b's file name, append a data to b file, then destroy a's old file,  (***High Cross***)
+(***High Cross***)
 
 ![highCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/highCross.gif)
 
-6. rename b to a's name, append a data to b file, destroy a's old file  (***Low Cross***)
+(***Low Cross***)
 
 ![lowCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/lowcross.gif)
 
-7. rename b's to some c name, append a data to new b named file, keep a's old file (***Blind Pass***)
+(***Blind Pass***)
 
 ![blindPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/blindpass.gif)
 
-8. rename b's to some c name, append a data to new b named file, destroy a's old file (***Butt Pass***)
+(***Butt Pass***)
 
 ![buttPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/buttpass.gif)
 
-9. rename b's to some c name, append a data to new b named file, truncate a's old file (***Knee Pass***)
+(***Knee Pass***)
 
+(***Head Pass***)
 
-10. rename b's to some c name, append a data to new b named file, truncate a's old file (***Head Pass***)
+(***Right Shoulder Pass***)
+
+(***Left Shoulder Pass***)
 
 
 ##### WARNING: Chips and flicks overwrite
 
-11. keep b's file name, overwrite b file with a data, keep a's old file in tact (***Chapeu Pass*** [chip pass] is an abstract pass) 
-  - Ignore the fact that this displays the rabona trick. The actual rabona trick is down below)
+***Chapeu Pass***
 
 ![chipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chip.gif)
 
-12. rename b to a's name, overwrite b file with a data, keep a's old file in tact, (***Backward Chapeu Pass***)
+(***Reverse Chapeu ***)
 
 ![backwardChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chippass.gif)
 
-13. keep b's file name, overwrite b file with a data, truncate a's old file (***Inside Chapeu Pass*** ) 
+(***Inside Chapeu Pass*** ) 
 
-14. rename b to a's name, overwrite b file with a data, truncate a's old file (***Outside Chapeu Pass***)
+(***Outside Chapeu Pass***)
 
-13. keep b's file name, overwrite b file with a data, destroy a's old file,  (***High Chapeu Pass***)
+(***High Chapeu Pass***)
 
-14. rename b to a's name, overwrite b file with a data, destroy a's old file,  (***Low Chapeu Pass***)
+(***Low Chapeu Pass***)
 
 ![lowChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/lowchip.gif)
 
-15. rename b to c name, overwrite b file with a data, keep a's old file  (***Rabona Inside Chip Pass***)
+(***Rabona Inside Chip Pass***)
 
 ![RabonaFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Rabona.gif)
 
-16. rename b to c name, overwrite b file with a data, truncate a file  (***Rabona Outside Chip Pass***)
+(***Rabona Outside Chip Pass***)
 
 
-17. rename b to c name, overwrite b file with a data, destroy a's old file,  (***Rainbow Flick Pass***)
+(***Rainbow Flick Pass to Self***)
 
 ![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
 
 
 
-## IF B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" or "Faux" options
+## IF A or B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" or "Faux" options
 
-1. touch b, move a to b's directory, keep a's old location, (spin up)
+***Spin Up***
 
-2. touch b, move a to b's directory, truncate a file, (spin up diagonal)
+***Spin Up Diagonal Right***
 
-3. touch a at b location, move a data to "new a", keep a's old file as well, (spin down)
+***Spin Up Diagonal Left***
 
-4. touch a at b location, move a data to "new a", truncate a file, (spin down diagonal)
+***Spin Down Diagonal Right***
 
-5. touch b, move a data to "new b", destroy a's old file (spin right)
-
-6. touch a at b location, move a data to "new a", destroy a's old file, (spin left)
+***Spin Down Diagonal Left***
 
 
-7. rename a file name with b name, touch b, move a data to would b file location, replace b's name with a's name (spin diagonal left)
+## IF A AND B FILES DO NOT Exist. Then you cant pass anything, Do this instead:
 
-8. rename a file name with b name, touch b, move a data to would b file location, dont replace b's name with a's name (spin diagonal right)
-
-9. rename a file name with b name, touch b, move a data to would b file location, truncate a
-
-
-10. substitute would b name with a mitigation name c, pass a data to new c file at would b location (Faux Pass)
-
-
-### IF A FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
-
-11. touch b's name at would a location, move b file data to a directory, keep b old file in tact, (spin up)
-
-
-12. touch b's name at would a location, move b to a's directory, destroy b's old location (spin down)
-
-
-13. touch a, move b to a's directory, destroy b's old file,  (spin right)
-
-
-14. touch a, move b to a's directory, keep b's old file (spin left)
-
-
-15. touch b's name at would a location, touch a's name at would b location, copy b data to a (spin diagonal left)
-
-
-16. touch b's name at would a location, touch a's name at would b location, move b data to a, truncate b file (spin diagonal left)
-
-17. touch a's name at would a location, Substitute would be A data with a mitigation string C or file B data (Faux Pass)
-
-
-## IF A AND B FILES DO NOT Exist. Then you cant pass anything, pass a Cuahteminha flag to mitigate this
-
-1. does nothing except mitigate the problem (***Cuauhteminha***)
+***Cuauhteminha***
 
 ![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
 
 ## Productivity mode sometimes forces us to break things, so if you don't mititgate it breaks
-If b or a is not an existing file, and you wish to break the program just ***dont add spin options*** to the 12 contexts above.
-If a and b do not exist. Then you can't pass anything, but a break adds another 1.
+If b or a is not an existing file (or both), and you wish to break the program just ***dont add spin options*** to the contexts above.
 
 
 ## other advanced topics
