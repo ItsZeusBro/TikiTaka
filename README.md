@@ -24,24 +24,28 @@ passes.
 # Touches
 
 ### First Touch (or just Touch)
-This is basically an independent move from a touch pass which combines the two. You can take a touch to set up a pass later in your move.
+This is basically an independent move from a touch pass which combines the two. You can take a touch to set up a pass later in your move. This touches a file, so that a player moves to that location for the pass.
 
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
 ### Double Touch 
+This acts like a touch, but it just creates a dir if not present for the file.
 
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
 ### Medium Touch (single touch over a network)
+This acts like a touch, but over a network.
 
 ### Long Touch (double touch over a network)
-
+This acts like a double touch but over a network.
 
 # Passes
+A pass at its most basic level is just moving a file's contents (.ball for game mode (with special data inside), any file in productivity mode)
 
 ### Passare 
-
+This is a normal pass
 ![Passare](https://thumbs.gfycat.com/DearestDismalAustraliankelpie-size_restricted.gif)
+
 
 ### "Backwards Pass" 
 
@@ -134,19 +138,24 @@ This is basically an independent move from a touch pass which combines the two. 
 
 
 
-## File Function Combinatorics:
-Say you have two potential file path descriptors a and b, I've identified the following patterns:
+## Pass Descriptions
 
-If b is an existing file you can do the following:
-1. overwrite b with a, destroy a's old file, rename b's file to a's name
-2. overwrite b with a, destroy a's old file, keep b's file name
-3. overwrite b with a, keep a's old file, rename b's file to a's name
-4. overwrite b with a, keep a's old file, keep b's file name
-5. append a to b, destroy a's old file, rename b
-6. append a to b, destroy a's old file, keep b's file name
-7. append a to b, keep a's old file, rename b
-8. append a to b, keep a's old file, keep b's file name
+### If B is an existing file (perfect pass) you can do the following:
 
+1. append a to b, keep a's old file, keep b's file name (passare)
+2. append a to b, keep a's old file, rename b's to a's name
+3. append a to b, destroy a's old file, keep b's file name
+4. append a to b, destroy a's old file, rename b to a's name
+5. overwrite b with a, keep a's old file, keep b's file name
+6. overwrite b with a, keep a's old file, rename b to a's name
+7. overwrite b with a, destroy a's old file, keep b's file name
+8. overwrite b with a, destroy a's old file, rename b to a's name
+9. append a to b, keep a's old file, rename b's to c's name
+10. append a to b, destroy a's old file, rename b to c's name
+11. overwrite b with a, keep a's old file, rename b to c's name
+12. overwrite b with a, destroy a's old file, rename b to c's name
+
+### Mitigation in case B was not a file (mitigators are flag options)
 If b is not an existing file, and you wish to mitigate, you can do the following:
 1. move a to b's directory, keep a's old location, change a's name at new destination to b's
 2. move a to b's directory, keep a's old location, keep a's name at new destination
