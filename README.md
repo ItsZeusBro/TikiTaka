@@ -42,43 +42,86 @@ This acts like a double touch but over a network.
 # Passes
 A pass at its most basic level is just moving a file's contents (.ball for game mode (with special data inside), any file in productivity mode)
 
-## Pass Descriptions
-
-### If B is an existing file (perfect pass) you can do the following:
+## If B is an existing file (perfect pass) you can do the following:
 
 1. append a to b, keep a's old file, keep b's file name (passare)
+
+
 2. append a to b, keep a's old file, rename b's to a's name (backward pass)
+
+
 3. append a to b, destroy a's old file, keep b's file name (high cross pass)
+
+
 4. append a to b, destroy a's old file, rename b to a's name (low cross pass)
+
+
 5. append a to b, keep a's old file, rename b's to c's name (blind pass)
+
+
 6. append a to b, destroy a's old file, rename b to c's name (butt pass)
+
 ##### WARNING: Chips and flicks overwrite
+
 7. overwrite b with a, keep a's old file, keep b's file name (Chapeu pass)
+
+
 8. overwrite b with a, keep a's old file, rename b to a's name (backward chip pass)
+
+
 9. overwrite b with a, destroy a's old file, keep b's file name (high chip pass)
+
+
 10. overwrite b with a, destroy a's old file, rename b to a's name (low chip pass)
+
+
 11. overwrite b with a, keep a's old file, rename b to c's name (rabona flick)
+
+
 12. overwrite b with a, destroy a's old file, rename b to c's name (rainbow)
 
-#### If a and b do not exist. Then you cant pass anything.
+## If a and b do not exist. Then you cant pass anything.
+
 1. does almost nothing except mitigate (Cuauhteminha)
 
-## Pass Mitigation in case B was not a file (spin options)
-#### If b is not an existing file, and you wish to mitigate it, you can do the following option flags:
+## Pass Mitigation in case A or B was not a file (spin options)
+### If b is not an existing file, and you wish to mitigate it, you can do the following option flags
+
 1. move a to b's directory, keep a's old location, change a's name at new destination to b's (spin up)
+
+
 2. move a to b's directory, keep a's old location, keep a's name at new destination (spin down)
+
+
 3. move a to b's directory, destroy a's old file, change a's name at new destination to b's (spin right)
+
+
 4. move a to b's directory, destroy a's old file,  keep a's name at new destination (spin left)
+
+
 5. dont move a to b, change a's file name locally to b's name (spin diagonal left)
+
+
 6. don't move a to b, don't change a's name locally (basically does nothing) (spin diagonal right)
 
-#### If a is not an existing file, and you wish to mitigate it, you can do the following option flags:
-1. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
-2. move b to a's directory, keep b's old location, keep b's name at new destination (spin down)
-3. move b to a's directory, destroy b's old file, change b's name at new destination to a's (spin right)
-4. move b to a's directory, destroy b's old file,  keep b's name at new destination (spin left)
-5. dont move b to a, change b's file name locally to a's name (spin diagonal left)
-6. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
+### If a is not an existing file, and you wish to mitigate it, you can do the following option flags:
+
+7. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
+
+
+8. move b to a's directory, keep b's old location, keep b's name at new destination (spin down)
+
+
+9. move b to a's directory, destroy b's old file, change b's name at new destination to a's (spin right)
+
+
+10. move b to a's directory, destroy b's old file,  keep b's name at new destination (spin left)
+
+
+11. dont move b to a, change b's file name locally to a's name (spin diagonal left)
+
+
+12. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
 
 
 ## Productivity mode sometimes forces us to break things
