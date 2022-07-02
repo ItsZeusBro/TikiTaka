@@ -144,6 +144,9 @@ A shot at its most basic level is just moving a file's contents without mitigati
 
 ***Rabona Outside Chip or Shot***
 
+***Bicicleta Pass or Shot***
+
+![Bicileta](https://github.com/ItsZeusBro/TikiTaka/blob/e4d697bb5f478d31c6825c47f8237b9410c30994/Gifs/Bicicleta.gif)
 
 ***Rainbow Flick to Self or Shot***
 
