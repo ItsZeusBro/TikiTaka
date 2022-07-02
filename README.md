@@ -11,7 +11,7 @@ Or
 ![TikiTaka1](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/TikiTaka.gif)
 
 ## File Operation Primitives:
-
+These are the primitive use cases
 ### Naming actions
 1. Rename x to y
 2. Rename y to x
@@ -30,20 +30,12 @@ Or
 3. Destroy x
 4. Destroy y
 
+## File Operation Function Primitives:
+rename()
+copy()
+truncate()
+delete()
 
-## In the begning it will be a productivity first tool, then this game should be made with TikiTaka:
-
-- An ***element*** is defined as a buffer, stream, or file
-- Moving data (the ball) from one element to the other with protections is a ***pass***
-- Moving data (the ball) from one element to the other without protections is considered a ***shot***
-- ***Bad pass or shot*** is when you lose the ball to the other team. (only if your playing against someone) 
-- ***A Miss*** can be mitigated with subsequent behavior to further your objectives. It means an exception was not thrown.
-- A ***Dribble move*** is a filter on a buffer, before a shot or pass.
-- A ***touch*** is an essential element to making sure you don't miss on the pass or the shot. 
-  - Buf if you take good touches, you can set yourself up for style points on subsequent shots and passes, that come much later 
-    - (which add up to moral victories and real secondary points)
-- ***Vertical***  passes and shots are determined by what depth in your file tree you pass or shoot to.
-- ***Horizontal*** passes (left or right) are done at the same level in your file tree. If you want to do a long cross you have to specifiy a location in your file tree that is at the same tree depth.  If you don't meet this criteria its a miss (which can be mitigated), but is not considered losing the ball. Losing the ball requires that it go out of bounds (exception), or that you are playing against someone (which is a miss against an oppnent).
 
 
 # Touches
@@ -209,3 +201,17 @@ This does not include all the things that Tiki Taka does with streams (which is 
 If you do dribbling tricks like Chopping, they create the aforementioned buffer replacements on the pass. Buffers allow you to "process the data" before a pass or shot, you still end up in the same pass numbers above, but the combinations of real things you could before the pass are endless. These filters add to the complexity of the game to complete "objectives" and score "goals".
 
 
+
+## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
+
+- An ***element*** is defined as a buffer, stream, or file
+- Moving data (the ball) from one element to the other with protections is a ***pass***
+- Moving data (the ball) from one element to the other without protections is considered a ***shot***
+- ***Bad pass or shot*** is when you lose the ball to the other team. (only if your playing against someone) 
+- ***A Miss*** can be mitigated with subsequent behavior to further your objectives. It means an exception was not thrown.
+- A ***Dribble move*** is a filter on a buffer, before a shot or pass.
+- A ***touch*** is an essential element to making sure you don't miss on the pass or the shot. 
+  - Buf if you take good touches, you can set yourself up for style points on subsequent shots and passes, that come much later 
+    - (which add up to moral victories and real secondary points)
+- ***Vertical***  passes and shots are determined by what depth in your file tree you pass or shoot to.
+- ***Horizontal*** passes (left or right) are done at the same level in your file tree. If you want to do a long cross you have to specifiy a location in your file tree that is at the same tree depth.  If you don't meet this criteria its a miss (which can be mitigated), but is not considered losing the ball. Losing the ball requires that it go out of bounds (exception), or that you are playing against someone (which is a miss against an oppnent).
