@@ -3,6 +3,7 @@ const time = new Date();
 import * as fs from "node:fs"
 
 
+
 export class TikiTaka{
   constructor(file_defender=true, strongLeft=true){
     this.defender=file_defender //every move should be scrutinized more when there is no defender
