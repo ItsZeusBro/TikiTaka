@@ -105,7 +105,7 @@ A pass at its most basic level is just moving a file's contents
 
 
 
-## IF B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
+## IF B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" or "Faux" options
 
 1. move a to b's directory, keep a's old location, change a's name at new destination to b's (spin up)
 
@@ -124,32 +124,37 @@ A pass at its most basic level is just moving a file's contents
 
 6. don't move a to b, don't change a's name locally (basically does nothing) (spin diagonal right)
 
+
+7. substitute would be B name with a mitigation name C and pass A data to new C file (Faux Pass)
+
+
 ### IF A FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
 
-7. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
+8. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
 
 
-8. move b to a's directory, keep b's old location, keep b's name at new destination (spin down)
+9. move b to a's directory, keep b's old location, keep b's name at new destination (spin down)
 
 
-9. move b to a's directory, destroy b's old file, change b's name at new destination to a's (spin right)
+10. move b to a's directory, destroy b's old file, change b's name at new destination to a's (spin right)
 
 
-10. move b to a's directory, destroy b's old file,  keep b's name at new destination (spin left)
+11. move b to a's directory, destroy b's old file,  keep b's name at new destination (spin left)
 
 
-11. dont move b to a, change b's file name locally to a's name (spin diagonal left)
+12. dont move b to a, change b's file name locally to a's name (spin diagonal left)
 
 
-12. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
+13. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
+
+14. Substitute would be A data with a mitigation string C or file D (Faux Pass)
 
 
-## IF A AND B FILES DO NOT Exist. Then you cant pass anything, pass a Cuahteminha flag to mitigate this.
+## IF A AND B FILES DO NOT Exist. Then you cant pass anything, pass a Cuahteminha flag to mitigate this
 
 1. does nothing except mitigate the problem (***Cuauhteminha***)
 
 ![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
-
 
 ## Productivity mode sometimes forces us to break things, so if you don't mititgate it breaks
 If b or a is not an existing file, and you wish to break the program just ***dont add spin options*** to the 12 contexts above.
