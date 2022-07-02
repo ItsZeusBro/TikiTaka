@@ -47,11 +47,13 @@ These are the primitive use cases that can be performed locally or over a networ
 With these primitive functions you can do all the aforementioned patterns. If you wish to do these over a network use an options parameter
 
 1. mkdr(dir)
-2. create(newFilePath, options)
-3. rename(oldPath, newName, options)
-4. copyAppend(a, b, options)
-5. truncate(filePath, options)
-6. del(filePath, options)
+2. create(newFilePath, [options])
+4. rename(oldPath, newName, [options])
+5. copyAppend(a, b, [options])
+6. stream(a, [b], [options]) //grabs a read stream, or streams from a to b, options can contain filter actions
+7. wstream(a, [options]) //grabs a write stream, and can attach pre-write filter actions
+9. truncate(filePath, [options])
+10. del(filePath, [options])
 
 
 
