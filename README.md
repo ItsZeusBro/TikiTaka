@@ -73,42 +73,42 @@ A pass at its most basic level is just moving a file's contents
 
 ## IF A and B FILES EXISTS, this is a perfect pass and you can do the following:
 
-(***Passare***)
+***Passare***
 
 ![passare](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/Passare.gif)
 
 
-(***Backward Pass***)
+***Backward Pass***
 
 ![backwardPass](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/BackPass.gif)
 
-(***Inside Pass***)
+***Inside Pass***
 
-(***Outside Pass***)
+***Outside Pass***
 
-(***High Cross***)
+***High Cross***
 
 ![highCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/highCross.gif)
 
-(***Low Cross***)
+***Low Cross***
 
 ![lowCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/lowcross.gif)
 
-(***Blind Pass***)
+***Blind Pass***
 
 ![blindPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/blindpass.gif)
 
-(***Butt Pass***)
+***Butt Pass***
 
 ![buttPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/buttpass.gif)
 
-(***Knee Pass***)
+***Knee Pass***
 
-(***Head Pass***)
+***Head Pass***
 
-(***Right Shoulder Pass***)
+***Right Shoulder Pass***
 
-(***Left Shoulder Pass***)
+***Left Shoulder Pass***
 
 
 ##### WARNING: Chips and flicks overwrite
@@ -117,28 +117,31 @@ A pass at its most basic level is just moving a file's contents
 
 ![chipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chip.gif)
 
-(***Reverse Chapeu ***)
+***Reverse Chapeu ***
 
 ![backwardChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chippass.gif)
 
-(***Inside Chapeu Pass*** ) 
+***Inside Chapeu***
 
-(***Outside Chapeu Pass***)
+***Outside Chapeu***
 
-(***High Chapeu Pass***)
+***High Chapeu***
 
-(***Low Chapeu Pass***)
+***Low Chapeu***
 
 ![lowChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/lowchip.gif)
 
-(***Rabona Inside Chip Pass***)
+***Rabona Inside Chip***
 
 ![RabonaFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Rabona.gif)
 
-(***Rabona Outside Chip Pass***)
+***Rabona Outside Chip***
 
 
-(***Rainbow Flick Pass to Self***)
+***Rainbow Flick to Self***
+
+***Head Run***
+
 
 ![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
 
