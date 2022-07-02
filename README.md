@@ -56,8 +56,9 @@ With these primitive functions you can do all the aforementioned patterns. If yo
 10. del(filePath, [options])
 
 
+# Compound actions (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
 
-# Touches
+## Touches
 
 ### One Touch (or just Touch)
 This is basically an independent move from a touch pass which combines the two. You can take a touch to set up a pass later in your move. This touches a file, so that a player moves to that location for the pass.
