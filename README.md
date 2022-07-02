@@ -6,6 +6,10 @@ passes.
 
 ![TikiTaka](https://media.balls.ie/uploads/2013/09/barcatikitaka.gif)
 
+Or
+
+![TikiTaka1](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/TikiTaka.gif)
+
 ## In the begning it will be a productivity first tool, then this game should be made with TikiTaka:
 
 - An ***element*** is defined as a buffer, stream, or file
@@ -40,49 +44,69 @@ This acts like a touch, but over a network.
 This acts like a double touch but over a network.
 
 # Passes
-A pass at its most basic level is just moving a file's contents (.ball for game mode (with special data inside), any file in productivity mode)
+A pass at its most basic level is just moving a file's contents 
+- this is an abstract move, don't care too much about it. The following passes have meaning.
+
+![normalPasses](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/normalPass.gif)
 
 ## If B is an existing file (perfect pass) you can do the following:
 
 1. append a to b, keep a's old file, keep b's file name (passare)
 
+![passare](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/Passare.gif)
+
 
 2. append a to b, keep a's old file, rename b's to a's name (backward pass)
 
+![backwardPass](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/BackPass.gif)
 
 3. append a to b, destroy a's old file, keep b's file name (high cross pass)
 
+![highCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/highCross.gif)
 
 4. append a to b, destroy a's old file, rename b to a's name (low cross pass)
 
+![lowCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/lowcross.gif)
 
 5. append a to b, keep a's old file, rename b's to c's name (blind pass)
 
+![blindPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/blindpass.gif)
 
 6. append a to b, destroy a's old file, rename b to c's name (butt pass)
+
+![buttPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/buttpass.gif)
 
 ##### WARNING: Chips and flicks overwrite
 
 7. overwrite b with a, keep a's old file, keep b's file name (Chapeu pass)
 
+![chipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chip.gif)
+
 
 8. overwrite b with a, keep a's old file, rename b to a's name (backward chip pass)
 
+![backwardChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chippass.gif)
 
 9. overwrite b with a, destroy a's old file, keep b's file name (high chip pass)
 
-
 10. overwrite b with a, destroy a's old file, rename b to a's name (low chip pass)
 
+![lowChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/lowchip.gif)
 
 11. overwrite b with a, keep a's old file, rename b to c's name (rabona flick)
 
+![RabonaFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Rabona.gif)
 
 12. overwrite b with a, destroy a's old file, rename b to c's name (rainbow)
+
+![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
 
 ## If a and b do not exist. Then you cant pass anything.
 
 1. does almost nothing except mitigate (Cuauhteminha)
+
+![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
+
 
 ## Pass Mitigation in case A or B was not a file (spin options)
 ### If b is not an existing file, and you wish to mitigate it, you can do the following option flags
