@@ -58,7 +58,8 @@ With these primitive functions you can do all the aforementioned patterns. If yo
 10. del(filePath, [options])
 
 
-# Compound actions (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
+# Compound actions 
+## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
 I believe that using this type of scheme we would eventually see terminals with graphical replays one day (just for fun)
 
 ## Touches
