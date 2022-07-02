@@ -42,7 +42,7 @@ With these primitive functions you can do all the aforementioned patterns. If yo
 2. rename(oldPath, newName, options)
 3. copyAppend(a, b, options)
 4. truncate(filePath, options)
-5. delete(filePath, options)
+5. del(filePath, options)
 
 
 
