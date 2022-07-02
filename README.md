@@ -12,7 +12,7 @@ Or
 ![TikiTaka1](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/TikiTaka.gif)
 
 ## File Operation Primitives:
-These are the primitive use cases
+These are the primitive use cases that can be performed locally or over a network
 
 ### Creation Actions
 1. Create file with name x
