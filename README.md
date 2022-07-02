@@ -12,7 +12,12 @@ Or
 
 ## File Operation Primitives:
 These are the primitive use cases
-### Naming actions
+
+### Creation Actions
+1. Create file with name x
+2. Create file with name y
+
+### Renaming Actions
 1. Rename x to y
 2. Rename y to x
 3. Substitute y name with z
@@ -31,10 +36,11 @@ These are the primitive use cases
 4. Destroy y
 
 ## File Operation Function Primitives:
-rename()
-copy()
-truncate()
-delete()
+1. create()
+2. rename()
+3. copy()
+4. truncate()
+5. delete()
 
 
 
