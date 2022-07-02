@@ -32,10 +32,12 @@ This is basically an independent move from a touch pass which combines the two. 
 
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
+
 ### Double Touch 
 This acts like a touch, but it just creates a dir if not present for the file.
 
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
+
 
 ### Medium Touch (single touch over a network)
 This acts like a touch, but over a network.
