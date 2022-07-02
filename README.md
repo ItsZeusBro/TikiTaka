@@ -37,11 +37,11 @@ These are the primitive use cases
 4. Destroy y
 
 ## File Operation Function Primitives:
-1. create()
-2. rename()
-3. copyAppend()
-4. truncate()
-5. delete()
+1. create(newFilePath)
+2. rename(oldPath, newName)
+3. copyAppend(a, b)
+4. truncate(filePath)
+5. delete(filePath)
 
 
 
