@@ -10,6 +10,27 @@ Or
 
 ![TikiTaka1](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/TikiTaka.gif)
 
+## File Operation Primitives:
+
+### Naming actions
+1. Rename x to y
+2. Rename y to x
+3. Substitute y name with z
+4. Substitute x name with z
+
+### Copy Actions
+1. Append Copy x to y (append x data to y file)
+2. Append Copy y to x (append y data to x file)
+3. Substitute append z (buff or file) to y (append z data to y file)
+4. Substitute append z (buff or file) to x (append z data to x file)
+
+### Cleaning Actions
+1. Truncate x
+2. Truncate y
+3. Destroy x
+4. Destroy y
+
+
 ## In the begning it will be a productivity first tool, then this game should be made with TikiTaka:
 
 - An ***element*** is defined as a buffer, stream, or file
