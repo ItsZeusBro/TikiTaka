@@ -38,11 +38,13 @@ These are the primitive use cases
 
 ## File Operation Function Primitives:
 With these primitive functions you can do all the aforementioned patterns. If you wish to do these over a network use an options parameter
-1. create(newFilePath, options)
-2. rename(oldPath, newName, options)
-3. copyAppend(a, b, options)
-4. truncate(filePath, options)
-5. del(filePath, options)
+
+1. mkdr(dir)
+2. create(newFilePath, options)
+3. rename(oldPath, newName, options)
+4. copyAppend(a, b, options)
+5. truncate(filePath, options)
+6. del(filePath, options)
 
 
 
