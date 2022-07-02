@@ -200,5 +200,9 @@ If you add tricks like Chopping, that create buffers, you still end up in the sa
 you could do are also endless.
 
 
+## Some Prophecy:
+People will use this idea to create other similar games (other sports) with the same underlying patterns. Go for it. It's really hard to make these analogies, but im confident this will not be the last one.
+
+## As the sport matures, we may have small informal tournaments.
 
 
