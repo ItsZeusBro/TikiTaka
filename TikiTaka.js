@@ -103,6 +103,10 @@ export class TikiTaka{
 
     return this
   }
+  blindPass(a, b){
+    //without checking if b exists, append a's content to b's file (should fail if b is not present)
+    this.passare(a, b, true)
+  }
   backwardsPass(a, b){
     //This is a touch and pass(append to dest), remove origin solution
     //this means we need to make sure a exists, if it doesn't, we cant use it.
@@ -113,6 +117,17 @@ export class TikiTaka{
     this.fakey(a)
     return this
   }
+
+  longPass(a,b){
+    //IF b exists...Copy data from local filesystem's a to remote filesystem's b and
+    //append a's contents to end of b file,
+    //ELSE move a to b's location (have it take on b's name). delete a's origin location
+  }
+  //fake pass
+  faux(){
+     return this
+  }
+
   fakey(a){
     //this creates a file if it does not exist, or deletes if it does.
       if(fs.existsSync(a)){
@@ -131,39 +146,29 @@ export class TikiTaka{
       throw new Error("Don't go out of bounds with the ball!")
     }
   }
-  blindPass(a, b){
-    this.passare(a, b, true)
-  }
 
-  longPass(a,b){
-    //IF b exists...Copy data from local filesystem's a to remote filesystem's b and
-    //append contents to end of b, if b does not exist, move a there
-    //and have it take on b's name
-  }
   chapeu(a, b){
     //IF b exists...overwrite b with a's contents
     //changing b's name to the a's name.
-    //IF b doesn't exist, just move the a with the contents and its name
-    //to that directory.
+    //ELSE, move a's contents and its name
+    //to that directory. delete a's origin location
     fs.copyFileSync(a, b);
     return this
   }
   rabona(a,b){
     //IF b exists...overwrite b with a's contents
-    //changing b's name to the a's name.
+    //changing b's name to a's name.
+    //ELSE, move a to b's location taking on
+    //b's name. delete a's origin location
     if(fs.existsSync(b)){
       this.chapeu(a, b)
     }else{
 
     }
-    //ELSE, move the a to the b's location taking on
-    //b's name.
 
     return this
   }
-  faux(){
-     return this
-  }
+
   marseilleTurn(){
     return this
   }
@@ -181,12 +186,7 @@ export class TikiTaka{
   aurelio(){
 
   }
-  createBall(somepath){
 
-  }
-  createPitch(somepath){
-
-  }
   chop(){
 
   }
@@ -212,6 +212,12 @@ export class TikiTaka{
       }
     }
     return true
+  }
+  createBall(somepath){
+
+  }
+  createPitch(somepath){
+
   }
 }
 
