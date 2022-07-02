@@ -156,28 +156,36 @@ This is a normal pass
 11. overwrite b with a, keep a's old file, rename b to c's name
 12. overwrite b with a, destroy a's old file, rename b to c's name
 
-### Mitigation in case B was not a file (mitigators are flag options)
-If b is not an existing file, and you wish to mitigate, you can do the following:
-1. move a to b's directory, keep a's old location, change a's name at new destination to b's
-2. move a to b's directory, keep a's old location, keep a's name at new destination
-3. move a to b's directory, destroy a's old file, change a's name at new destination to b's
-4. move a to b's directory, destroy a's old file,  keep a's name at new destination
-5. dont move a to b, change a's file name locally to b's name
-6. don't move a to b, don't change a's name locally (basically does nothing)
 
-If b is not an existing file, and you wish to break the program, that adds another 6
-If a does not exist, and b is an existing file, you can add another 6 for mitigation.
-If a does not exist, and b is an existing file, you can add another 6 that break the program.
-If a and b do not exist. Then you cant pass anything, but mitigation adds another 1 if the program does nothing
+## Mitigation in case B was not a file (spin options)
+#### If b is not an existing file, and you wish to mitigate it, you can do the following option flags:
+1. move a to b's directory, keep a's old location, change a's name at new destination to b's (spin up)
+2. move a to b's directory, keep a's old location, keep a's name at new destination (spin down)
+3. move a to b's directory, destroy a's old file, change a's name at new destination to b's (spin right)
+4. move a to b's directory, destroy a's old file,  keep a's name at new destination (spin left)
+5. dont move a to b, change a's file name locally to b's name (spin diagonal left)
+6. don't move a to b, don't change a's name locally (basically does nothing) (spin diagonal right)
+
+
+#### If a is not an existing file, and you wish to mitigate it, you can do the following option flags:
+1. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
+2. move b to a's directory, keep b's old location, keep b's name at new destination (spin down)
+3. move b to a's directory, destroy b's old file, change b's name at new destination to a's (spin right)
+4. move b to a's directory, destroy b's old file,  keep b's name at new destination (spin left)
+5. dont move b to a, change b's file name locally to a's name (spin diagonal left)
+6. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
+#### If a and b do not exist. Then you cant pass anything, but mitigation adds another 1 if the program 
+1. does nothing (spin in place)
+
+## Productivity mode sometimes forces us to break things
+If b or a is not an existing file, and you wish to break the program just ***dont add spin options*** to the 12 contexts above.
 If a and b do not exist. Then you can't pass anything, but a break adds another 1.
 
-All together 8+6+20 = 44. But that's not all! If you do long passes (over a tcp socket) this doubles to 88.
 
-If you add modifiers, which substitute a buffer for a file, then you can add another 8 patterns, leaving us at 96.
-If you add modifiers, and b doesn't exist and a is a buffer, then you can add another 20. This leaves us at 116.
 
+## other advanced topics
 This does not include all the things that Tiki Taka does with streams (which is not a touch then pass, they are single touch passes with endless combinations).
 
-If you do dribbling tricks like Chopping, they create the aforementioned buffer replacements on the pass. T buffers allow you to "process the data" before a pass or shot, you still end up in the same pass numbers above, but the combinations of real things you could before the pass are endless. These filters add to the complexity of the game to complete "objectives" and score "goals".
+If you do dribbling tricks like Chopping, they create the aforementioned buffer replacements on the pass. Buffers allow you to "process the data" before a pass or shot, you still end up in the same pass numbers above, but the combinations of real things you could before the pass are endless. These filters add to the complexity of the game to complete "objectives" and score "goals".
 
 
