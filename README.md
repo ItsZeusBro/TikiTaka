@@ -34,7 +34,9 @@ Take an extra touch to create the path for the play, and then its location
 
 # Passes
 Facts:
-Overall there are at least 56 total short and long passes in this game. At least 28 are no look passes (14 each). This number of 56 does not include fake passes and their varieties. It also does not include pass modifiers like Tikki Takka, or Chopping and others. Here are just a few, that im working on. Names will change at this early time if they end up making more sense. It is unlikely at this point, however.
+Overall there are at least 40 total short and long passes in this game. 12 of these are no look passes. This number does not include a few fake passes and their varieties. It also does not include pass modifiers like Tikki Takka, or Chopping and others which multiply this number. Each modifier is a dynamic reality, that seem to be non-redundant. 
+
+Here are just a few, that im working on. Names will change at this early time if they end up making more sense. It is unlikely that these names will change at this point, however, the functions might change underneath them (to some other existing name), if it makes more sense.
 
 ### Passare 
 Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data, do not overwrite)
