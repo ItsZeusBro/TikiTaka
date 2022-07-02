@@ -11,21 +11,20 @@ passes.
 - An element is defined as a buffer, stream, or file
 - Moving data (the ball) from one element to the other with protections is a ***pass***
 - Moving data (the ball) from one element to the other without protections is considered a ***shot***
-- ***Out of bounds*** (on a pass), or a ***miss*** (on a shot) are caught exceptions and don't go towards your score.
-- A ***dribble move*** is a filter on a buffer, before a shot or pass.
+- ***Bad pass or shot*** is when you lose the ball to the other team. (only if your playing against someone) 
+- ***A Miss*** can be mitigated with subsequent behavior to further your objectives. It means an exception was not thrown.
+- A ***Dribble move*** is a filter on a buffer, before a shot or pass.
 - A ***touch*** is an essential element to making sure you don't miss on the pass or the shot. 
   - Buf if you take good touches, you can set yourself up for style points on subsequent shots and passes, that come much later 
     - (which add up to moral victories and real secondary points)
-- ***Directionality*** of your shot, or pass, is determined by where in your file tree you pass or shoot to. If you pass
-something higher in your file tree, your passing backwards towards your goalie. Your root level, is your goal that people can score on.
-- The point about the data, is that its just a ***ball*** inside a file. A file is just a player. You can't have more than 11 players on the field
-at any given time. You create the location for a player and pass it to them in the same function at times. Othertimes you create the location and
-use it later.
+- ***Vertical***  passes and shots are determined by what depth in your file tree you pass or shoot to.
+- ***Horizontal*** passes (left or right) are done at the same level in your file tree. If you want to do a long cross you have to specifiy a location in your file tree that is at the same tree depth.  If you don't meet this criteria its a miss (which can be mitigated), but is not considered losing the ball. Losing the ball requires that it go out of bounds (exception), or that you are playing against someone (which is a miss against an oppnent).
 
 
 # Touches
 
 ### First Touch (or just Touch)
+This is basically an independent move from a touch pass which combines the two. You can take a touch to set up a pass later in your move.
 
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
@@ -127,7 +126,7 @@ use it later.
 ![Bicicleta](https://i.gifer.com/origin/3b/3b1d9a9ae1ba42041f655cd7925cb0c2.gif)
 
 
-### Toe the Line
+### Toe'ng the Line (sideline play)
 
 ![ToeTheLine](https://github.com/ItsZeusBro/TikiTaka/blob/8e3acf1772a2650658c5725087bcb184f8527310/Gifs/toetheline.gif)
 
