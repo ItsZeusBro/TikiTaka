@@ -39,7 +39,7 @@ These are the primitive use cases
 ## File Operation Function Primitives:
 1. create()
 2. rename()
-3. copy()
+3. copyAppend()
 4. truncate()
 5. delete()
 
