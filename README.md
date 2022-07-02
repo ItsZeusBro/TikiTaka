@@ -73,6 +73,8 @@ A pass at its most basic level is just moving a file's contents
 
 A shot at its most basic level is just moving a file's contents without mitigation guards
 
+![shot](https://github.com/ItsZeusBro/TikiTaka/blob/da23304114bbf392486f81f1c3443a42ca1d20d9/Gifs/Showta.gif)
+
 ## IF A and B FILES EXISTS, this is a perfect pass or shot:
 
 ***Ground Passare or Shot***
@@ -175,12 +177,23 @@ These substitute C data or C name as a mitigation in case A or B does not exist
 ## Productivity mode sometimes forces us to break things, so if you don't mititgate it breaks
 If b or a is not an existing file (or both), and you wish to break the program just ***dont add spin options*** to the contexts above.
 
+## Dribbles
+These are filter and position/offset logic for buffer substitution on A, if A is a stored buffer in a queue or stack (depending on if your left foot or right foot player)
 
-## other advanced topics
-This does not include all the things that Tiki Taka does with streams (which is not a touch then pass, they are single touch passes with endless combinations).
+***Dribble***
+This is a pattern matching game to match patterns on a buffer and forward to files
 
-If you do dribbling tricks like Chopping, they create the aforementioned buffer replacements on the pass. Buffers allow you to "process the data" before a pass or shot, you still end up in the same pass numbers above, but the combinations of real things you could before the pass are endless. These filters add to the complexity of the game to complete "objectives" and score "goals".
+![Dribble](https://github.com/ItsZeusBro/TikiTaka/blob/da23304114bbf392486f81f1c3443a42ca1d20d9/Gifs/dribble.gif)
 
+***Chopping***
+This chops files from a position to an offset
+![Chopping](https://github.com/ItsZeusBro/TikiTaka/blob/27f5a9c220bd4ea491e1d1326cd32dcd5fee9c72/Gifs/chop.gif)
+
+
+## TikiTaka
+This is advanced subject about substituting streams for files. It uses a stack or queue for advanced moves that are round about pass schemes that are like dynamic plays. Very difficult to reason about and execute.
+
+![TikiTaka](https://github.com/ItsZeusBro/TikiTaka/blob/da23304114bbf392486f81f1c3443a42ca1d20d9/Gifs/TikiTaka.gif)
 
 
 ## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
