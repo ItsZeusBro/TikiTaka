@@ -47,13 +47,13 @@ These are the primitive use cases
 
 # Touches
 
-### First Touch (or just Touch)
+### One Touch (or just Touch)
 This is basically an independent move from a touch pass which combines the two. You can take a touch to set up a pass later in your move. This touches a file, so that a player moves to that location for the pass.
 
 ![GreatTouch](http://www.whoateallthepies.tv/wp-content/uploads/2012/06/1339961258914.gif)
 
 
-### Double Touch 
+### Two Touch 
 This acts like a touch, but it just creates a dir if not present for the file.
 
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
