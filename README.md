@@ -51,67 +51,61 @@ A pass at its most basic level is just moving a file's contents
 
 ![normalPasses](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/normalPass.gif)
 
-## If B is an existing file (perfect pass) you can do the following:
+## IF A and B FILES EXISTS, this is a perfect pass and you can do the following:
 
-1. append a to b, keep a's old file, keep b's file name (passare)
+1. append a to b, keep a's old file, keep b's file name (***Passare***)
 
 ![passare](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/Passare.gif)
 
 
-2. append a to b, keep a's old file, rename b's to a's name (backward pass)
+2. append a to b, keep a's old file, rename b's to a's name (***Backward Pass***)
 
 ![backwardPass](https://github.com/ItsZeusBro/TikiTaka/blob/be3c654df1625a48a4a05243d1d990ca0b2bd812/Gifs/BackPass.gif)
 
-3. append a to b, destroy a's old file, keep b's file name (high cross pass)
+3. append a to b, destroy a's old file, keep b's file name (***High Cross***)
 
 ![highCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/highCross.gif)
 
-4. append a to b, destroy a's old file, rename b to a's name (low cross pass)
+4. append a to b, destroy a's old file, rename b to a's name (***Low Cross***)
 
 ![lowCross](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/lowcross.gif)
 
-5. append a to b, keep a's old file, rename b's to c's name (blind pass)
+5. append a to b, keep a's old file, rename b's to c's name (***Blind Pass***)
 
 ![blindPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/blindpass.gif)
 
-6. append a to b, destroy a's old file, rename b to c's name (butt pass)
+6. append a to b, destroy a's old file, rename b to c's name (***Butt Pass***)
 
 ![buttPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/buttpass.gif)
 
 ##### WARNING: Chips and flicks overwrite
 
-7. overwrite b with a, keep a's old file, keep b's file name (Chapeu pass)
+7. overwrite b with a, keep a's old file, keep b's file name (***Chapeu Pass*** [chip pass] is an abstract pass) 
+  - Ignore the fact that this displays the rabona trick. The actual rabona trick is down below)
 
 ![chipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chip.gif)
 
-
-8. overwrite b with a, keep a's old file, rename b to a's name (backward chip pass)
+8. overwrite b with a, keep a's old file, rename b to a's name (***Backward Chapeu Pass***)
 
 ![backwardChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/chippass.gif)
 
-9. overwrite b with a, destroy a's old file, keep b's file name (high chip pass)
+9. overwrite b with a, destroy a's old file, keep b's file name (***High Chapeu Pass***)
 
-10. overwrite b with a, destroy a's old file, rename b to a's name (low chip pass)
+10. overwrite b with a, destroy a's old file, rename b to a's name (***Low Chapeu Pass***)
 
 ![lowChipPass](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/lowchip.gif)
 
-11. overwrite b with a, keep a's old file, rename b to c's name (rabona flick)
+11. overwrite b with a, keep a's old file, rename b to c's name (***Rabona Chip Pass***)
 
 ![RabonaFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Rabona.gif)
 
-12. overwrite b with a, destroy a's old file, rename b to c's name (rainbow)
+12. overwrite b with a, destroy a's old file, rename b to c's name (***Rainbow Flick Pass***)
 
 ![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
 
-## If a and b do not exist. Then you cant pass anything.
-
-1. does almost nothing except mitigate (Cuauhteminha)
-
-![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
 
 
-## Pass Mitigation in case A or B was not a file (spin options)
-### If b is not an existing file, and you wish to mitigate it, you can do the following option flags
+## IF B FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
 
 1. move a to b's directory, keep a's old location, change a's name at new destination to b's (spin up)
 
@@ -130,7 +124,7 @@ A pass at its most basic level is just moving a file's contents
 
 6. don't move a to b, don't change a's name locally (basically does nothing) (spin diagonal right)
 
-### If a is not an existing file, and you wish to mitigate it, you can do the following option flags:
+### IF A FILE DOES NOT EXIST, and you wish to mitigate this, you can do the following "ball spin" options
 
 7. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
 
@@ -150,10 +144,16 @@ A pass at its most basic level is just moving a file's contents
 12. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
 
 
-## Productivity mode sometimes forces us to break things
+## IF A AND B FILES DO NOT Exist. Then you cant pass anything, pass a Cuahteminha flag to mitigate this.
+
+1. does nothing except mitigate the problem (***Cuauhteminha***)
+
+![Cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/Cuauhteminha.gif)
+
+
+## Productivity mode sometimes forces us to break things, so if you don't mititgate it breaks
 If b or a is not an existing file, and you wish to break the program just ***dont add spin options*** to the 12 contexts above.
 If a and b do not exist. Then you can't pass anything, but a break adds another 1.
-
 
 
 ## other advanced topics
