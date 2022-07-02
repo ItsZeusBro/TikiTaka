@@ -195,6 +195,7 @@ This is a pattern matching game to match patterns on a buffer and forward to fil
 
 ***Chopping***
 This chops files from a position to an offset
+
 ![Chopping](https://github.com/ItsZeusBro/TikiTaka/blob/27f5a9c220bd4ea491e1d1326cd32dcd5fee9c72/Gifs/chop.gif)
 
 
