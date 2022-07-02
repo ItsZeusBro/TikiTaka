@@ -18,7 +18,7 @@ passes.
     - (which add up to moral victories and real secondary points)
 - ***Directionality*** of your shot, or pass, is determined by where in your file tree you pass or shoot to. If you pass
 something higher in your file tree, your passing backwards towards your goalie. Your root level, is your goal that people can score on.
-- The point about the data, is that its just a ball inside a file. A file is just a player. You can't have more than 11 players on the field
+- The point about the data, is that its just a ***ball*** inside a file. A file is just a player. You can't have more than 11 players on the field
 at any given time. You create the location for a player and pass it to them in the same function at times. Othertimes you create the location and
 use it later.
 
