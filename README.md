@@ -42,103 +42,6 @@ This acts like a double touch but over a network.
 # Passes
 A pass at its most basic level is just moving a file's contents (.ball for game mode (with special data inside), any file in productivity mode)
 
-### Passare 
-This is a normal pass
-
-![Passare](https://thumbs.gfycat.com/DearestDismalAustraliankelpie-size_restricted.gif)
-
-
-### "Backwards Pass" 
-
-![BackPass](https://c.tenor.com/J1O91U8m0_YAAAAC/ronaldo-vs-hungary-ronaldo-goal-vs-hungary.gif)
-
-
-### Blind Pass
-
-![BlindPass](https://c.tenor.com/Is08MWvpkigAAAAC/fifa-soccer.gif)
-
-### Butt Pass
-
-
-![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
-
-### Cross
-
-![LongPass](https://i.gifer.com/8Rpb.gif)
-
-
-### Chapeu (All Chip passes and flick passes overwrite, becareful)
-
-![ChipPass](https://68.media.tumblr.com/25e2d76dfbc9c24b3f27d867cb45d0ec/tumblr_o7pf4jesjf1vrq5lso1_500.gif)
-
-
-### Rabona Chapeu (All Chip Pass's overwrite, becareful)
-
-![Rabona](https://c.tenor.com/9tH5GAo0jsEAAAAM/robert-lewandowski-lewandowski.gif)
-
-
-### Rainbow (flick pass to self)
-
-![Rainbow](Gifs/rainbow.gif)
-
-### "Cuauhteminha" 
-
-![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
-
-### Faux (fake pass)
-
-![fake pass](https://64.media.tumblr.com/5df3e0260385ea86c22d9dfa5d3255a1/8f68b6b7a4e53f11-52/s540x810/75d40cee9e6ed66149acca81816255c12fac72fd.gifv)
-
-### "Aurelio" 
-
-![Aurelio](https://media4.giphy.com/media/DbCErKp9tO14VpcA8j/giphy.gif)
-
-
-# Passing Modifiers
-## Tikki Takka
-
-
-### Tikki
-
-
-![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
-
-### Takka 
-
-![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
-
-
-### Chopping
-
-![Chop](https://github.com/ItsZeusBro/TikiTaka/blob/4ed7ebc8375397d99fd1f525611e658a73a85a16/Gifs/chop.gif)
-
-### Marseille Turn 
-
-![Marseille](https://thumbs.gfycat.com/SilentFluidImago-max-1mb.gif)
-
-
-# Other Moves Not Related to Passing
-### Fakey
-
-![fakey](http://25.media.tumblr.com/tumblr_mekqr4Bdjf1rjdfzto1_500.gif)
-
-### Showta (arabish for shot) 
-
-![Showta](https://thumbs.gfycat.com/AgileViciousEastrussiancoursinghounds-size_restricted.gif)
-
-### Bicicleta (bicycle shot in Portuguese)
-
-![Bicicleta](https://i.gifer.com/origin/3b/3b1d9a9ae1ba42041f655cd7925cb0c2.gif)
-
-
-### Toe'ng the Line (sideline play)
-
-![ToeTheLine](https://github.com/ItsZeusBro/TikiTaka/blob/8e3acf1772a2650658c5725087bcb184f8527310/Gifs/toetheline.gif)
-
-
-
-
-
 ## Pass Descriptions
 
 ### If B is an existing file (perfect pass) you can do the following:
@@ -160,7 +63,7 @@ This is a normal pass
 #### If a and b do not exist. Then you cant pass anything.
 1. does almost nothing except mitigate (Cuauhteminha)
 
-## Mitigation in case B was not a file (spin options)
+## Pass Mitigation in case B was not a file (spin options)
 #### If b is not an existing file, and you wish to mitigate it, you can do the following option flags:
 1. move a to b's directory, keep a's old location, change a's name at new destination to b's (spin up)
 2. move a to b's directory, keep a's old location, keep a's name at new destination (spin down)
@@ -168,7 +71,6 @@ This is a normal pass
 4. move a to b's directory, destroy a's old file,  keep a's name at new destination (spin left)
 5. dont move a to b, change a's file name locally to b's name (spin diagonal left)
 6. don't move a to b, don't change a's name locally (basically does nothing) (spin diagonal right)
-
 
 #### If a is not an existing file, and you wish to mitigate it, you can do the following option flags:
 1. move b to a's directory, keep b's old location, change b's name at new destination to a's (spin up)
