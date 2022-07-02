@@ -221,7 +221,7 @@ This is advanced subject about substituting streams for files. It uses a stack o
 - Moving data (the ball) from one element to the other with protections is a ***pass***
 - Moving data (the ball) from one element to the other without protections is considered a ***shot***
 - ***Bad pass or shot*** is when you lose the ball to the other team. (only if your playing against someone) 
-- ***A Miss*** can be mitigated with subsequent behavior to further your objectives. It means an exception was not thrown.
+- ***A Miss*** can be mitigated with subsequent behavior to further your objectives. It means an exception was not thrown because you knew how to use mitigators.
 - A ***Dribble move*** is a filter on a buffer, before a shot or pass.
 - A ***touch*** is an essential element to making sure you don't miss on the pass or the shot. 
   - Buf if you take good touches, you can set yourself up for style points on subsequent shots and passes, that come much later 
