@@ -6,9 +6,9 @@ passes.
 
 ![TikiTaka](https://media.balls.ie/uploads/2013/09/barcatikitaka.gif)
 
-## Some Concepts for a future Game Mode (you can use it for productivity as well)
+## In the begning it will be a productivity first tool, then this game should be made with TikiTaka:
 
-- An element is defined as a buffer, stream, or file
+- An ***element*** is defined as a buffer, stream, or file
 - Moving data (the ball) from one element to the other with protections is a ***pass***
 - Moving data (the ball) from one element to the other without protections is considered a ***shot***
 - ***Bad pass or shot*** is when you lose the ball to the other team. (only if your playing against someone) 
