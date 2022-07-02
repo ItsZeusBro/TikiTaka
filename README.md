@@ -144,10 +144,12 @@ A shot at its most basic level is just moving a file's contents without mitigati
 
 ***Rainbow Flick to Self or Shot***
 
+![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
+
 ***Head Run***
 
+![HeadRun](https://github.com/ItsZeusBro/TikiTaka/blob/9acfca686ec2618131c746c15e8156d3db6e35b4/Gifs/headRun.gif)
 
-![RainbowFlick](https://github.com/ItsZeusBro/TikiTaka/blob/786ef0f0dc08a2572688cf82b39153e4fff5b177/Gifs/rainbow.gif)
 
 
 
