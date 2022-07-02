@@ -30,6 +30,13 @@ These are the primitive use cases that can be performed locally or over a networ
 3. Substitute append z (buff or file) to y (append z data to y file)
 4. Substitute append z (buff or file) to x (append z data to x file)
 
+### Streaming and buffer Actions
+1. Stream from a directly to b
+2. Stream from a, filter the buffer or truncate b, stream to b
+3. Stream from a, push streamable on stack or queue, pop [optionally read and filter], then stream to b [optionally truncate first]
+4. Read a, place in buffer, push buffer on stack, pop later [optionally read and filter], then write to b [optionally truncate first]
+5. Read a, place in buffer, push to queue, pop queue immediately [optionally read and filter], write to a or b [optionally truncate first]
+
 ### Cleaning Actions
 1. Truncate x
 2. Truncate y
