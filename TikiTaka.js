@@ -7,11 +7,12 @@ import * as fs from "node:fs"
 export class TikiTaka{
   constructor(file_defender=true, strongLeft=true){
     this.defender=file_defender //every move should be scrutinized more when there is no defender
-    //Primitives
+    //Touches
     TikiTaka.prototype.oneTouch = this.oneTouch;
     TikiTaka.prototype.twoTouch = this.twoTouch;
     TikiTaka.prototype.mediumTouch = this.mediumTouch;
     TikiTaka.prototype.longTouch = this.longTouch;
+    //Passes
     TikiTaka.prototype.passare = this.passare;
     TikiTaka.prototype.passagioInverso = this.passagioInverso; //im not sure if my Italian is accurate (im trying to say "reverse pass")
     TikiTaka.prototype.hoherTritt = this.hoherTritt; //im not sure if my German is accurate (im trying to say "high kick")
@@ -21,7 +22,6 @@ export class TikiTaka{
     TikiTaka.prototype.chapeu = this.chapeuInverso; //im not sure if my portuguese is accurate (im trying to say "inverse chip")
     TikiTaka.prototype.rabona = this.rabona;
     TikiTaka.prototype.faux = this.fauxPass;
-
     TikiTaka.prototype.fakey = this.fakey;
     TikiTaka.prototype.marseilleTurn = this.marseilleTurn;
     TikiTaka.prototype.showta = this.showta;
@@ -37,15 +37,65 @@ export class TikiTaka{
     this.writestreams = []
   }
 
+  //atomic functions
+  create(newFilePath){
+    //just creates a file at path with fileName
+    try{
+      if(!fs.existsSync(newFilePath)){
+        fs.closeSync(fs.openSync(newFilePath, 'w'))
+      }
+    }catch{
+      return false
+    }
+  }
+  rename(oldPath, newName){
+    //renames a filepath to newName if filepath exists
+    //else returns false
+    try{
+      var newPath = path.dirname(oldPath)+'/'+newName
+      fs.renameSync(oldPath, newPath)
+    }catch{
+      return false
+    }
+  }
 
+  copyAppend(a, b){
+    //just copies a data to b location if both exists
+    //else returns false
+    try{
+      if(fs.existsSync(a)&&fs.existsSync(b)){
+        var buff = fs.readFileSync(a)
+        fs.appendFileSync(b, buff)
+      }
+    }catch{
+      return false
+    }
+  }
 
+  truncate(filePath){
+    //truncates file at filePath if it exists
+    //else returns false
+    try{
+      fs.truncateSync(filePath, 0)
+    }catch{
+      return false
+    }
+  }
+
+  del(filePath){
+    //del file at filePath
+    //else returns false
+    try{
+      fs.unlinkSync(filePath)
+    }catch{
+      return false
+    }
+  }
 
 }
 
 
 
-var play = new TikiTaka("./sometest/some.test", true, true)
 
+var options = [create(), rename(), copy(), truncate(), del()]
 
-
-console.log(play.pass("123", "456").blindPass("653", "lkdsfj"))
