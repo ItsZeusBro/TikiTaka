@@ -37,12 +37,12 @@ These are the primitive use cases
 4. Destroy y
 
 ## File Operation Function Primitives:
-With these primitive functions you can do all the aforementioned patterns
-1. create(newFilePath)
-2. rename(oldPath, newName)
-3. copyAppend(a, b)
-4. truncate(filePath)
-5. delete(filePath)
+With these primitive functions you can do all the aforementioned patterns. If you wish to do these over a network use an options parameter
+1. create(newFilePath, options)
+2. rename(oldPath, newName, options)
+3. copyAppend(a, b, options)
+4. truncate(filePath, options)
+5. delete(filePath, options)
 
 
 
