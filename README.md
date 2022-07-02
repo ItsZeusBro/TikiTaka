@@ -192,7 +192,7 @@ All together 8+6+20 = 44. But that's not all! If you do long passes (over a tcp 
 If you add modifiers, which substitute a buffer for a file, then you can add another 8 patterns, leaving us at 96.
 If you add modifiers, and b doesn't exist and a is a buffer, then you can add another 20. This leaves us at 116.
 
-This does not include the filtering you can do on the buffers before the passes. These filter types are endless, and add to the complexity of the game to complete "objectives" and score "goals".
+This does not include the filtering (pattern matching and what not) you can do on the buffers before the passes. These filter types are endless, and add to the complexity of the game to complete "objectives" and score "goals".
 
 This does not include all the things that Tiki Taka does with streams (which is not a touch then pass, they are single touch passes with endless combinations).
 
