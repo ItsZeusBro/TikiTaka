@@ -144,18 +144,21 @@ This is a normal pass
 ### If B is an existing file (perfect pass) you can do the following:
 
 1. append a to b, keep a's old file, keep b's file name (passare)
-2. append a to b, keep a's old file, rename b's to a's name
-3. append a to b, destroy a's old file, keep b's file name
-4. append a to b, destroy a's old file, rename b to a's name
-5. overwrite b with a, keep a's old file, keep b's file name
-6. overwrite b with a, keep a's old file, rename b to a's name
-7. overwrite b with a, destroy a's old file, keep b's file name
-8. overwrite b with a, destroy a's old file, rename b to a's name
-9. append a to b, keep a's old file, rename b's to c's name
-10. append a to b, destroy a's old file, rename b to c's name
-11. overwrite b with a, keep a's old file, rename b to c's name
-12. overwrite b with a, destroy a's old file, rename b to c's name
+2. append a to b, keep a's old file, rename b's to a's name (backward pass)
+3. append a to b, destroy a's old file, keep b's file name (high cross pass)
+4. append a to b, destroy a's old file, rename b to a's name (low cross pass)
+5. append a to b, keep a's old file, rename b's to c's name (blind pass)
+6. append a to b, destroy a's old file, rename b to c's name (butt pass)
+##### WARNING: Chips and flicks overwrite
+7. overwrite b with a, keep a's old file, keep b's file name (Chapeu pass)
+8. overwrite b with a, keep a's old file, rename b to a's name (backward chip pass)
+9. overwrite b with a, destroy a's old file, keep b's file name (high chip pass)
+10. overwrite b with a, destroy a's old file, rename b to a's name (low chip pass)
+11. overwrite b with a, keep a's old file, rename b to c's name (rabona flick)
+12. overwrite b with a, destroy a's old file, rename b to c's name (rainbow)
 
+#### If a and b do not exist. Then you cant pass anything.
+1. does almost nothing except mitigate (Cuauhteminha)
 
 ## Mitigation in case B was not a file (spin options)
 #### If b is not an existing file, and you wish to mitigate it, you can do the following option flags:
@@ -174,8 +177,7 @@ This is a normal pass
 4. move b to a's directory, destroy b's old file,  keep b's name at new destination (spin left)
 5. dont move b to a, change b's file name locally to a's name (spin diagonal left)
 6. don't move b to a, don't change b's name locally (basically does nothing) (spin diagonal right)
-#### If a and b do not exist. Then you cant pass anything, but mitigation adds another 1 if the program 
-1. does nothing (spin in place)
+
 
 ## Productivity mode sometimes forces us to break things
 If b or a is not an existing file, and you wish to break the program just ***dont add spin options*** to the 12 contexts above.
