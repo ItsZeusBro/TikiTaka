@@ -198,7 +198,8 @@ If you do dribbling tricks like Chopping, they create the aforementioned buffer 
 
 
 ## Some Prophecy:
-People will use this idea to create other similar games (other sports) with the same underlying patterns. Go for it. It's really hard to make these analogies, but im confident this will not be the last one.
+- People will use this idea to create other similar games (other sports) with the same underlying patterns. Go for it. It's really hard to make these analogies, but im confident this will not be the last one.
+- Eventually, graphical game engines would interface with files and data to provide a real visual to the game. People would watch real soccer moves done by people at the command line moving data and files around in real time.
 
 ## As the sport matures, we may have small informal tournaments.
 
