@@ -6,9 +6,7 @@ passes.
 
 ![TikiTaka](https://media.balls.ie/uploads/2013/09/barcatikitaka.gif)
 
-## Some Basic Terminology
-
-
+# Some Basic Terms
 
 ### Pelota 
 We mean data
@@ -19,7 +17,8 @@ We mean the file guard that prevents us from overwriting a file
 ### Getting passed the Defender
 Using a function properly, without mistakes, otherwise you could lose the opportunity
 
-## Beginner Moves
+
+# Some Preperation Primitives
 
 ### First Touch (or just Touch)
 Setting up a location for the ball to stop at (file location)
@@ -32,11 +31,10 @@ Take an extra touch to create the path for the play, and then its location
 
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
+
+# Passes
 Facts:
-Overall there are at least 56 total short and long passes in this game. At least 28 are no look passes (14 each). This number of 56 does not include fake passes and their varieties, the different shot types, different ball tricks, etc.
-
-These are just a few i've taken interest in, will add more use cases soon.
-
+Overall there are at least 56 total short and long passes in this game. At least 28 are no look passes (14 each). This number of 56 does not include fake passes and their varieties. It also does not include pass modifiers like Tikki Takka, or Chopping and others.
 
 ### Passare 
 Normally passing a ball down a path (directory) and to stop at the intended location (file) (append the data, do not overwrite)
@@ -58,8 +56,6 @@ Pass data (append) to a presumably existing file without looking to see if the r
 Pass data (append) to a presumably existing file without looking to see if the recipient file is there. If it is not there script does NOT fail, it just keeps going...and going...
 
 ![ButtPass](https://c.tenor.com/i9BI3BV7bf4AAAAC/neymar-passe-neymar.gif)
-
-## Semi-Pro Moves
 
 ### Long Pass
 Copy data from local filesystem file to another filesystem's file. Append it to the end of that file, does not overwrite.
@@ -89,11 +85,6 @@ trick pass to self. (moving the file to another location keeping its name). If t
 
 ![Cuahteminha](https://i.makeagif.com/media/10-11-2015/kZ_ZND.gif)
 
-### Fakey
-Deletes a file if it exists. Creates the file if it doesn't.
-
-![fakey](http://25.media.tumblr.com/tumblr_mekqr4Bdjf1rjdfzto1_500.gif)
-
 ### Faux (fake pass)
 Take the file data, put into buffer, delete the origin if the file exists. If it does not, remove anything from the buffer (if present) and put into file. If buffer empty, just keep going.
 
@@ -104,11 +95,43 @@ a faux (fake pass) in one direction (takes file data, puts into buffer), and dri
 
 ![Aurelio](https://media4.giphy.com/media/DbCErKp9tO14VpcA8j/giphy.gif)
 
+
+# Passing Modifiers
+## Tikki Takka
+This is a playful feature. Basically the TikkiTakka class holds a stack and a queue. It uses the stack if you have a strong left foot.
+It uses the queue if you don't. The stack (or queue) holds one of the previous tikki or takka. This all depends on what you chose first.
+
+### Tikki
+Set up an fs Read Stream (Tikki). 
+- If you have a strong left, and if there was a writestream in the writestream stack, pop it off and pipe the readstream to writestream. 
+- If you don't have a strong left, and there was a writestream in the writestream queue, pop it off the queue and pipe the readstream to the writestream.
+
+![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
+
+### Takka 
+Set up a write stream (Takka). 
+- If you have a strong left, and if there was a readstream in the readstream stack, pop it off and pipe the readstream to writestream. 
+- If you don't have a strong left, and there was a readstream in the readstream queue, pop it off the queue and pipe the readstream to the writestream.
+
+![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
+
+
+### Chopping
+chops a file from a starting position to an ending position, and puts into class's buffer stack (or queue, depending on strong left).
+
+![Chop](https://github.com/ItsZeusBro/TikiTaka/blob/4ed7ebc8375397d99fd1f525611e658a73a85a16/Gifs/chop.gif)
+
 ### Marseille Turn 
 Sets up a circle file stream.
 
 ![Marseille](https://thumbs.gfycat.com/SilentFluidImago-max-1mb.gif)
 
+
+# Other Moves Not Related to Passing
+### Fakey
+Deletes a file if it exists. Creates the file if it doesn't.
+
+![fakey](http://25.media.tumblr.com/tumblr_mekqr4Bdjf1rjdfzto1_500.gif)
 
 ### Showta (arabish for shot) 
 To set up a socket or ipc to write to. Does not write (score) yet.
@@ -129,34 +152,8 @@ Deletes a file if it exists, otherwise throws an error
 
 
 
-## Professional Moves
-
-### Chop
-chops a file from a starting position to an ending position, and puts into class's buffer stack (or queue, depending on strong left).
-
-![Chop](https://github.com/ItsZeusBro/TikiTaka/blob/4ed7ebc8375397d99fd1f525611e658a73a85a16/Gifs/chop.gif)
-
-
-### Tikki Takka
-This is a playful feature. Basically the TikkiTakka class holds a stack and a queue. It uses the stack if you have a strong left foot.
-It uses the queue if you don't. The stack (or queue) holds one of the previous tikki or takka. This all depends on what you chose first.
-
-### Tikki
-Set up an fs Read Stream (Tikki). 
-- If you have a strong left, and if there was a writestream in the writestream stack, pop it off and pipe the readstream to writestream. 
-- If you don't have a strong left, and there was a writestream in the writestream queue, pop it off the queue and pipe the readstream to the writestream.
-
-![tikki](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/tikki.gif)
-
-### Takka 
-Set up a write stream (Takka). 
-- If you have a strong left, and if there was a readstream in the readstream stack, pop it off and pipe the readstream to writestream. 
-- If you don't have a strong left, and there was a readstream in the readstream queue, pop it off the queue and pipe the readstream to the writestream.
-
-![takka](https://github.com/ItsZeusBro/TikiTaka/blob/d06d4467b709bda2fc3b0c44134ab79ac5eaa7e1/takka.gif)
-
 
 
 ### "goooal!" or "gooooal!" 
-#### is console logged on the difficult play with three passes. "gooooal" for a difficult play with 4 passes, etc
+#### goals are scored in this game, but they are hard. The rules for doing so will be announced soon.
 
