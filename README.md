@@ -76,12 +76,6 @@ This acts like a touch, but it just creates a dir if not present for the file.
 ![Double Touch](http://25.media.tumblr.com/049d3b7524f8066b328af64d06bb0bfe/tumblr_mp1qinImn11rdvztso1_500.gif)
 
 
-### Medium Touch (single touch over a network)
-This acts like a touch, but over a network.
-
-### Long Touch (double touch over a network)
-This acts like a double touch but over a network.
-
 # Passes and Shots
 A pass at its most basic level is just moving a file's contents 
 - this is an abstract move, don't care too much about it. The following passes have meaning.
