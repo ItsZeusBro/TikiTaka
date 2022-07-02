@@ -33,8 +33,7 @@ Take an extra touch to create the path for the play, and then its location
 
 
 # Passes
-Facts:
-Overall there are at least 40 total short and long passes in this game. 12 of these are no look passes. This number does not include a few fake passes and their varieties. It also does not include pass modifiers like Tikki Takka, or Chopping and others which multiply this number. Each modifier is a dynamic reality, that seem to be non-redundant. 
+Facts: I've idintified 116 different passes one can do with two simple things that could be files. See the math at the bottom. These are just a few. Be patient for their implementation. Thanks.
 
 Here are just a few, that im working on. Names will change at this early time if they end up making more sense. It is unlikely that these names will change at this point, however, the functions might change underneath them (to some other existing name), if it makes more sense.
 
@@ -158,4 +157,46 @@ Deletes a file if it exists, otherwise throws an error
 
 ### "goooal!" or "gooooal!" 
 #### goals are scored in this game, but they are hard. The rules for doing so will be announced soon.
+
+
+
+## File Function Combinatorics:
+Say you have two potential file path descriptors a and b, I've identified the following patterns:
+
+If b is an existing file you can do the following:
+1. overwrite b with a, destroy a's old file, rename b's file to a's name
+2. overwrite b with a, destroy a's old file, keep b's file name
+3. overwrite b with a, keep a's old file, rename b's file to a's name
+4. overwrite b with a, keep a's old file, keep b's file name
+5. append a to b, destroy a's old file, rename b
+6. append a to b, destroy a's old file, keep b's file name
+7. append a to b, keep a's old file, rename b
+8. append a to b, keep a's old file, keep b's file name
+
+If b is not an existing file, and you wish to mitigate, you can do the following:
+1. move a to b's directory, keep a's old location, change a's name at new destination to b's
+2. move a to b's directory, keep a's old location, keep a's name at new destination
+3. move a to b's directory, destroy a's old file, change a's name at new destination to b's
+4. move a to b's directory, destroy a's old file,  keep a's name at new destination
+5. dont move a to b, change a's file name locally to b's name
+6. don't move a to b, don't change a's name locally (basically does nothing)
+
+If b is not an existing file, and you wish to break the program, that adds another 6
+If a does not exist, and b is an existing file, you can add another 6 for mitigation.
+If a does not exist, and b is an existing file, you can add another 6 that break the program.
+If a and b do not exist. Then you cant pass anything, but mitigation adds another 1 if the program does nothing
+If a and b do not exist. Then you can't pass anything, but a break adds another 1.
+
+All together 8+6+20 = 44. But that's not all! If you do long passes (over a tcp socket) this doubles to 88.
+
+If you add modifiers, which substitute a buffer for a file, then you can add another 8 patterns, leaving us at 96.
+If you add modifiers, and b doesn't exist and a is a buffer, then you can add another 20. This leaves us at 116.
+
+This does not include all the things that Tiki Taka does with streams (which is not a touch then pass, they are single touch passes with endless combinations).
+
+If you add tricks like Chopping, that create buffers, you still end up in the same modifier patterns above, but the combinations of real things
+you could do are also endless.
+
+
+
 
