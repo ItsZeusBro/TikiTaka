@@ -1,9 +1,4 @@
-import * as ttp from "./TikiTakaPrims/TikiTakaPrims";
-
-
-
-
-export class TikiTakaInterface{
+export class TikaInterface{
   constructor(file_defender=true, strongLeft=true){
     //Touches
     TikiTaka.prototype.oneTouch = this.oneTouch;

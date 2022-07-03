@@ -4,7 +4,7 @@
   "description": "",
   "main": "TikiTaka.js",
   "scripts": {
-    "test-verbose": "node ./TikiTakaTest.js --verbose"
+    "test-verbose": "node ./TikaTest.js --verbose"
   },
   "type":"module",
 
