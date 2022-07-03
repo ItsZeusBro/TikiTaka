@@ -56,22 +56,22 @@ export class TikaPrims{
       }
     }
     //takes object with paths associated with n numbers of bytes to truncate to
-    truncate(paths){
+    truncate(paths, n_s){
       //truncates file at filePath if it exists to n number of bytes
       //else returns false
       var failures = []
-      for (const [p, n] of Object.entries(paths)) {
-          //check if is directory or file, then delete
-          try{
-            if(fs.existsSync(p)){
-              fs.truncateSync(p, n)
-            }
-          }catch{
-            //this is a mitigation technique. Offensive programming
-            //does not tolerate failures, but encourages mitigation.
-            failures.push(p)
+      var zipped = paths.map(function(e, i) {return [e, n_s[i]]});
+      zipped.forEach((element)=>{
+        try{
+          if(fs.existsSync(element[0])){
+            fs.truncateSync(element[0], element[1])
           }
-      }
+        }catch{
+          //this is a mitigation technique. Offensive programming
+          //does not tolerate failures, but encourages mitigation.
+          failures.push(element[0])
+        }
+      })
       return failures
     }
 

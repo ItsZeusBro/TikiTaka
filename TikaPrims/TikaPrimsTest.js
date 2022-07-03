@@ -139,8 +139,7 @@ export class TikaPrimsTest{
         fs.writeFileSync(fs.openSync(b, 'a'), "this 14 bytess");
         fs.writeFileSync(fs.openSync(c, 'a'), "this 14 bytess");
         //truncate them at different lengths
-        var failures = tp.truncate({a:10, b:5, c:1}) //should end up at 10, 5, and 1
-        console.log(failures)
+        var failures = tp.truncate([a,b,c], [10, 5, 1]) //should end up at 10, 5, and 1
         //assert expected behavior
         assert.equal(fs.statSync(a).size, 10);
         assert.equal(fs.statSync(b).size, 5);
