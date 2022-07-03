@@ -13,6 +13,7 @@ export class TikaPrimsTest{
         this.testCreate(this.tp)
         this.testRename(this.tp)
         this.testCopyAppend(this.tp)
+        this.testTruncate(this.tp)
     }
 
     testMkdir(tp){
@@ -125,8 +126,25 @@ export class TikaPrimsTest{
         assert.equal(fs.statSync(a).size, 28);
         assert.equal(fs.statSync(b).size, 14);
     }
-    testTruncate(){
-
+    testTruncate(tp){
+        var clean_these=[this.tests]
+        tp.mkdr(this.tests)
+        //create 3 files
+        var a = this.tests+'a.foo'
+        var b = this.tests+'b.bar'
+        var c = this.tests+'c.baz'
+        tp.create(a, b, c)
+        //load them with same data
+        fs.writeFileSync(fs.openSync(a, 'a'), "this 14 bytess");
+        fs.writeFileSync(fs.openSync(b, 'a'), "this 14 bytess");
+        fs.writeFileSync(fs.openSync(c, 'a'), "this 14 bytess");
+        //truncate them at different lengths
+        var failures = tp.truncate({a:10, b:5, c:1}) //should end up at 10, 5, and 1
+        console.log(failures)
+        //assert expected behavior
+        assert.equal(fs.statSync(a).size, 10);
+        assert.equal(fs.statSync(b).size, 5);
+        assert.equal(fs.statSync(c).size, 1);
     }
     testDel(){
 

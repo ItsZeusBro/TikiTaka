@@ -55,20 +55,24 @@ export class TikaPrims{
         return false
       }
     }
-
-    truncate(...paths){
-      //truncates file at filePath if it exists
+    //takes object with paths associated with n numbers of bytes to truncate to
+    truncate(paths){
+      //truncates file at filePath if it exists to n number of bytes
       //else returns false
-      for (const p of paths) {
-        //check if is directory or file, then delete
-        try{
-          if(!fs.lstatSync(p).isDirectory()){
-            fs.truncateSync(p, 0)
+      var failures = []
+      for (const [p, n] of Object.entries(paths)) {
+          //check if is directory or file, then delete
+          try{
+            if(fs.existsSync(p)){
+              fs.truncateSync(p, n)
+            }
+          }catch{
+            //this is a mitigation technique. Offensive programming
+            //does not tolerate failures, but encourages mitigation.
+            failures.push(p)
           }
-        }catch{
-          return false
-        }
       }
+      return failures
     }
 
     del(recursive=false, ...paths){
