@@ -4,7 +4,7 @@
   "description": "",
   "main": "TikiTaka.js",
   "scripts": {
-    "tv": "node TikiTakaPrimsTest --verbose"
+    "test-verbose": "node ./TikiTakaPrims/TikiTakaPrimsTest.js --verbose"
   },
   "type":"module",
 
