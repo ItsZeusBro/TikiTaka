@@ -3,24 +3,28 @@ import * as fs from "node:fs"
 
 export class TikiTakaPrims{
   //atomic functions
-    mkdr(dir){
+    mkdr(...dirs){
       //is able to make directory or returns false
-      try{
-        if(!fs.existsSync(dir)){
-          fs.mkdirSync(dir)
+      for (const dir of dirs) {
+        try{
+          if(!fs.existsSync(dir)){
+            fs.mkdirSync(dir)
+          }
+        }catch{
+          return false
         }
-      }catch{
-        return false
       }
     }
-    create(newFilePath){
+    create(...paths){
       //just creates a file at path with fileName
-      try{
-        if(!fs.existsSync(newFilePath)){
-          fs.closeSync(fs.openSync(newFilePath, 'w'))
+      for (const p of paths) {
+        try{
+          if(!fs.existsSync(p)){
+            fs.closeSync(fs.openSync(p, 'w'))
+          }
+        }catch{
+          return false
         }
-      }catch{
-        return false
       }
     }
     rename(oldPath, newName){
@@ -47,24 +51,36 @@ export class TikiTakaPrims{
       }
     }
 
-    truncate(filePath){
+    truncate(...paths){
       //truncates file at filePath if it exists
       //else returns false
-      try{
-        fs.truncateSync(filePath, 0)
-      }catch{
-        return false
+      for (const p of paths) {
+        //check if is directory or file, then delete
+        try{
+          if(!fs.lstatSync(p).isDirectory()){
+            fs.truncateSync(p, 0)
+          }
+        }catch{
+          return false
+        }
       }
     }
 
-    del(filePath){
-      //del file at filePath
-      //else returns false
-      try{
-        fs.unlinkSync(filePath)
-      }catch{
-        return false
+    del(recursive=false, ...paths){
+      //node variadic paramter paths accepts file or dir paths
+      for (const p of paths) {
+        //check if is directory or file, then delete
+        try{
+          if(fs.lstatSync(p).isDirectory()){
+            fs.rmSync(p, {recursive:recursive})
+          }else{
+            fs.unlinkSync(p)
+          }
+        }catch{
+          return false
+        }
       }
+     
     }
 }
 
