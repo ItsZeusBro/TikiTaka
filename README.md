@@ -1,5 +1,8 @@
 # TikiTaka
-WARNING: Please do not invest time in the names of these functions yet, as they are subject to change. Its too early. It's just to give you an idea.
+WARNINGS: 
+1. Please do not invest time in the names of these functions yet, as they are subject to change. Its too early. It's just to give you an idea.
+2. TikiTaka takes an "Offensive Programming" style. Meaning, a lot of safeguards are removed in an otherwise defensive programming world. TikiTaka is a sport first and foremost. However, we think (with time) you might end up more productive when you get really good at it.
+
 
 ## Playing Spanish Futbol with Files and Data
 - Tiki Taka is a Spanish Football Style that is dynamic and unpredictable
@@ -48,15 +51,19 @@ These are the primitive use cases that can be performed locally or over a networ
 ## File Operation Function Primitives:
 With these primitive functions you can do all the aforementioned patterns. If you wish to do these over a network use an options parameter
 
-1. mkdr(dir)
-2. create(newFilePath, [options])
-4. rename(oldPath, newName, [options])
-5. copyAppend(a, b, [options])
-6. stream(a, [b], [options]) //grabs a read stream, or streams from a to b, options can contain filter actions
-7. wstream(a, [options]) //grabs a write stream, and can attach pre-write filter actions
+//Primitive interfaces are designed for keystroke efficiency, multi-tasking, and memory efficiency (this is a sport--afterall)
+
+1. mkdr(...dirs)
+2. create(...paths)
+4. rename(old, new) //this is atomic, because its faster to chain this function than it is to fill an array of tupples
+5. copyAppend(a, b)
+6. copyOverwrite(a, b)
+7. stream(a, [b], [options]) //grabs a read stream, or streams from a to b, options can contain filter actions
+8. wstream(a, [options]) //grabs a write stream, and can attach pre-write filter actions
 9. truncate(filePath, [options])
 10. del(filePath, [options])
-
+11. write(path, data) 
+12. read(path) //sends back object that gives you options {string:"some_string", buff:TakiBuffObject} //TakiBuff has metadata and a buffer
 
 # Compound actions 
 ## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
