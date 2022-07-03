@@ -20,7 +20,7 @@ export class TikaPrims{
       //just creates a file at path with fileName
       for (const p of paths) {
         try{
-          fs.closeSync(fs.openSync(p, 'a'))
+          fs.closeSync(fs.openSync(p, 'w'))
         }catch{
           return false
         }
@@ -30,14 +30,13 @@ export class TikaPrims{
 
     }
     read(){
-      
+
     }
 
-    rename(oldPath, newName){
+    rename(oldPath, newPath){
       //renames a filepath to newName if filepath exists
       //else returns false
       try{
-        var newPath = path.dirname(oldPath)+'/'+newName
         fs.renameSync(oldPath, newPath)
       }catch{
         return false
@@ -86,7 +85,6 @@ export class TikaPrims{
           return false
         }
       }
-     
     }
 }
 

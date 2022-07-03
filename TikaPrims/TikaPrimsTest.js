@@ -2,6 +2,7 @@ import { TikaPrims } from './TikaPrims.js';
 import * as fs from "node:fs";
 import * as assert from "node:assert";
 import { LOG_SONG } from '../LOG_SONG.js';
+import { SourceMap } from 'node:module';
 export class TikaPrimsTest{
     constructor(verbose, export_to){
         this.verbose = verbose
@@ -10,6 +11,7 @@ export class TikaPrimsTest{
         this.tp = new TikaPrims()
         this.testMkdir(this.tp)
         this.testCreate(this.tp)
+        this.testRename(this.tp)
     }
 
     testMkdir(tp){
@@ -66,32 +68,47 @@ export class TikaPrimsTest{
 
 
     testCreate(tp){
-        var clean_these=[
-            this.tests
-        ]
+        var clean_these=[this.tests]
         //create file, check if it exists
-        tp.mkdr('./tests')
-        tp.create("./tests/some.test")
+        tp.mkdr(this.tests)
+        tp.create(this.tests+"some.test")
         //load it with data, check file for data
-        
-        fs.writeFileSync(fs.openSync("./tests/some.test", 'a'), "this is 14 byt");
-        assert.equal(fs.statSync('./tests/some.test').size, 14);
-
-        //create file, load it with data, create it again: expected result?
-        tp.create("./tests/some.test")
-        fs.writeFileSync(fs.openSync("./tests/some.test", 'a'), "this 13 bytes");
-        assert.equal(fs.statSync('./tests/some.test').size, 13);
-
-        
-        
+        fs.writeFileSync(fs.openSync(this.tests+"some.test", 'a'), "this is 14 byt");
+        assert.equal(fs.statSync(this.tests+'some.test').size, 14);
+        //create file, load it with data, create it again: expected result
+        tp.create(this.tests+"some.test")
+        fs.writeFileSync(fs.openSync(this.tests+"some.test", 'a'), "this 13 bytes");
+        assert.equal(fs.statSync(this.tests+'some.test').size, 13);
         //then cleans up
-        //tp.del(true, clean_these[0])
+        tp.del(true, clean_these[0])
     }
-    testRename(){
-
+    testRename(tp){
+        //create file
+        //add data to it
+        //rename it a few different ways 
+        //make sure file contents are not modified
+        //make sure new file names match the renamed name
+        var clean_these=[this.tests]
+        tp.mkdr(this.tests)
+        var sometest1 = this.tests+"some.test1"
+        var sometest2 = this.tests+"some.test2"
+        tp.create(sometest1)
+        fs.writeFileSync(fs.openSync(sometest1, 'a'), "this is 14 byt");
+        assert.equal(fs.statSync(sometest1).size, 14);
+        tp.rename(sometest1, sometest2)
+        //make sure the file sometest2 exists
+        assert.ok(fs.existsSync(sometest2))
+        //make sure the file sometest1 does not exist
+        assert.ok(!fs.existsSync(sometest1))
+        //rename the other way and retest
+        tp.rename(sometest2, sometest1)
+        assert.ok(fs.existsSync(sometest1))
+        //make sure the file sometest1 does not exist
+        assert.ok(!fs.existsSync(sometest2))
+        tp.del(true, clean_these[0])
     }
     testCopyAppend(){
-
+        
     }
     testTruncate(){
 
