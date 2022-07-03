@@ -84,7 +84,7 @@ export class TikaPrimsTest{
         //and repeat tests
 
         //then cleans up
-        tp.del(true, clean_these[0])
+        //tp.del(true, clean_these[0])
     }
     testRename(){
 
