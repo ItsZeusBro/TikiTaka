@@ -12,6 +12,7 @@ export class TikaPrimsTest{
         this.testMkdir(this.tp)
         this.testCreate(this.tp)
         this.testRename(this.tp)
+        this.testCopyAppend(this.tp)
     }
 
     testMkdir(tp){
@@ -28,8 +29,7 @@ export class TikaPrimsTest{
         });
 
         //Then creates files.
-        tp.create(this.tests+"test.4")
-        tp.create(this.tests+"test1/test.5")
+        tp.create(this.tests+"test.4", this.tests+"test1/test.5")
 
         //Then checks if files exist. 
         if(!fs.existsSync(this.tests+"test.4")){
@@ -41,8 +41,7 @@ export class TikaPrimsTest{
         }else if(this.verbose){console.log("passes file and dir check")} 
 
         //Then creates the dirs again to make sure no overwriting
-        tp.mkdr(this.tests)
-        tp.mkdr(this.tests+"test1")
+        tp.mkdr(this.tests, this.tests+"test1")
 
         //then checks if same files persist
         if(!fs.existsSync(this.tests+"test.4")){
@@ -107,8 +106,24 @@ export class TikaPrimsTest{
         assert.ok(!fs.existsSync(sometest2))
         tp.del(true, clean_these[0])
     }
-    testCopyAppend(){
-        
+    testCopyAppend(tp){
+        //copy from one file and append to another
+        var clean_these=[this.tests]
+        tp.mkdr(this.tests)
+        //create two files a and b
+        var a = this.tests+'a.foo'
+        var b = this.tests+'b.baz'
+        tp.create(a, b)
+        //fill a with 14 bytes
+        fs.writeFileSync(fs.openSync(a, 'a'), "this 14 bytess");
+        //append to b
+        tp.copyAppend(a, b)
+        assert.equal(fs.statSync(a).size, 14);
+        assert.equal(fs.statSync(b).size, 14);
+        //append b to a (a should have 28 bytes)
+        tp.copyAppend(b, a)
+        assert.equal(fs.statSync(a).size, 28);
+        assert.equal(fs.statSync(b).size, 14);
     }
     testTruncate(){
 
