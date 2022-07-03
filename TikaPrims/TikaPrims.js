@@ -26,12 +26,7 @@ export class TikaPrims{
         }
       }
     }
-    write(){
 
-    }
-    read(){
-
-    }
 
     rename(oldPath, newPath){
       //renames a filepath to newName if filepath exists
@@ -89,6 +84,12 @@ export class TikaPrims{
           return false
         }
       }
+    }
+    write(){
+
+    }
+    read(){
+
     }
 }
 

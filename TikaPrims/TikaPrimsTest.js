@@ -14,6 +14,7 @@ export class TikaPrimsTest{
         this.testRename(this.tp)
         this.testCopyAppend(this.tp)
         this.testTruncate(this.tp)
+        this.testDel(this.tp)
     }
 
     testMkdir(tp){
@@ -125,6 +126,8 @@ export class TikaPrimsTest{
         tp.copyAppend(b, a)
         assert.equal(fs.statSync(a).size, 28);
         assert.equal(fs.statSync(b).size, 14);
+        tp.del(true, clean_these[0])
+
     }
     testTruncate(tp){
         var clean_these=[this.tests]
@@ -144,8 +147,19 @@ export class TikaPrimsTest{
         assert.equal(fs.statSync(a).size, 10);
         assert.equal(fs.statSync(b).size, 5);
         assert.equal(fs.statSync(c).size, 1);
-    }
-    testDel(){
+        tp.del(true, clean_these[0])
 
+    }
+    testDel(tp){
+        tp.del(this.tests)
+        tp.mkdr(this.tests)
+        //create 2
+        var a = 'a.foo'
+        var b = 'b.baz'
+        tp.create(this.tests+a, this.tests+b)
+        console.log(fs.readdirSync(this.tests).sort(), [a, b])
+        assert.deepEqual(fs.readdirSync(this.tests).sort(), [a, b])
+        tp.del(true, this.tests+a, this.tests+b)
+        assert.notDeepEqual(fs.readdirSync(this.tests).sort(), [a, b])
     }
 }
