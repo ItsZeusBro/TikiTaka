@@ -6,8 +6,7 @@
   "scripts": {
     "test-verbose": "node ./TikaTest.js --verbose"
   },
-  "type":"module",
-
+  "type": "module",
   "author": "Hassan Amad",
   "license": "SEE LICENSE IN LICENSE"
 }

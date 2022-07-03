@@ -1,5 +1,6 @@
 import { TikaPrims } from './TikaPrims.js';
-import { existsSync } from "node:fs";
+import * as fs from "node:fs";
+import * as assert from "node:assert";
 
 export class TikaPrimsTest{
     constructor(verbose){
@@ -22,11 +23,11 @@ export class TikaPrimsTest{
         tp.create("./test0/test1/test.7")
 
         //Then checks if files exist. 
-        if(!existsSync('test0/test.6')){
+        if(!fs.existsSync('test0/test.6')){
             throw new Error("test0/test.6 does not exist")
         }else if(this.verbose){console.log("passes file and dir check")} 
         
-        if(!existsSync('test0/test1/test.7')){
+        if(!fs.existsSync('test0/test1/test.7')){
             throw new Error("test0/test1/test.7 does not exist")
         }else if(this.verbose){console.log("passes file and dir check")}
 
@@ -35,11 +36,11 @@ export class TikaPrimsTest{
         tp.mkdr("test0/test1")
 
         //then checks if same files persist
-        if(!existsSync('test0/test.6')){
+        if(!fs.existsSync('test0/test.6')){
             throw new Error("test0/test.6 does not exist")
         } else if(this.verbose){console.log("passes file and dir check")}
 
-        if(!existsSync('test0/test1/test.7')){
+        if(!fs.existsSync('test0/test1/test.7')){
             throw new Error("test0/test1/test.7 does not exist")
         } else if(this.verbose){console.log("passes file and dir check")}
 
@@ -54,7 +55,8 @@ export class TikaPrimsTest{
         //create file, check if it exists
         tp.create("./some.test")
         //create file, load it with data, check file for data
-
+        fs.writeFileSync(fs.openSync("./some.test"), "some test data")
+        assert(fs.stat('./some.test'))
         //create file, load it with data, create it again: expected result?
 
         //create file with different string types
