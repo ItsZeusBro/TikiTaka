@@ -1,7 +1,7 @@
-import { TikaPrims } from './TikaPrims/TikaPrims.js';
+import { TikaPrims } from './TikaPrims.js';
 import { existsSync } from "node:fs";
 
-class TikaPrimsTest{
+export class TikaPrimsTest{
     constructor(verbose){
         this.verbose = verbose
         this.tp = new TikaPrims()

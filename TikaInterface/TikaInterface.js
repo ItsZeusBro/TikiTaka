@@ -1,29 +1,29 @@
 export class TikaInterface{
   constructor(file_defender=true, strongLeft=true){
     //Touches
-    TikiTaka.prototype.oneTouch = this.oneTouch;
-    TikiTaka.prototype.twoTouch = this.twoTouch;
-    TikiTaka.prototype.mediumTouch = this.mediumTouch;
-    TikiTaka.prototype.longTouch = this.longTouch;
+    TikaInterface.prototype.oneTouch = this.oneTouch;
+    TikaInterface.prototype.twoTouch = this.twoTouch;
+    TikaInterface.prototype.mediumTouch = this.mediumTouch;
+    TikaInterface.prototype.longTouch = this.longTouch;
     //Passes or Shots
-    TikiTaka.prototype.passare = this.passare;
-    TikiTaka.prototype.passagioInverso = this.passagioInverso; //im not sure if my Italian is accurate (im trying to say "reverse pass")
-    TikiTaka.prototype.hoherTritt = this.hoherTritt; //im not sure if my German is accurate (im trying to say "high kick")
-    TikiTaka.prototype.niedrigerTritt = this.niedrigerTritt; //im not sure if my German is accurate (im trying to say "low kick")
-    TikiTaka.prototype.noLookPass = this.noLookPass;
-    TikiTaka.prototype.buttPass = this.buttPass;
-    TikiTaka.prototype.chapeu = this.chapeuInverso; //im not sure if my portuguese is accurate (im trying to say "inverse chip")
-    TikiTaka.prototype.rabona = this.rabona;
-    TikiTaka.prototype.bicicleta = this.bicicleta;
-    TikiTaka.prototype.cuauhteminha = this.cuauhteminha;
-    TikiTaka.prototype.aurelio = aurelio;
+    TikaInterface.prototype.passare = this.passare;
+    TikaInterface.prototype.passagioInverso = this.passagioInverso; //im not sure if my Italian is accurate (im trying to say "reverse pass")
+    TikaInterface.prototype.hoherTritt = this.hoherTritt; //im not sure if my German is accurate (im trying to say "high kick")
+    TikaInterface.prototype.niedrigerTritt = this.niedrigerTritt; //im not sure if my German is accurate (im trying to say "low kick")
+    TikaInterface.prototype.noLookPass = this.noLookPass;
+    TikaInterface.prototype.buttPass = this.buttPass;
+    TikaInterface.prototype.chapeu = this.chapeuInverso; //im not sure if my portuguese is accurate (im trying to say "inverse chip")
+    TikaInterface.prototype.rabona = this.rabona;
+    TikaInterface.prototype.bicicleta = this.bicicleta;
+    TikaInterface.prototype.cuauhteminha = this.cuauhteminha;
+    TikaInterface.prototype.aurelio = this.aurelio;
     //Dribbling and Tikki Takka
-    TikiTaka.prototype.fakey = this.fakey;
-    TikiTaka.prototype.marseilleTurn = this.marseilleTurn;
-    TikiTaka.prototype.faux = this.fauxPass;
-    TikiTaka.prototype.chop = chop;
-    TikiTaka.prototype.tikki = this.tikki;
-    TikiTaka.prototype.takka = this.takka;
+    TikaInterface.prototype.fakey = this.fakey;
+    TikaInterface.prototype.marseilleTurn = this.marseilleTurn;
+    TikaInterface.prototype.faux = this.fauxPass;
+    TikaInterface.prototype.chop = this.chop;
+    TikaInterface.prototype.tikki = this.tikki;
+    TikaInterface.prototype.takka = this.takka;
     //these are STACKS if strongLeft is true, otherwise queues
     this.strongLeft=strongLeft;
     this.readstreams = [];
@@ -168,17 +168,3 @@ export class TikaInterface{
 
 
 }
-
-
-
-
-var options = [create(), rename(), copy(), truncate(), del()]
-
-
-
-//var play = new TikiTaka("./sometest/some.test", true, true)
-
-
-
-//console.log(play.pass("123", "456").blindPass("653", "lkdsfj"))
-

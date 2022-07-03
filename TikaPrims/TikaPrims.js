@@ -1,7 +1,7 @@
 import * as path from "node:path"
 import * as fs from "node:fs"
 
-export class TikiTakaPrims{
+export class TikaPrims{
   //atomic functions
     mkdr(...dirs){
       //is able to make directory or returns false

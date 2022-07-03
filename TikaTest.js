@@ -9,7 +9,10 @@ class TikaTest{
                 this.verbose=true
             }
         });
+        console.log(this.verbose)
         this.ttpt = new TikaPrimsTest(this.verbose)
         this.ttit = new TikaInterfaceTest(this.verbose)
     }
 }
+
+var tt = new TikaTest(process.argv)
