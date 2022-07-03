@@ -72,17 +72,18 @@ export class TikaPrimsTest{
         //create file, check if it exists
         tp.mkdr('./tests')
         tp.create("./tests/some.test")
-        //create file, load it with data, check file for data
+        //load it with data, check file for data
         
-        fs.writeFileSync(fs.openSync("./tests/some.test", 'w+'), "some test data");
-        console.log(fs.statSync('./tests/some.test'));
-        //assert.value(fs.stat('./some.test'))
+        fs.writeFileSync(fs.openSync("./tests/some.test", 'a'), "this is 14 byt");
+        assert.equal(fs.statSync('./tests/some.test').size, 14);
+
         //create file, load it with data, create it again: expected result?
+        tp.create("./tests/some.test")
+        fs.writeFileSync(fs.openSync("./tests/some.test", 'a'), "this 13 bytes");
+        assert.equal(fs.statSync('./tests/some.test').size, 13);
 
-        //create file with different string types
-
-        //and repeat tests
-
+        
+        
         //then cleans up
         //tp.del(true, clean_these[0])
     }

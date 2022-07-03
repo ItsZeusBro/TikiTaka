@@ -15,18 +15,24 @@ export class TikaPrims{
         }
       }
     }
+    //This deletes your file contents if you run this on an existing file 
     create(...paths){
       //just creates a file at path with fileName
       for (const p of paths) {
         try{
-          if(!fs.existsSync(p)){
-            fs.closeSync(fs.openSync(p, 'w'))
-          }
+          fs.closeSync(fs.openSync(p, 'a'))
         }catch{
           return false
         }
       }
     }
+    write(){
+
+    }
+    read(){
+      
+    }
+
     rename(oldPath, newName){
       //renames a filepath to newName if filepath exists
       //else returns false
