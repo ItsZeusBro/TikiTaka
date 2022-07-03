@@ -51,19 +51,19 @@ These are the primitive use cases that can be performed locally or over a networ
 ## File Operation Function Primitives:
 With these primitive functions you can do all the aforementioned patterns. If you wish to do these over a network use an options parameter
 
-//Primitive interfaces are designed for keystroke efficiency, multi-tasking, and memory efficiency (this is a sport--afterall)
+//Primitive interfaces are designed for keystroke efficiency, multi-tasking, and brain memory efficiency (this is a sport--afterall)
 
 1. mkdr(...dirs)
 2. create(...paths)
-4. rename(old, new) //this is atomic, because its faster to chain this function than it is to fill an array of tupples
+4. rename(old, new)
 5. copyAppend(a, b)
 6. copyOverwrite(a, b)
-7. stream(a, [b], [options]) //grabs a read stream, or streams from a to b, options can contain filter actions
-8. wstream(a, [options]) //grabs a write stream, and can attach pre-write filter actions
-9. truncate(filePath, [options])
-10. del(filePath, [options])
+7. stream(a, [b])   //read stream or pipe
+8. wstream(...paths) //write stream
+9. truncate(...paths)
+10. del(...paths)
 11. write(path, data) 
-12. read(path) //sends back object that gives you options {string:"some_string", buff:TakiBuffObject} //TakiBuff has metadata and a buffer
+12. read(...paths)
 
 # Compound actions 
 ## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
