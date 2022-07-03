@@ -142,7 +142,7 @@ export class TikaPrimsTest{
         fs.writeFileSync(fs.openSync(b, 'a'), "this 14 bytess");
         fs.writeFileSync(fs.openSync(c, 'a'), "this 14 bytess");
         //truncate them at different lengths
-        var failures = tp.truncate([a,b,c], [10, 5, 1]) //should end up at 10, 5, and 1
+        var failures = tp.truncate({'./tests/a.foo': 10, './tests/b.bar': 5, './tests/c.baz': 1}) //should end up at 10, 5, and 1
         //assert expected behavior
         assert.equal(fs.statSync(a).size, 10);
         assert.equal(fs.statSync(b).size, 5);
@@ -151,6 +151,7 @@ export class TikaPrimsTest{
 
     }
     testDel(tp){
+        var clean_these=[this.tests]
         tp.del(this.tests)
         tp.mkdr(this.tests)
         //create 2
@@ -159,7 +160,8 @@ export class TikaPrimsTest{
         tp.create(this.tests+a, this.tests+b)
         console.log(fs.readdirSync(this.tests).sort(), [a, b])
         assert.deepEqual(fs.readdirSync(this.tests).sort(), [a, b])
-        tp.del(true, this.tests+a, this.tests+b)
-        assert.notDeepEqual(fs.readdirSync(this.tests).sort(), [a, b])
+        tp.del(true, a, b)
+        assert.notEqual(fs.readdirSync(this.tests).sort(), [a, b])
+        tp.del(true, clean_these[0])
     }
 }

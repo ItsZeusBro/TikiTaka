@@ -22,5 +22,3 @@ class TikaTest{
 }
 
 var tt = new TikaTest(process.argv)
-
-

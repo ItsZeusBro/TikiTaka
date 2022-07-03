@@ -28,11 +28,11 @@ export class TikaPrims{
     }
 
 
-    rename(oldPath, newPath){
+    rename(olP, newP){
       //renames a filepath to newName if filepath exists
       //else returns false
       try{
-        fs.renameSync(oldPath, newPath)
+        fs.renameSync(olP, newP)
       }catch{
         return false
       }
@@ -51,32 +51,32 @@ export class TikaPrims{
       }
     }
     //takes object with paths associated with n numbers of bytes to truncate to
-    truncate(paths, n_s){
+    truncate(paths){
       //truncates file at filePath if it exists to n number of bytes
       //else returns false
       var failures = []
-      var zipped = paths.map(function(e, i) {return [e, n_s[i]]});
-      zipped.forEach((element)=>{
+
+      for (const [key, value] of Object.entries(paths)){   
         try{
-          if(fs.existsSync(element[0])){
-            fs.truncateSync(element[0], element[1])
+          if(fs.existsSync(key)){
+            fs.truncateSync(key, value)
           }
         }catch{
           //this is a mitigation technique. Offensive programming
           //does not tolerate failures, but encourages mitigation.
-          failures.push(element[0])
+          failures.push(key)
         }
-      })
+      }
       return failures
     }
 
-    del(recursive=false, ...paths){
+    del(recurse=false, ...paths){
       //node variadic paramter paths accepts file or dir paths
       for (const p of paths) {
         //check if is directory or file, then delete
         try{
           if(fs.lstatSync(p).isDirectory()){
-            fs.rmSync(p, {recursive:recursive})
+            fs.rmSync(p, {recursive:recurse})
           }else{
             fs.unlinkSync(p)
           }
@@ -85,6 +85,7 @@ export class TikaPrims{
         }
       }
     }
+
     write(){
 
     }
