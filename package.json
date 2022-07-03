@@ -4,7 +4,7 @@
   "description": "",
   "main": "TikiTaka.js",
   "scripts": {
-    "test-verbose": "node ./TikaTest.js --verbose"
+    "test-verb-log": "node ./TikaTest.js --verbose --log ./logs/"
   },
   "type": "module",
   "author": "Hassan Amad",
