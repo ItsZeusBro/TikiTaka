@@ -87,6 +87,10 @@ export class TikaPrims{
     write(paths){
       //if files don't exist, create and append
       //if they do, append
+      if(!this.isObject(paths)){
+        throw new Error('Wrong usage of TikaPrims.write(paths), please see docs')
+      }
+      console.log(paths)
       for (const [path, data] of Object.entries(paths)){   
         //a flag appends or creates file and appends if it doesn't exist
         if(Buffer.isBuffer(data)){
@@ -111,5 +115,8 @@ export class TikaPrims{
     read(){
        
     }
+    isObject(a){
+      return (!!a) && (a.constructor === Object);
+    };
 }
 

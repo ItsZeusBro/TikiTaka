@@ -3,8 +3,8 @@ import * as assert from "node:assert";
 import { TikaTest } from '../TikaTest.js';
 
 export class TikaPrimsTest extends TikaTest{
-    constructor(){
-        super()
+    constructor(logDir, logName, verbose, logit){
+        super(logDir, logName, verbose, logit)
         this.tests = './tests/'
         this.testMkdir()
         this.testCreate()

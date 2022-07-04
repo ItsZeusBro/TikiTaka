@@ -5,31 +5,27 @@ import process from 'node:process';
 
 class TikaTests{
     constructor(){
-        //Basically you can run these syncronously and just log to their respective dirs
-        //and collect the logs
-        this.tt = new TikaTest(process.argv, true)
-        this.ttpt = new TikaPrimsTest()
-        this.tit = new TikaInterfaceTest()
-        this.logs=[]
-        this.collectLogs(this.tt, this.ttpt, this.tit)
-        this.cleanSubLogs(this.tt, this.ttpt, this.tit)
-        this.organizeLogs()
+        this.verbose;
+        this.logIt;
+        this.flags()
+        this.tt = new TikaTest(this.verbose, this.logIt) //testing TikaTest (don't worry about this too much, 
+                                                         //the next tests inheirt their own)
+        this.ttpt = new TikaPrimsTest("./logs/", "TikaPrimsTest", this.verbose, this.logIt)
+        this.tit = new TikaInterfaceTest("./logs/", "TikaInterfaceTest", this.verbose, this.logIt)
     }
-    collectLogs(...objects){
-        
-        objects.forEach((obj)=>{
-            this.logs.push(obj.getLog())
-        })
+    flags(){
+        var flags = process.argv
+        flags.forEach(element => {
+            if (element=='--verbose'){
+                this.verbose=true
+            }
+            if (element=='--log'){
+                this.logIt=true
+            }
 
+        });
     }
-    cleanSubLogs(...objects){
-        objects.forEach((obj)=>{
-            obj.cleanSubLog()
-        })
-    }
-    organizeLogs(){
-        
-    }
+
 }
 
 
