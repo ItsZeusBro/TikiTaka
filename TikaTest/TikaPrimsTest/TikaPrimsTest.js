@@ -3,14 +3,14 @@ import * as assert from "node:assert";
 import { TikaTest } from '../TikaTest.js';
 
 export class TikaPrimsTest extends TikaTest{
-    constructor(logFile, verbose, logit){
+    constructor(logFile, verbose, cmnt){
+        super(logFile, verbose, cmnt);
         this.comment(
             "TikiPrimsTest()\n",
             "constructuor()\n",
             "initiates super() TikaTest parent\n",
             "Test each testFunction()\n"
         );
-        super(logFile, verbose, logit);
         this.tests = './tests/';
         this.testMkdir();
         this.testCreate();
@@ -308,8 +308,6 @@ export class TikaPrimsTest extends TikaTest{
             "assert read buffer is equal to created buffer\n",
         );
         
-
-
 
     }
 
