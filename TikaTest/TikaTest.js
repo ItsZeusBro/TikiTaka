@@ -10,9 +10,7 @@ export class TikaTest{
             this.log('There was an uncaught error\n'+err);
             process.exit(1); // mandatory (as per the Node.js docs)
         });
-
     }
-
     log(data){
         var obj={}
         obj[this.logFile]=data+'\n'
@@ -23,9 +21,6 @@ export class TikaTest{
             console.log(data)
         }
     }
-    cleanSubLog(){
-
-    }
     clean(dir){
         this.tp.del(true, dir)
     }
@@ -33,8 +28,4 @@ export class TikaTest{
         this.clean(dir)
         this.tp.mkdr(dir)
     }
-    getLog(){
-
-    }
-
 }
