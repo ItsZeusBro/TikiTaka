@@ -1,16 +1,12 @@
-import { TikaPrims } from './TikaPrims.js';
+import { TikaPrims } from '../TikaPrims/TikaPrims.js';
 import * as fs from "node:fs";
 import * as assert from "node:assert";
 import { LOG_SONG } from '../LOG_SONG.js';
 import { SourceMap } from 'node:module';
-export class TikaPrimsTest{
-    constructor(verbose, export_to){
-        this.export_to = export_to
-        this.logStrm = null 
-        this.log()
-        this.verbose = verbose
-        this.tests='./tests/'
-        this.tp = new TikaPrims()
+import { TikaTest } from './TikaTest.js';
+
+export class TikaPrimsTest extends TikaTest{
+    constructor(){
         this.testMkdir()
         this.testCreate()
         this.testRename()
@@ -20,29 +16,7 @@ export class TikaPrimsTest{
         this.testWrite()
         this.testOverwrite()
     }
-    log(){
-        //logs should be set up here
-        //may have to spin up child process to use this
-        if(this.export_to){
-            this.logStrm = this.logStream()
-            process.stdout.pipe(this.logStrm)
-            process.stderr.pipe(this.logStrm)
-            process.on('close', data => {
-                console.log(data);
-              });
-        }
-    }
-    clean(){
-        this.tp.del(true, this.tests)
-    }
-    prepare(){
-        this.clean()
-        this.tp.mkdr(this.tests)
-    }
-    logStream(){
-        var f_name=this.export_to+Date.now()
-        return fs.createWriteStream(f_name,{ flags: 'a' })  
-    }
+    
     testMkdir(){
         var paths=[
             this.tests, 

@@ -4,8 +4,8 @@
   "description": "",
   "main": "TikiTaka.js",
   "scripts": {
-    "test-verb-log": "node ./TikaTest.js --verbose --log ./logs/",
-    "test-verb": "node ./TikaTest.js --verbose"
+    "test-verb-log": "node ./TikaTests.js --verbose --log ./logs/",
+    "test-verb": "node ./TikaTests.js --verbose"
 
   },
   "type": "module",

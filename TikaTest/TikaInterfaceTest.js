@@ -2,8 +2,7 @@ import { TikaInterface } from "./TikaInterface.js"
 
 //This basically runs tests on every module
 export class TikaInterfaceTest{
-    constructor(verbose){
-        this.verbose = verbose
+    constructor(){
         this.ti = new TikaInterface()
     }
     
