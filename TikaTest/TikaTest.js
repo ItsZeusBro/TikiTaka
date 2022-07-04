@@ -1,5 +1,4 @@
-import { TikaPrimsTest } from './TikaPrimsTest.js';
-import { TikaInterfaceTest } from '../TikaInterface/TikaInterfaceTest.js';
+import { TikaPrims } from "../TikaPrims/TikaPrims.js"
 
 export class TikaTest{
     constructor(flags, root=false){

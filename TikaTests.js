@@ -1,6 +1,6 @@
-import { TikaTest } from "./TikaTest/TikaTest"
-import { TikaPrimsTest } from "./TikaTest/TikaPrimsTest"
-import { TikaInterfaceTest } from "./TikaTest/TikaInterfaceTest"
+import { TikaTest } from "./TikaTest/TikaTest.js"
+import { TikaPrimsTest } from "./TikaTest/TikaPrimsTest.js"
+import { TikaInterfaceTest } from "./TikaTest/TikaInterfaceTest.js"
 
 class TikaTests{
     constructor(){

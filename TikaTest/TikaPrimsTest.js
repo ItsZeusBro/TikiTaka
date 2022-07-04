@@ -1,7 +1,7 @@
 import { TikaPrims } from '../TikaPrims/TikaPrims.js';
 import * as fs from "node:fs";
 import * as assert from "node:assert";
-import { LOG_SONG } from '../LOG_SONG.js';
+import { LOG_SONG } from '../logs/LOG_SONG.js';
 import { SourceMap } from 'node:module';
 import { TikaTest } from './TikaTest.js';
 
