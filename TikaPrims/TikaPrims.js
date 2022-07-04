@@ -108,6 +108,7 @@ export class TikaPrims{
         }
       }
     }
+    //just reads a file in whatever format it was written in
     read(){
        
     }
