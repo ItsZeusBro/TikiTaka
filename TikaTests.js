@@ -7,6 +7,7 @@ import {Comet} from "./Comet/Comet.js"
 class TikaTests extends Comet {
     constructor(){
         super()
+        this.comet("hello?")
         this.tt = new TikaTest() 
         this.ttpt = new TikaPrimsTest()
         this.tit = new TikaInterfaceTest()

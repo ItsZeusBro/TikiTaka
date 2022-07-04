@@ -3,6 +3,7 @@ import { Comet } from "../Comet/Comet.js"
 
 export class TikaTest extends Comet{
     constructor(){
+        super()
         this.tp = new TikaPrims()
         process.on('uncaughtException', err => {
             this.comet('There was an uncaught error\n'+err);
