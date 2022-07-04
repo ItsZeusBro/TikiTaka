@@ -111,9 +111,13 @@ export class TikaPrims{
         }
       }
     }
-    //just reads a file in whatever format it was written in
-    read(){
-       
+
+    read(...paths){
+      var data = {}
+       paths.forEach(path => {
+          data[path]=fs.readFileSync(path)
+       });
+      return data
     }
     isObject(a){
       return (!!a) && (a.constructor === Object);

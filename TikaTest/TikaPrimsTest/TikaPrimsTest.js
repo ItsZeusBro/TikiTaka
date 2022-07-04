@@ -20,6 +20,7 @@ export class TikaPrimsTest extends TikaTest{
         this.testDel();
         this.testWrite();
         this.testOverwrite();
+        this.testRead();
     }
     
     testMkdir(){
@@ -299,14 +300,27 @@ export class TikaPrimsTest extends TikaTest{
             "write some string to file a\n", 
             "read string from file a\n",
             "assert equal\n",
+
             "create buffer with string\n",
             "create file a\n", 
             "write buffer to file a\n", 
             "read buffer from file a\n",
             "assert read buffer is equal to created buffer\n",
         );
-        
-
+        this.prepare(this.tests);
+        var a = this.tests+"a.test"
+        var b = this.tests+"b.test"
+        this.tp.create(a, b)
+        var adat = "some string"
+        var bdat = Buffer.from("some buffer from string")
+        var wr = {}
+        wr[a]=adat
+        wr[b]=bdat
+        this.tp.write(wr)
+        var data = this.tp.read(a, b)
+        assert.deepEqual(data[a], Buffer.from(adat))
+        assert.deepEqual(data[b], bdat)
+        this.clean(this.tests);
     }
 
 
