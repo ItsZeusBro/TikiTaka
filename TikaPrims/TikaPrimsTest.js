@@ -6,17 +6,8 @@ import { SourceMap } from 'node:module';
 export class TikaPrimsTest{
     constructor(verbose, export_to){
         this.export_to = export_to
-        //logs should be set up here
         this.logStrm = null 
-        //may have to spin up child process to use this
-        if(this.export_to){
-            this.logStrm = this.logStream()
-            process.stdout.pipe(this.logStrm)
-            process.stderr.pipe(this.logStrm)
-            process.on('close', data => {
-                console.log(data);
-              });
-        }
+        this.log()
         this.verbose = verbose
         this.tests='./tests/'
         this.tp = new TikaPrims()
@@ -29,7 +20,29 @@ export class TikaPrimsTest{
         this.testWrite()
         this.testOverwrite()
     }
-
+    log(){
+        //logs should be set up here
+        //may have to spin up child process to use this
+        if(this.export_to){
+            this.logStrm = this.logStream()
+            process.stdout.pipe(this.logStrm)
+            process.stderr.pipe(this.logStrm)
+            process.on('close', data => {
+                console.log(data);
+              });
+        }
+    }
+    clean(){
+        this.tp.del(true, this.tests)
+    }
+    prepare(){
+        this.clean()
+        this.tp.mkdr(this.tests)
+    }
+    logStream(){
+        var f_name=this.export_to+Date.now()
+        return fs.createWriteStream(f_name,{ flags: 'a' })  
+    }
     testMkdir(){
         var paths=[
             this.tests, 
@@ -214,16 +227,5 @@ export class TikaPrimsTest{
         //read from it and check the number of bytes
     }
 
-    clean(){
-        this.tp.del(true, this.tests)
-    }
-    prepare(){
-        this.clean()
-        this.tp.mkdr(this.tests)
-    }
 
-    logStream(){
-        var f_name=this.export_to+Date.now()
-        return fs.createWriteStream(f_name,{ flags: 'a' })  
-    }
 }
