@@ -1,19 +1,17 @@
 import { TikaPrims } from "../TikaPrims/TikaPrims.js"
 
 export class TikaTest{
-    constructor(logDir, logName, verbose, logit){
+    constructor(logFile, verbose, logit){
         this.tp = new TikaPrims()
         this.verbose=verbose
         this.logit=logit
-        this.logFile=logDir+logName+Date.now()+'.log'
+        this.logFile=logFile
         process.on('uncaughtException', err => {
             this.log('There was an uncaught error\n'+err);
             process.exit(1); // mandatory (as per the Node.js docs)
         });
 
-
     }
-
 
     log(data){
         var obj={}

@@ -3,8 +3,8 @@ import * as assert from "node:assert";
 import { TikaTest } from '../TikaTest.js';
 
 export class TikaPrimsTest extends TikaTest{
-    constructor(logDir, logName, verbose, logit){
-        super(logDir, logName, verbose, logit)
+    constructor(logFile, verbose, logit){
+        super(logFile, verbose, logit)
         this.tests = './tests/'
         this.testMkdir()
         this.testCreate()
@@ -31,15 +31,15 @@ export class TikaPrimsTest extends TikaTest{
         });
         //Then creates files.
         this.tp.create(this.tests+"test.4", this.tests+"test1/test.5")
-        //Then checks if files exist. 
+        //Then checks if files exist, takes (file, error, message). 
         this.assertFileDoesExist(
             this.tests+"test.4", 
-            this.tests+"test.4"+" does not exist in testMkdir()", 
+            "ERROR: "+this.tests+"test.4"+" does not exist in testMkdir()", 
             this.tests+"test.4"+" does exist in testMkdir()"
         )
         this.assertFileDoesExist(
             this.tests+"test1/test.5", 
-            this.tests+"test1/test.5"+" does not exist in testMkdir()", 
+            "ERROR: "+this.tests+"test1/test.5"+" does not exist in testMkdir()", 
             this.tests+"test1/test.5"+" does exist in testMkdir()"
         )
         //Then creates the dirs again to make sure no overwriting
@@ -47,12 +47,12 @@ export class TikaPrimsTest extends TikaTest{
         //then checks if same files persist
         this.assertFileDoesExist(
             this.tests+"test.4", 
-            this.tests+"test.4"+" does not exist in testMkdir()", 
+            "ERROR: "+this.tests+"test.4"+" does not exist in testMkdir()", 
             this.tests+"test.4"+" does exist in testMkdir()"
         )
         this.assertFileDoesExist(
             this.tests+"test1/test.5", 
-            this.tests+"test1/test.5"+" does not exist in testMkdir()", 
+            "ERROR: "+this.tests+"test1/test.5"+" does not exist in testMkdir()", 
             this.tests+"test1/test.5"+" does exist in testMkdir()"
         )
         //clean up tests
