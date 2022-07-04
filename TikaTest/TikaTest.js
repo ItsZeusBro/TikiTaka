@@ -3,19 +3,18 @@ import { TikaPrims } from "../TikaPrims/TikaPrims.js"
 export class TikaTest{
     constructor(flags, root=false){
         this.tp = new TikaPrims()
-        this.tests='./tests/'
         this.verbose;
-        this.log;
+        this.logName;
         if(root){
             flags.forEach(element => {
                 if (element=='--verbose'){
                     this.verbose=true
                 }
                 if (element=='--log'){
-                    this.log=true
+                    this.logName=true
                 }
-                if (this.log){
-                    this.log = element
+                if (this.logName){
+                    this.logName = element
                 }
             });
         }
@@ -32,15 +31,15 @@ export class TikaTest{
               });
         }
     }
-    clean(){
-        this.tp.del(true, this.tests)
+    clean(dir){
+        this.tp.del(true, dir)
     }
-    prepare(){
-        this.clean()
-        this.tp.mkdr(this.tests)
+    prepare(dir){
+        this.clean(dir)
+        this.tp.mkdr(dir)
     }
     logStream(){
-        var f_name=this.export_to+Date.now()
+        var f_name=this.logName+Date.now()
         return fs.createWriteStream(f_name,{ flags: 'a' })  
     }
 }

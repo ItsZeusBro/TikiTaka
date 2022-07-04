@@ -1,12 +1,11 @@
-import { TikaPrims } from '../TikaPrims/TikaPrims.js';
 import * as fs from "node:fs";
 import * as assert from "node:assert";
-import { LOG_SONG } from '../logs/LOG_SONG.js';
-import { SourceMap } from 'node:module';
-import { TikaTest } from './TikaTest.js';
+import { TikaTest } from '../TikaTest.js';
 
 export class TikaPrimsTest extends TikaTest{
     constructor(){
+        super()
+        this.tests = './tests/'
         this.testMkdir()
         this.testCreate()
         this.testRename()
@@ -18,6 +17,8 @@ export class TikaPrimsTest extends TikaTest{
     }
     
     testMkdir(){
+        console.log("testMkdir()")
+
         var paths=[
             this.tests, 
             this.tests+"test1", 
@@ -55,12 +56,13 @@ export class TikaPrimsTest extends TikaTest{
             this.tests+"test1/test.5"+" does exist in testMkdir()"
         )
         //clean up tests
-        this.clean()        
+        this.clean(this.tests)        
     }        
 
 
     testCreate(){
-        this.prepare()
+        console.log("testCreate()")
+        this.prepare(this.tests)
         this.tp.create(this.tests+"some.test")
         //load it with data, check file for data
         fs.writeFileSync(fs.openSync(this.tests+"some.test", 'a'), "this is 14 byt");
@@ -70,10 +72,11 @@ export class TikaPrimsTest extends TikaTest{
         fs.writeFileSync(fs.openSync(this.tests+"some.test", 'a'), "this 13 bytes");
         assert.equal(fs.statSync(this.tests+'some.test').size, 13);
         //then cleans up
-        this.clean()
+        this.clean(this.tests)
     }
     testRename(){
-        this.prepare()
+        console.log("testRename()")
+        this.prepare(this.tests)
         //create file
         var sometest1 = this.tests+"some.test1"
         var sometest2 = this.tests+"some.test2"
@@ -92,10 +95,11 @@ export class TikaPrimsTest extends TikaTest{
         assert.ok(fs.existsSync(sometest1))
         //make sure the file sometest1 does not exist
         assert.ok(!fs.existsSync(sometest2))
-        this.clean()
+        this.clean(this.tests)
     }
     testCopyAppend(){
-        this.prepare()
+        console.log("testCopyAppend()")
+        this.prepare(this.tests)
         //create two files a and b
         var a = this.tests+'a.foo'
         var b = this.tests+'b.baz'
@@ -110,10 +114,11 @@ export class TikaPrimsTest extends TikaTest{
         this.tp.copyAppend(b, a)
         assert.equal(fs.statSync(a).size, 28);
         assert.equal(fs.statSync(b).size, 14);
-        this.clean()
+        this.clean(this.tests)
     }
     testTruncate(){
-        this.prepare()
+        console.log("testTruncate()")
+        this.prepare(this.tests)
         //create 3 files
         var a = this.tests+'a.foo'
         var b = this.tests+'b.bar'
@@ -129,23 +134,24 @@ export class TikaPrimsTest extends TikaTest{
         assert.equal(fs.statSync(a).size, 10);
         assert.equal(fs.statSync(b).size, 5);
         assert.equal(fs.statSync(c).size, 1);
-        this.clean()
+        this.clean(this.tests)
     }
     testDel(){
-        this.prepare()
+        console.log("testDel()")
+        this.prepare(this.tests)
         //create 2
         var a = 'a.foo'
         var b = 'b.baz'
         this.tp.create(this.tests+a, this.tests+b)
-        console.log(fs.readdirSync(this.tests).sort(), [a, b])
         assert.deepEqual(fs.readdirSync(this.tests).sort(), [a, b])
         this.tp.del(true, a, b)
         assert.notEqual(fs.readdirSync(this.tests).sort(), [a, b])
-        this.clean()
+        this.clean(this.tests)
     }
     
     testWrite(){
-        this.prepare()
+        console.log("testWrite()")
+        this.prepare(this.tests)
         //we should be able to write many strings or buffers to files using the same function call
         var wickedString = "some wicked string"
         var wickedBuffer = Buffer.from("some wicked buffer")
@@ -162,10 +168,11 @@ export class TikaPrimsTest extends TikaTest{
         wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"})
         assert.equal(wickedString+wickedString, wickedStringRead)
         assert.equal(Buffer.concat([wickedBuffer, wickedBuffer]), wickedBufferRead)
-        this.clean()
+        this.clean(this.tests)
     }
     testOverwrite(){
-        this.prepare()
+        console.log("testOverwrite()")
+        this.prepare(this.tests)
         //we should be able to write many strings or buffers to files using the same function call
         var wickedString = "some wicked string"
         var wickedBuffer = Buffer.from("some wicked buffer")
@@ -185,7 +192,7 @@ export class TikaPrimsTest extends TikaTest{
 
         assert.equal(wickedString2, wickedStringRead)
         assert.equal(wickedBuffer2, wickedBufferRead)
-        this.clean()
+        this.clean(this.tests)
     }
     assertFileDoesExist(file, error="", message=""){
         if(!fs.existsSync(file)){
@@ -196,6 +203,8 @@ export class TikaPrimsTest extends TikaTest{
     }
 
     testRead(){
+        console.log("testRead())")
+
         //create a file
         //write to it n number of bytes and record the string
         //read from it and check the number of bytes
