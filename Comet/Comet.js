@@ -10,10 +10,11 @@ export class Comet{
             this.tp.mkdr(this.cometsDir)
         }
         this.instance = process.pid
-        this.cometDir = this.cometsDir+"comet_"+this.instance+'/'
-        if (!fs.existsSync(this.cometDir)){
-            this.tp.mkdr(this.cometDir)
+        this.cometFile = this.cometsDir+"comet_"+this.instance+'.comet'
+        if (!fs.existsSync(this.cometFile)){
+            this.tp.create(this.cometFile)
         }
+
     }
     flags(){
         var flags = process.argv
@@ -24,17 +25,11 @@ export class Comet{
         });
     }
     comet(...data){
-        //Keep all this magical stuff right here, don't separate it
-        var stk = new Error().stack.split('at')
-        console.log(stk)
-        // var fnc = Array(stk.split('at'))[0][2].split('.')[1].trim().split(" ")[0]
-        // var clss = Array(stk.split('at'))[0][2].split('.')[0].trim()
-        //console.log(fnc, clss)
-        // var obj={}
-        // obj['./logs/'+clss+'.log']= fnc+"()\n"+data.join()+'\n'
-        // this.tp.write(obj)
-        // if (this.verbose){
-        //     console.log(data.join(' '))
-        // }
+        var obj={}
+        obj[this.cometFile]= data.join()+'\n'
+        this.tp.write(obj)
+        if (this.verbose){
+            console.log(data.join(' '))
+        }
     }
 }
