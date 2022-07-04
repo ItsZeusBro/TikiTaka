@@ -1,13 +1,29 @@
 {
   "name": "tikitaka",
   "version": "1.0.0",
-  "description": "",
-  "main": "TikiTaka.js",
+  "description": "WARNINGS:  1. Please do not invest time in the names of these functions yet, as they are subject to change. Its too early. It's just to give you an idea. 2. TikiTaka takes an \"Offensive Programming\" style. Meaning, a lot of safeguards are removed in an otherwise defensive programming world. TikiTaka is a sport first and foremost. However, we think (with time) you might end up more productive when you get really good at it.",
+  "main": "Tika.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "test-verb": "node ./TikaTests.js --verbose"
-
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-verb": "node ./TikaTests.js --verbose",
+    "reboot": "rm -rf node_modules/; rm package-lock.json; npm cache clean --force; npm install;",
+    "comet-reboot": "cd ./Comet; npm run reboot; cd ..; rm -rf node_modules/; rm package-lock.json; npm cache clean --force; npm link Comet; npm install;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsZeusBro/TikiTaka.git"
   },
   "type": "module",
   "author": "Hassan Amad",
-  "license": "SEE LICENSE IN LICENSE"
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ItsZeusBro/TikiTaka/issues"
+  },
+  "homepage": "https://github.com/ItsZeusBro/TikiTaka#readme",
+  "devDependencies": {
+    "comet": "^1.0.1"
+  }
 }

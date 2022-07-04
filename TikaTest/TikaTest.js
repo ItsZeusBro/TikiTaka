@@ -10,13 +10,12 @@ export class TikaTest extends Comet{
             process.exit(1); // mandatory (as per the Node.js docs)
         });
     }
-    
     clean(dir){
-        comet('cleaning test dirs')
+        this.comet('cleaning test dirs')
         this.tp.del(true, dir)
     }
     prepare(dir){
-        comet('preparing test dirs')
+        this.comet('preparing test dirs')
         this.clean(dir)
         this.tp.mkdr(dir)
     }
