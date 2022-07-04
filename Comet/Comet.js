@@ -5,11 +5,11 @@ export class Comet{
         this.verbose;
         this.flags()
         this.tp = new TikaPrims()
-        this.instance = Date.now()
         this.cometsDir=process.cwd()+'/comets/'
         if (!fs.existsSync(this.cometsDir)){
             this.tp.mkdr(this.cometsDir)
         }
+        this.instance = process.pid
         this.cometDir = this.cometsDir+"comet_"+this.instance+'/'
         if (!fs.existsSync(this.cometDir)){
             this.tp.mkdr(this.cometDir)
