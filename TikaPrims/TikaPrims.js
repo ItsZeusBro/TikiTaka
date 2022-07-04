@@ -97,9 +97,15 @@ export class TikaPrims{
         }
       }
     }
-    overwrite(){
+    overwrite(paths){
+      //if files don't exist, create and write
+      //if they do, writeover
       for (const [path, data] of Object.entries(paths)){   
-      
+        if(Buffer.isBuffer(data)){
+            fs.writeSync(fs.openSync(path, 'w'), data)
+        }else{
+            fs.writeSync(fs.openSync(path, 'w'), Buffer.from(data))
+        }
       }
     }
     read(){

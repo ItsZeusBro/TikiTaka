@@ -16,6 +16,7 @@ export class TikaPrimsTest{
         this.testTruncate(this.tp)
         this.testDel(this.tp)
         this.testWrite(this.tp)
+        this.testOverwrite(this.tp)
     }
 
     testMkdir(tp){
@@ -189,6 +190,35 @@ export class TikaPrimsTest{
         wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"})
         assert.equal(wickedString+wickedString, wickedStringRead)
         assert.equal(Buffer.concat([wickedBuffer, wickedBuffer]), wickedBufferRead)
+        tp.del(true, clean_these[0])
+
+    }
+    testOverwrite(tp){
+        var clean_these=[this.tests]
+        tp.del(this.tests)
+        tp.mkdr(this.tests)
+        //we should be able to write many strings or buffers to files using the same function call
+        var wickedString = "some wicked string"
+        var wickedBuffer = Buffer.from("some wicked buffer")
+        //if the files don't exist, create them and write to them. If they do, append to them 
+        //this is asyncronous, in some sense, because you don't know which will be written first
+        //If you don't desire this behavior chain two write functions together
+        tp.overwrite({'./tests/wickedString':wickedString, './tests/wickedBuffer':wickedBuffer})
+        //check strings
+        var wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'})
+        var wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"})
+        assert.equal(wickedString, wickedStringRead)
+        assert.equal(wickedBuffer, wickedBufferRead)
+        
+        var wickedString2 = "some wicked string 2"
+        var wickedBuffer2 = Buffer.from("some wicked buffer 2")
+        tp.overwrite({'./tests/wickedString':wickedString2, './tests/wickedBuffer':wickedBuffer2})
+
+        wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'})
+        wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"})
+
+        assert.equal(wickedString2, wickedStringRead)
+        assert.equal(wickedBuffer2, wickedBufferRead)
         tp.del(true, clean_these[0])
 
     }
