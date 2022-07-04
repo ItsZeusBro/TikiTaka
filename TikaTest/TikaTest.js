@@ -11,9 +11,11 @@ export class TikaTest{
             process.exit(1); // mandatory (as per the Node.js docs)
         });
     }
-    log(data){
+    comment(...data){
         var obj={}
-        obj[this.logFile]=data+'\n'
+
+        obj[this.logFile]=data.join(' ')+'\n'
+
         if (this.logit){
             this.tp.write(obj)
         }

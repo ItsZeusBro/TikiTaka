@@ -68,7 +68,7 @@ export class TikaPrims{
       return failures
     }
 
-    del(recurse=false, ...paths){
+    delF(recurse=false, ...paths){
       //node variadic paramter paths accepts file or dir paths
       for (const p of paths) {
         //check if is directory or file, then delete
