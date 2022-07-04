@@ -3,10 +3,10 @@ import { TikaTest } from "../TikaTest.js"
 
 //This basically runs tests on every module
 export class TikaInterfaceTest extends TikaTest{
-    constructor(logFile, verbose, cmnt){
-        super(logFile, verbose, cmnt)
+    constructor(){
+        super()
         this.ti = new TikaInterface()
-        this.comment("sometest from TikaInterfaceTest")
+        this.comet("sometest from TikaInterfaceTest")
     }
     
 }

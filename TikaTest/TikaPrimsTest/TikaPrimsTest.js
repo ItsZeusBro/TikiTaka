@@ -3,9 +3,9 @@ import * as assert from "node:assert";
 import { TikaTest } from '../TikaTest.js';
 
 export class TikaPrimsTest extends TikaTest{
-    constructor(logFile, verbose, cmnt){
-        super(logFile, verbose, cmnt);
-        this.comment(
+    constructor(){
+        super();
+        this.comet(
             "TikiPrimsTest()\n",
             "constructuor()\n",
             "initiates super() TikaTest parent\n",
@@ -23,7 +23,7 @@ export class TikaPrimsTest extends TikaTest{
     }
     
     testMkdir(){
-        this.comment(
+        this.comet(
             "testMkdir()\n",
             "create directories with tp.mkdr\n",
             "create files in those directories\n", 
@@ -74,7 +74,7 @@ export class TikaPrimsTest extends TikaTest{
 
 
     testCreate(){
-        this.comment(
+        this.comet(
             "testCreate()\n",
             "create some.test file\n", 
             "write 14 bytes to it, and assert\n", 
@@ -98,7 +98,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests);
     }
     testRename(){
-        this.comment(
+        this.comet(
             "testRename()\n",
             "create two files some.test1, and some.test2\n", 
             "fill sometest1 with 14 byte string\n", 
@@ -131,7 +131,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests);
     }
     testCopyAppend(){
-        this.comment(
+        this.comet(
             "testCopyAppend()\n",
             "create 2 files a, b\n", 
             "fill a with 14 byte string\n", 
@@ -160,7 +160,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests);
     }
     testTruncate(){
-        this.comment(
+        this.comet(
             "testTruncate()",
             "create 3 files a, b, c\n", 
             "write same message to each\n", 
@@ -189,7 +189,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests);
     }
     testDel(){
-        this.comment(
+        this.comet(
             "testDel()\n",
             "create two files a and b\n", 
             "assert that an array with the filenames is equal to the directory list array\n", 
@@ -211,7 +211,7 @@ export class TikaPrimsTest extends TikaTest{
     }
     
     testWrite(){
-        this.comment(
+        this.comet(
             "testWrite()\n",
             "create a string and a buffer\n", 
             "write them to their respective files\n", 
@@ -241,7 +241,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests);
     }
     testOverwrite(){
-        this.comment(
+        this.comet(
             "testOverwrite()\n",
             "create a string and a buffer\n", 
             "write them to their respective files\n", 
@@ -279,7 +279,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests);
     }
     assertFileDoesExist(file, error="", message=""){
-        this.comment(
+        this.comet(
             "assertFileDoesExist()\n",
             "takes a file, error, and message\n", 
             "if the file doesn't exist, throw new Error with error arg\n", 
@@ -288,14 +288,12 @@ export class TikaPrimsTest extends TikaTest{
         if(!fs.existsSync(file)){
             throw new Error(error);
 
-        }else if(this.verbose){
-            this.comment(message);
-        } 
+        }
 
     }
 
     testRead(){
-        this.comment(
+        this.comet(
             "testRead()\n",
             "create a file a\n", 
             "write some string to file a\n", 
