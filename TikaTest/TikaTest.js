@@ -5,6 +5,10 @@ export class TikaTest{
         this.tp = new TikaPrims()
         this.verbose;
         this.logName;
+        process.on('uncaughtException', err => {
+            this.log('There was an uncaught error', err);
+            process.exit(1); // mandatory (as per the Node.js docs)
+          });
         if(root){
             flags.forEach(element => {
                 if (element=='--verbose'){
@@ -18,18 +22,15 @@ export class TikaTest{
                 }
             });
         }
+        this.logName=this.logName+Date.now()
     }
-    log(){
-        //logs should be set up here
-        //may have to spin up child process to use this
-        if(this.export_to){
-            this.logStrm = this.logStream()
-            process.stdout.pipe(this.logStrm)
-            process.stderr.pipe(this.logStrm)
-            process.on('close', data => {
-                console.log(data);
-              });
-        }
+
+    log(...data){
+        console.log(this.logName, data.join())
+        //this.tp.write(this.logName, data.join())
+    }
+    cleanSubLog(){
+        
     }
     clean(dir){
         this.tp.del(true, dir)
@@ -38,8 +39,8 @@ export class TikaTest{
         this.clean(dir)
         this.tp.mkdr(dir)
     }
-    logStream(){
-        var f_name=this.logName+Date.now()
-        return fs.createWriteStream(f_name,{ flags: 'a' })  
+    getLog(){
+
     }
+
 }

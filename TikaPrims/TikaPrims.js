@@ -54,7 +54,6 @@ export class TikaPrims{
       //truncates file at filePath if it exists to n number of bytes
       //else returns false
       var failures = []
-
       for (const [key, value] of Object.entries(paths)){   
         try{
           if(fs.existsSync(key)){

@@ -17,7 +17,7 @@ export class TikaPrimsTest extends TikaTest{
     }
     
     testMkdir(){
-        console.log("testMkdir()")
+        this.log("testMkdir()")
 
         var paths=[
             this.tests, 
@@ -61,7 +61,7 @@ export class TikaPrimsTest extends TikaTest{
 
 
     testCreate(){
-        console.log("testCreate()")
+        this.log("testCreate()")
         this.prepare(this.tests)
         this.tp.create(this.tests+"some.test")
         //load it with data, check file for data
@@ -75,7 +75,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests)
     }
     testRename(){
-        console.log("testRename()")
+        this.log("testRename()")
         this.prepare(this.tests)
         //create file
         var sometest1 = this.tests+"some.test1"
@@ -98,7 +98,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests)
     }
     testCopyAppend(){
-        console.log("testCopyAppend()")
+        this.log("testCopyAppend()")
         this.prepare(this.tests)
         //create two files a and b
         var a = this.tests+'a.foo'
@@ -117,7 +117,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests)
     }
     testTruncate(){
-        console.log("testTruncate()")
+        this.log("testTruncate()")
         this.prepare(this.tests)
         //create 3 files
         var a = this.tests+'a.foo'
@@ -137,7 +137,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests)
     }
     testDel(){
-        console.log("testDel()")
+        this.log("testDel()")
         this.prepare(this.tests)
         //create 2
         var a = 'a.foo'
@@ -150,7 +150,7 @@ export class TikaPrimsTest extends TikaTest{
     }
     
     testWrite(){
-        console.log("testWrite()")
+        this.log("testWrite()")
         this.prepare(this.tests)
         //we should be able to write many strings or buffers to files using the same function call
         var wickedString = "some wicked string"
@@ -171,7 +171,7 @@ export class TikaPrimsTest extends TikaTest{
         this.clean(this.tests)
     }
     testOverwrite(){
-        console.log("testOverwrite()")
+        this.log("testOverwrite()")
         this.prepare(this.tests)
         //we should be able to write many strings or buffers to files using the same function call
         var wickedString = "some wicked string"
@@ -198,12 +198,12 @@ export class TikaPrimsTest extends TikaTest{
         if(!fs.existsSync(file)){
             throw new Error(error)
         }else if(this.verbose){
-            console.log(message)
+            this.log(message)
         } 
     }
 
     testRead(){
-        console.log("testRead())")
+        this.log("testRead())")
 
         //create a file
         //write to it n number of bytes and record the string
