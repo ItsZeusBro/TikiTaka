@@ -27,7 +27,6 @@ export class TikaPrims{
       }
     }
 
-
     rename(olP, newP){
       //renames a filepath to newName if filepath exists
       //else returns false
@@ -86,11 +85,25 @@ export class TikaPrims{
       }
     }
 
-    write(){
-
+    write(paths){
+      //if files don't exist, create and append
+      //if they do, append
+      for (const [path, data] of Object.entries(paths)){   
+        //a flag appends or creates file and appends if it doesn't exist
+        if(Buffer.isBuffer(data)){
+            fs.writeSync(fs.openSync(path, 'a'), data)
+        }else{
+            fs.writeSync(fs.openSync(path, 'a'), Buffer.from(data))
+        }
+      }
+    }
+    overwrite(){
+      for (const [path, data] of Object.entries(paths)){   
+      
+      }
     }
     read(){
-
+       
     }
 }
 

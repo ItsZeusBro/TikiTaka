@@ -15,6 +15,7 @@ export class TikaPrimsTest{
         this.testCopyAppend(this.tp)
         this.testTruncate(this.tp)
         this.testDel(this.tp)
+        this.testWrite(this.tp)
     }
 
     testMkdir(tp){
@@ -163,5 +164,36 @@ export class TikaPrimsTest{
         tp.del(true, a, b)
         assert.notEqual(fs.readdirSync(this.tests).sort(), [a, b])
         tp.del(true, clean_these[0])
+    }
+    
+    testWrite(tp){
+        var clean_these=[this.tests]
+        tp.del(this.tests)
+        tp.mkdr(this.tests)
+        //we should be able to write many strings or buffers to files using the same function call
+        var wickedString = "some wicked string"
+        var wickedBuffer = Buffer.from("some wicked buffer")
+        //if the files don't exist, create them and write to them. If they do, append to them 
+        //this is asyncronous, in some sense, because you don't know which will be written first
+        //If you don't desire this behavior chain two write functions together
+        tp.write({'./tests/wickedString':wickedString, './tests/wickedBuffer':wickedBuffer})
+        //check strings
+        var wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'})
+        var wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"})
+        assert.equal(wickedString, wickedStringRead)
+        assert.equal(wickedBuffer, wickedBufferRead)
+        
+        tp.write({'./tests/wickedString':wickedString, './tests/wickedBuffer':wickedBuffer})
+
+        wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'})
+        wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"})
+        assert.equal(wickedString+wickedString, wickedStringRead)
+        assert.equal(Buffer.concat([wickedBuffer, wickedBuffer]), wickedBufferRead)
+        tp.del(true, clean_these[0])
+
+    }
+
+    testRead(tp){
+
     }
 }
