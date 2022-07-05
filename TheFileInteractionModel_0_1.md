@@ -63,3 +63,10 @@ If you have a bidriectional flow model, you can use the bidirectional arrow or a
 ### Chaining, Forks, and Junctions
 Chaining is a modeling technique that demonstrates a compound flow model, where you have a starting node, and flow the data to other nodes syncronously or asyncronously, effectively piping the flow into another node or multiple nodes. Forks are when a file flow syncronously splits into two different asyncronous paths. Two asyncronous paths of execution can only converge on a Junction. They need to terminate on the junction that executes the end result of the flow of a fork. The junction can merge file results in a number of syncronous ways.
 
+
+## Abstract Methods
+1. a.Flow(b.pre(script1), quant, exclsv, p1, p2).post(script2)  //flow
+2. a.Flow(b).Flow(c)                                            //chaining
+3. pre(script)                                                  //pre action
+4. post(script)                                                 //post action
+
