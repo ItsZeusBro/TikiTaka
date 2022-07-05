@@ -189,8 +189,24 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 ![rainbow](https://github.com/ItsZeusBro/TikiTaka/blob/69eba8b4a8f187965bcef0d9e8ffc11e253ffc05/Gifs/rainbow.gif)
 
 
+## File Interaction Modeling
+### Abstract Concepts:
+1. Directionality   (flow of data)
+2. Quantification   (number of bytes)
+3. Exclusivity      (data can be shared or exculsive after an interaction)
+4. Positionality    (from what position data comes and to what position it goes)
 
-### Interface Protocol (for games and productivity) [coming soon]
+### Examples:
+#### (all) A to B (end), inclusive
+1. Directionality (A to B)
+2. Quantification (All of A)
+3. Exclusivity    (Inclusive, data is not removed from A)
+4. Positionality  (Because none is specified, append to end of B)
+<img src="https://github.com/ItsZeusBro/TikiTaka/blob/64ee069554363bfbe640db96adea91bb6f2d5ccb/Docs/All-A_To-B-End_Inclusive.png" height=210 width=300/>
+
+
+
+## Interface Protocol (for games and productivity) [coming soon]
 
 | **Touches**                      | Parameters | Returns | Explanation                                                     |
 |----------------------------------|------------|---------|-----------------------------------------------------------------|
