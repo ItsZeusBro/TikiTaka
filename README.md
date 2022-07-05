@@ -31,41 +31,142 @@ Or
 # Compound actions 
 ## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
 I believe that using this type of scheme we would eventually see terminals with graphical replays one day (just for fun)
-| **Touches**                      | Parameters | Fs Explanation                                                          | Futbol Explanation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Gifs |
-|----------------------------------|------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|
-| oneTouch(a, options)             |            |                                                                         | This is when you touch the ball to set up a pass or shot. A good  touch is one that results in  separation from the defender, and allows for the successful delivery  of a pass or shot on goal.                                                                                                                                                                                                                                                                                                                                                 |      |
-| twoTouch(a, b, [options])        |            |                                                                         | Sometimes one touch is not enough to separate the defender. Two good touches should be enough.                                                                                                                                                                                                                                                                                                                                                                                                                                                   |      |
-| **Passes and Shots**             |            |                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |      |
-| passare(a, b [options])          |            |                                                                         | This is a standard pass. It requires that the player with the ball successfully kicks the ball in the direction of the  intended recipient and that the recipient successfully receives the ball in stride so they can do something with it.                                                                                                                                                                                                                                                                                                     |      |
-| passagioInverso(a, b, [options]) |            |                                                                         | This is a backwards pass or shot. This can be done when the recipient (or goal) is behind you, or when the recipient will be behind you when the ball  reaches the intended position.                                                                                                                                                                                                                                                                                                                                                            |      |
-| hoherTritt(a, b, [options])      |            |                                                                         | This is a high cross pass. A high cross is a pass that is lifted up in the air over defenders to reach the intended recipient in stride (typically while on their way towards the net, but not always). This is not the same as a chip pass, even though they can achieve the same result.                                                                                                                                                                                                                                                       |      |
-| niedrigerTritt(a, b, [options])  |            |                                                                         | This is a low cross pass. A low cross is a pass that skips slightly above the ground with a large amount of force and speed. This is a good pass when the opportunity presents itself because it catches defenders off guard when they expect a high cross.                                                                                                                                                                                                                                                                                      |      |
-| noLooker(a, b, [options])        |            |                                                                         | A no look pass (or shot) is as it sounds. You fool defenders by looking one way and passing (or shooting) the ball the other way. This is typically done as a ground pass or shot. (Sometimes as a no  look chip pass or shot)                                                                                                                                                                                                                                                                                                                   |      |
-| butter(a, b, [options])          |            |                                                                         | This is a butt pass or shot. While you are turned from the ball and the ball is coming at you with speed (waist high), you can thrust your tuchus into the ball and deliver an unexpected  pass or shot.                                                                                                                                                                                                                                                                                                                                         |      |
-| chapeu(a, b, [options])          |            |                                                                         | This is a chip pass or shot. Typically you would do this to  lift the ball off the ground at short distances to keep defenders from being able to intercept the pass with a high kick. If it's a shot on goal, it is used to take advantage of an aggressive goal keeper that charges the ball carrier.                                                                                                                                                                                                                                          |      |
-| chapeuInverso(a, b, [options])   |            |                                                                         | A reverse chip requires you to have the ball elevated enough to  chip it over or around defenders (as a pass or shot).                                                                                                                                                                                                                                                                                                                                                                                                                           |      |
-| rabona(a, b, [options])          |            |                                                                         | A rabona is a difficult pass or shot done while wrapping your strong foot behind your week foot to meet the ball with sufficient power to deliver a good pass or shot.                                                                                                                                                                                                                                                                                                                                                                           |      |
-| bicicleta(a, b, [options])       |            |                                                                         | This is mostly used as a shot, but can be used as a pass. It is when your back is turned to the  intended recipient or goal. You jump, lifting your leg above your head to meet the ball at an apex that provides an optimal lift trajectory for the ball.                                                                                                                                                                                                                                                                                       |      |
-| **Dribbles**                     |            | All Dribbles are basically special  purpose filters on a buffer         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |      |
-| dribble(a, [options])            |            | Meant to be used to push data into  buffer for filtering and processing | A dribble is basically when you are running with the ball at your feet through and around defenders. The ball is typically on the ground, and requires good control skills if you are closer to the opponents goal.                                                                                                                                                                                                                                                                                                                              |      |
-| faux((result)=>{})               |            |                                                                         | A fake pass or shot, is usually a dribble move. While the  defender is anticipating your pass or shot in a given direction you can fool them by simply faking the pass or shot.                                                                                                                                                                                                                                                                                                                                                                  |      |
-| shimmy((result)=>{})             |            |                                                                         | This is when you are typically one on one against a defender while dribbling. You shake your shoulders to throw them off balance and take advantage of a pre-mature choice by the defender.                                                                                                                                                                                                                                                                                                                                                      |      |
-| legWiggle((result)=>{})          |            |                                                                         | This is typically while the ball is settled on the ground in front of you and you are facing a defender in close proximity. You can shake your leg in one direction or the other intending to throw the defender off balance in one direction while you take it the other direction.                                                                                                                                                                                                                                                             |      |
-| marseilleTurn((result)=>{})      |            |                                                                         | This is a move while dribbling between defenders. You place your strong foot atop the ball and roll over it while turning your body in a circular motion, only to pick up the ball with your weak foot atop the ball, rolling it across your body towards your intended direction.                                                                                                                                                                                                                                                               |      |
-| ronaldoChop((result)=>{})        |            |                                                                         | This is an aggressive dribble technique, where your foot is placed on the inside of the ball and you whip it around the ball to the outside. At  high speeds dribbling towards a defender you can throw them off balance one way or the other allowing you to make a decisive move. This effect is usually compounded with multiple chops.                                                                                                                                                                                                       |      |
-| nutmeg((result)=>{})             |            |                                                                         | This is a dribbling technique that is used to roll the ball in between their legs, while decisively sprinting around them.  Usually it fools the defender and during that brief emotional moment of despair, you can beat their reaction to the direction of your choice.                                                                                                                                                                                                                                                                        |      |
-| aurelio((result)=>{})            |            |                                                                         | This is done while a defender is standing opposite to you in a strong  defensive position. You take your foot outside of the ball and push it  opposite the side and wrap the ball behind your other leg and towards the original side. If done quickly you can fool the defender to one side and go the other. Because it is not a dynamic move, you need to be sure you can fool the defender. You can't readjust after deciding to perform  this move. If the defender is clever, they will just steal the ball as you have no other options. |      |
-| cruyffTurn((result)=>{})         |            |                                                                         | This is while your back is turned from the defender. It includes a body turn and fake shot or pass, only to wrap your foot around the outside of  the ball to push it across the defender to the other side.                                                                                                                                                                                                                                                                                                                                     |      |
-| elastico((result)=>{})           |            |                                                                         | This dribble is typically done in stride while approaching a defender.  The player with the ball takes one touch to the outside of their body, and quickly places their shin or foot on the outside of the ball to direct it opposite the initial direction.                                                                                                                                                                                                                                                                                     |      |
-| okocha((result)=>{})             |            |                                                                         | This move requires an outside to inside foot roll (over the ball). As the ball moves to the inside towards the weak side of the body, the same foot is used  to go on the inside to outside of the ball (around the front of the ball)  This fakes out the defender by making them believe the dribbler is going  the strong way, while in reality the ball is rolling to the weak side.  Then the ball controller quickly proceeds to move the direction of the rolling ball.                                                                   |      |
-| revelino((result)=>{})           |            |                                                                         | The revelino is when you take your foot inside half of the ball and push it to the outside of your body, only to quickly take it back towards the other half of your body fooling the defender to the initial strong side of the move.                                                                                                                                                                                                                                                                                                           |      |
-| fakePullBack((result)=>{})       |            |                                                                         | This is when the defender believes you are charging in one direction and you pull back briefly only to make them lunge towards you, then you proceed with the charge move around the defender.                                                                                                                                                                                                                                                                                                                                                   |      |
-| cutback((result)=>{})            |            |                                                                         | This is one of the most basic moves in futbol, where you act as if you are going one direction and quickly cut in the other direction with the ball.                                                                                                                                                                                                                                                                                                                                                                                             |      |
-| cuauhteminha((result)=>{})       |            |                                                                         | cuauhteminha is usually done while trying to split a double team while cornered. You grab the ball with both feet and jump between the defenders with the ball.                                                                                                                                                                                                                                                                                                                                                                                  |      |
-| mathewsCut((result)=>{})         |            |                                                                         | Take an inside of the foot touch one way and quickly push it by the defender  to the opposite side of the initial touch.                                                                                                                                                                                                                                                                                                                                                                                                                         |      |
-| **Tiki Taka**                    |            |                                                                         | Tiki Taka is a Spanish style of play where quick one touch passes aim to make the  defenders commit at untimely moments towards one side of the pitch opening up wider passing lanes and opportunities to go deeper into the defenders zone.                                                                                                                                                                                                                                                                                                     |      |
-| tiki()                           |            |                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |      |
-| taka()                           |            |                                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |      |
+
+### One Touch:
+This is when you touch the ball to set up a pass or shot. A good touch is one that results in separation from the defender, and allows for the successful delivery of a pass or shot on goal.
+
+![oneTouch](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/FirstTouch.gif)
+
+### Two Touch:
+Sometimes one touch is not enough to separate the defender. Two good touches should be enough.
+
+![twoTouch](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/doubleTouch.gif)
+
+### Passare
+
+This is a standard pass. It requires that the player with the ball successfully kicks the ball in the direction of the intended recipient and that the recipient successfully receives the ball in stride so they can do something with it.
+
+![passare](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/Passare.gif)
+
+### Passagio Inverso
+This is a backwards pass or shot. This can be done when the recipient (or goal) is behind you, or when the recipient will be behind you when the ball reaches the intended position.
+
+![passareInverso](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/BackPass.gif)
+
+### HoherTritt
+This is a high cross pass. A high cross is a pass that is lifted up in the air over defenders to reach the intended recipient in stride (typically while on their way towards the net, but not always). This is not the same as a chip pass, even though they can achieve the same result. 
+
+![highcross](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/highCross.gif)
+
+### NiedrigerTritt
+This is a low cross pass. A low cross is a pass that skips slightly above the ground with a large amount of force and speed. This is a good pass when the opportunity presents itself because it catches defenders off guard when they expect a high cross.
+
+![lowcross](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/lowcross.gif)
+
+### No Looker
+A no look pass (or shot) is as it sounds. You fool defenders by looking one way and passing (or shooting) the ball the other way. This is typically done as a ground pass or shot. (Sometimes as a no look chip pass or shot)
+
+![nolook](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/blindpass.gif)
+
+### Butt Pass
+This is a butt pass or shot. While you are turned from the ball and the ball is coming at you with speed (waist high), you can thrust your tuchus into the ball and deliver an unexpected pass or shot. 
+
+![butter](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/buttpass.gif)
+
+### Chapeu
+This is a chip pass or shot. Typically you would do this to lift the ball off the ground at short distances to keep defenders from being able to intercept the pass with a high kick. If it's a shot on goal, it is used to take advantage of an aggressive goal keeper that charges the ball carrier.
+
+![chip](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/chip.gif)
+
+### Chapeu Inverso
+A reverse chip requires you to have the ball elevated enough to chip it over or around defenders (as a pass or shot).
+
+![reverseChip](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/chippass.gif)
+
+### Rabona
+A rabona is a difficult pass or shot done while wrapping your strong foot behind your week foot to meet the ball with sufficient power to deliver a good pass or shot.
+
+![rabona](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/Rabona.gif)
+
+### Bicicleta
+This is mostly used as a shot, but can be used as a pass. It is when your back is turned to the intended recipient or goal. You jump, lifting your leg above your head to meet the ball at an apex that provides an optimal lift trajectory for the ball.
+
+![bicycle](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/Bicicleta.gif)
+
+### Dribble
+A dribble is basically when you are running with the ball at your feet through and around defenders. The ball is typically on the ground, and requires good control skills if you are closer to the opponents goal.
+
+![dribble](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/dribble.gif)
+
+### Faux
+A fake pass or shot, is usually a dribble move. While the defender is anticipating your pass or shot in a given direction you can fool them by simply faking the pass or shot.
+
+![faux](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/Faux.gif)
+
+### Shimmy
+This is when you are typically one on one against a defender while dribbling. You shake your shoulders to throw them off balance and take advantage of a pre-mature choice by the defender.
+
+![shimmy](https://github.com/ItsZeusBro/TikiTaka/blob/7e769a4677c977d12bb47640a158832b735ae141/Gifs/shimmy.gif)
+
+### Leg Wiggle
+This is typically while the ball is settled on the ground in front of you and you are facing a defender in close proximity. You can shake your leg in one direction or the other intending to throw the defender off balance in one direction while you take it the other direction.
+
+![wggle](https://github.com/ItsZeusBro/TikiTaka/blob/307f62ff0e8311c8c1193946162f61c9c6482540/Gifs/wggle.gif)
+
+### Marseille Turn
+This is a move while dribbling between defenders. You place your strong foot atop the ball and roll over it while turning your body in a circular motion, only to pick up the ball with your weak foot atop the ball, rolling it across your body towards your intended direction.
+
+![mturn](https://github.com/ItsZeusBro/TikiTaka/blob/99ddb1e40a121eeb4743fe236212a3fe972ae460/Gifs/MarseilleTurn.gif)
+
+### Ronaldo Chop
+This is an aggressive dribble technique, where your foot is placed on the inside of the ball and you whip it around the ball to the outside. At high speeds dribbling towards a defender you can throw them off balance one way or the other allowing you to make a decisive move. This effect is usually compounded with multiple chops.
+
+![chop](https://github.com/ItsZeusBro/TikiTaka/blob/307f62ff0e8311c8c1193946162f61c9c6482540/Gifs/chop.gif)
+
+### Nutmeg
+This is a dribbling technique that is used to roll the ball in between their legs, while decisively sprinting around them. Usually it fools the defender and during that brief emotional moment of despair, you can beat their reaction to the direction of your choice.
+
+![nutmeg](https://github.com/ItsZeusBro/TikiTaka/blob/fbd6b12b9d1310319353df4e265428c2b25e2fdf/Gifs/nutmeg.gif)
+
+### Aurelio
+This is done while a defender is standing opposite to you in a strong defensive position. You take your foot outside of the ball and push it opposite the side and wrap the ball behind your other leg and towards the original side. If done quickly you can fool the defender to one side and go the other. Because it is not a dynamic move, you need to be sure you can fool the defender. You can't readjust after deciding to perform this move. If the defender is clever, they will just steal the ball as you have no other options.
+
+![aurelio](https://github.com/ItsZeusBro/TikiTaka/blob/fbd6b12b9d1310319353df4e265428c2b25e2fdf/Gifs/Aurelio.gif)
+
+### Cruyff Turn
+This is while your back is turned from the defender. It includes a body turn and fake shot or pass, only to wrap your foot around the outside of the ball to push it across the defender to the other side.
+
+![cruyff](https://github.com/ItsZeusBro/TikiTaka/blob/0dc5cb094eabc46aa9467a1ea9b63c2e084736e1/Gifs/cruyff.gif)
+
+### Elastico
+This dribble is typically done in stride while approaching a defender. The player with the ball takes one touch to the outside of their body, and quickly places their shin or foot on the outside of the ball to direct it opposite the initial direction. 
+
+![elastico](https://github.com/ItsZeusBro/TikiTaka/blob/ed1ce6bb53da55b86fc7f697240a6267dda0ce6e/Gifs/elastico.gif)
+
+### Okocha
+This move requires an outside to inside foot roll (over the ball). As the ball moves to the inside towards the weak side of the body, the same foot is used  to go on the inside to outside of the ball (around the front of the ball) This fakes out the defender by making them believe the dribbler is going the strong way, while in reality the ball is rolling to the weak side. Then the ball controller quickly proceeds to move the direction of the rolling ball.
+
+![okocha](https://github.com/ItsZeusBro/TikiTaka/blob/3c761913ce5e4e89d6ed81f1596213583e8567e8/Gifs/okocha.gif)
+
+### Revelino
+The revelino is when you take your foot inside half of the ball and push it to the outside of your body, only to quickly take it back towards the other half of your body fooling the defender to the initial strong side of the move.
+
+![revelino](https://github.com/ItsZeusBro/TikiTaka/blob/34cf30b12cbd01fc93bdf1e183711d687b2b0f14/Gifs/Rivelino.gif)
+
+### Fake Pull Back
+This is when the defender believes you are charging in one direction and you pull back briefly only to make them lunge towards you, then you proceed with the charge move around the defender.
+
+![pullback](https://github.com/ItsZeusBro/TikiTaka/blob/f3e77e2bf963d95f90b0b662772cbd1ed62030c1/Gifs/pullback.gif)
+
+### Cutback
+This is one of the most basic moves in futbol, where you act as if you are going one direction and quickly cut in the other direction with the ball.
+
+![cutback](https://github.com/ItsZeusBro/TikiTaka/blob/dbc6547af36ea989003ff07ba25f9c60caa55bd5/Gifs/cutback.gif)
+
+### Cuauhteminha
+Cuauhteminha is usually done while trying to split a double team while cornered. You grab the ball with both feet and jump between the defenders with the ball.
+
+![cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/dbc6547af36ea989003ff07ba25f9c60caa55bd5/Gifs/Cuauhteminha.gif)
 
 ## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
 
