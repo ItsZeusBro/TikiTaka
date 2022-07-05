@@ -40,6 +40,8 @@ This is done over a distributed network over wan connection or lan using some so
 - Any player can be at any of the logically connected positions on the field, but there is a max capacity for each file system to prevent all of the players leaving their posts to chase the ball.
 - The goal is to score goals. Along the way defenders can occupy posts and corrupt your objectives that spawn upon your arrival to a location (they can delete files as you make them, corrupt streams, etc). There is a timer at each post to complete the objective, and if you don't the defender gets to kick the ball to another one of their connected nodes where there is probably a player waiting to recieve the ball.
 
+### Eventually we want this to be a spectator sport
+- These objectives and moves you can do to complete them will be visualized (associated with animations) by Ai one day to create a graphic animation that can replay whats going on on the pitch. 
 
 # Compound actions 
 
