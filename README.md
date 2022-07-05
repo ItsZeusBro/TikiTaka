@@ -189,7 +189,6 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 ![rainbow](https://github.com/ItsZeusBro/TikiTaka/blob/69eba8b4a8f187965bcef0d9e8ffc11e253ffc05/Gifs/rainbow.gif)
 
 
-## File Interaction Modeling (See https://github.com/ItsZeusBro/FIST for details)
 
 
 ## Interface Protocol (for games and productivity) [coming soon]
@@ -233,15 +232,40 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 ## The larger Goal:
 - We want to make the game fun first. Then we want to sharpen these tools to actually use them for productivity where possible.
 
-## Here are some File Operation Function Primitives for now:
-| Function           | params                                                                  | returns        | explanation                                                                                    |
-|--------------------|-------------------------------------------------------------------------|----------------|------------------------------------------------------------------------------------------------|
-| mkdir(...paths)    | takes n number of path arguments of type string                         | null           | creates empty directories with names specified in variadic arguments                           |
-| create(...paths)   | takes n number of path arguments of type string                         | null           | creates empty files with names specified in variadic arguments                                 |
-| rename(olP, newP)  | takes the old path that you wish to rename to the new path              | null           | renames a files name represented by argument a to argument b's file name                       |
-| copyAppend(a, b)   | takes two paths.                                                        | null           | 'a' is read from and a copy of its data is appended to 'b'                                     |
-| truncate(p, n)     | takes a path and n representing the number of bytes desired in the file | null           | truncates a file to the specified number of bytes n                                            |
-| del(p)             | a path to file                                                          | null           | deletes a directory or a file of a valid path                                                  |
-| write(p, data)     | takes a file path and some data you wish to write to it.                | null           | This function appends to the file by default.The file created if it doesn't exist              |
-| overwrite(p, data) | takes a file path and some data you wish to write over the file         | null           | If file does not exist, this doesn't overwrite, otherwise it truncates then writes to the file |
-| read(p)            | takes a file path that you want to read from                            | data from file | and reads from it                
+## Tiki Taka uses a File Interaction Model called FIST (See https://github.com/ItsZeusBro/FIST for details)
+
+## Here are the FIST File Primitives that will enable all of these great TikiTaka moves:
+
+          pre((data)=>{})
+          post((data)=>{})
+          flow(b, quant, exclsv, pin, pout)
+          stream(quant, pin, pout)
+
+### You should be able to chain them together like this to create your own moves:
+          a.pre(
+                    (data)=>{
+                    //pre script here
+                    //...
+                    //then flow
+                    a.flow(b, quant, exclsv, p1, p2)
+                    }
+          ).post(
+                    (data)=>{
+                    //some post script
+                    //...
+                    }
+          ).flow(c).a.pre(
+                    (data)=>{
+                      //pre script here
+                      //...
+                      //then stream
+                      a.stream(quant, p1, p2) 
+                    }
+          ).post(
+                    (data)=>{
+                    //some post script
+                    //...
+                    }
+          ).stream(c) //then stream to c
+
+
