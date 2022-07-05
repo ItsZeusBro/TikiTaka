@@ -1,7 +1,7 @@
 # The File Interaction Model (FIM) 0.1
 This is a new specification that I am developing to use for TikiTaka and other programs
 
-## We can begin with the 10 Main Concepts:
+## We can begin with the 12 Main Concepts:
 1. Flow
 2. Stream
 3. Directionality
