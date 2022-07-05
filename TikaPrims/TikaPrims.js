@@ -2,9 +2,8 @@ import * as path from "node:path"
 import * as fs from "node:fs"
 
 export class TikaPrims{
-  //atomic functions
+
     mkdr(...dirs){
-      //is able to make directory or returns false
       for (const dir of dirs) {
         try{
           if(!fs.existsSync(dir)){
@@ -15,9 +14,8 @@ export class TikaPrims{
         }
       }
     }
-    //This deletes your file contents if you run this on an existing file 
+
     create(...paths){
-      //just creates a file at path with fileName
       for (const p of paths) {
         try{
           fs.closeSync(fs.openSync(p, 'w'))
@@ -28,8 +26,6 @@ export class TikaPrims{
     }
 
     rename(olP, newP){
-      //renames a filepath to newName if filepath exists
-      //else returns false
       try{
         fs.renameSync(olP, newP)
       }catch{
@@ -38,8 +34,6 @@ export class TikaPrims{
     }
 
     copyAppend(a, b){
-      //just copies a data to b location if both exists
-      //else returns false
       try{
         if(fs.existsSync(a)&&fs.existsSync(b)){
           var buff = fs.readFileSync(a)
@@ -49,78 +43,50 @@ export class TikaPrims{
         return false
       }
     }
-    //takes object with paths associated with n numbers of bytes to truncate to
-    truncate(paths){
-      //truncates file at filePath if it exists to n number of bytes
-      //else returns false
-      var failures = []
-      for (const [key, value] of Object.entries(paths)){   
+
+    truncate(p, n){
         try{
-          if(fs.existsSync(key)){
-            fs.truncateSync(key, value)
+          if(fs.existsSync(p)){
+            fs.truncateSync(p, n)
           }
         }catch{
-          //this is a mitigation technique. Offensive programming
-          //does not tolerate failures, but encourages mitigation.
-          failures.push(key)
+          return p
         }
-      }
-      return failures
     }
 
-    del(recurse=false, ...paths){
-      //node variadic paramter paths accepts file or dir paths
-      for (const p of paths) {
-        //check if is directory or file, then delete
+    del(p){
         try{
           if(fs.lstatSync(p).isDirectory()){
-            fs.rmSync(p, {recursive:recurse})
+            fs.rmSync(p, {recursive:true})
           }else{
             fs.unlinkSync(p)
           }
         }catch{
           return false
         }
+    }
+
+    write(p, data){
+      if(Buffer.isBuffer(data)){
+          fs.writeSync(fs.openSync(p, 'a'), data)
+      }else{
+          fs.writeSync(fs.openSync(p, 'a'), Buffer.from(data))
       }
     }
 
-    write(paths){
-      //if files don't exist, create and append
-      //if they do, append
-      if(!this.isObject(paths)){
-        throw new Error('Wrong usage of TikaPrims.write(paths), please see docs')
-      }
-      console.log(paths)
-      for (const [path, data] of Object.entries(paths)){   
-        //a flag appends or creates file and appends if it doesn't exist
-        if(Buffer.isBuffer(data)){
-            fs.writeSync(fs.openSync(path, 'a'), data)
-        }else{
-            fs.writeSync(fs.openSync(path, 'a'), Buffer.from(data))
-        }
-      }
-    }
-    overwrite(paths){
-      //if files don't exist, create and write
-      //if they do, writeover
-      for (const [path, data] of Object.entries(paths)){   
-        if(Buffer.isBuffer(data)){
-            fs.writeSync(fs.openSync(path, 'w'), data)
-        }else{
-            fs.writeSync(fs.openSync(path, 'w'), Buffer.from(data))
-        }
+    overwrite(p, data){
+      if(Buffer.isBuffer(data)){
+          fs.writeSync(fs.openSync(p, 'w'), data)
+      }else{
+          fs.writeSync(fs.openSync(p, 'w'), Buffer.from(data))
       }
     }
 
-    read(...paths){
-      var data = {}
-       paths.forEach(path => {
-          data[path]=fs.readFileSync(path)
-       });
-      return data
+    read(p){
+      return fs.readFileSync(p)
     }
+
     isObject(a){
       return (!!a) && (a.constructor === Object);
     };
 }
-

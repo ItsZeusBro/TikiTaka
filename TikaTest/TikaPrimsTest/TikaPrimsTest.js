@@ -12,11 +12,13 @@ export class TikaPrimsTest extends TikaTest{
             "Test each testFunction()\n"
         );
         this.tests = './tests/';
+        this.clean(this.tests)
         this.testMkdir();
         this.testCreate();
         this.testRename();
         this.testCopyAppend();
         this.testTruncate();
+        this.clean(this.tests)
         this.testDel();
         this.testWrite();
         this.testOverwrite();
@@ -178,15 +180,12 @@ export class TikaPrimsTest extends TikaTest{
         fs.writeFileSync(fs.openSync(a, 'a'), "this 14 bytess");
         fs.writeFileSync(fs.openSync(b, 'a'), "this 14 bytess");
         fs.writeFileSync(fs.openSync(c, 'a'), "this 14 bytess");
-        var failures = this.tp.truncate({
-            './tests/a.foo': 10, 
-            './tests/b.bar': 5, 
-            './tests/c.baz': 1
-        });
+        this.tp.truncate(a, 10)
+        this.tp.truncate(b, 5)
+        this.tp.truncate(c, 1)
         assert.equal(fs.statSync(a).size, 10);
         assert.equal(fs.statSync(b).size, 5);
         assert.equal(fs.statSync(c).size, 1);
-
         this.clean(this.tests);
     }
     testDel(){
@@ -222,22 +221,25 @@ export class TikaPrimsTest extends TikaTest{
             "assert that the read values are equal to 2 x the original strings\n"  
         );
         this.prepare(this.tests);
-
+        var wsf='./tests/wickedString';
+        var wbf='./tests/wickedBuffer';
         var wickedString = "some wicked string";
         var wickedBuffer = Buffer.from("some wicked buffer");
 
-        this.tp.write({'./tests/wickedString':wickedString, './tests/wickedBuffer':wickedBuffer});
+        this.tp.write(wsf, wickedString);
+        this.tp.write(wbf, wickedBuffer);
         var wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'});
         var wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"});
         assert.equal(wickedString, wickedStringRead);
         assert.equal(wickedBuffer, wickedBufferRead);
         
-        this.tp.write({'./tests/wickedString':wickedString, './tests/wickedBuffer':wickedBuffer});
+        this.tp.write(wsf, wickedString);
+        this.tp.write(wbf, wickedBuffer);
         wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'});
         wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"});
+
         assert.equal(wickedString+wickedString, wickedStringRead);
         assert.equal(Buffer.concat([wickedBuffer, wickedBuffer]), wickedBufferRead);
-
 
         this.clean(this.tests);
     }
@@ -313,10 +315,10 @@ export class TikaPrimsTest extends TikaTest{
         this.tp.create(a, b)
         var adat = "some string"
         var bdat = Buffer.from("some buffer from string")
-        var wr = {}
-        wr[a]=adat
-        wr[b]=bdat
-        this.tp.write(wr)
+
+        this.tp.write(a, adat)
+        this.tp.write(b, bdat)
+
         var data = this.tp.read(a, b)
         assert.deepEqual(data[a], Buffer.from(adat))
         assert.deepEqual(data[b], bdat)

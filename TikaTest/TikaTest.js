@@ -12,7 +12,7 @@ export class TikaTest extends Comet{
     }
     clean(dir){
         this.comet('cleaning test dirs')
-        this.tp.del(true, dir)
+        this.tp.del(dir)
     }
     prepare(dir){
         this.comet('preparing test dirs')
