@@ -173,6 +173,43 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 
 ![rainbow](https://github.com/ItsZeusBro/TikiTaka/blob/69eba8b4a8f187965bcef0d9e8ffc11e253ffc05/Gifs/rainbow.gif)
 
+### Interface (for games and productivity) [coming soon]
+
+| **Touches**                      | Parameters | Returns | Explanation                                                     |
+|----------------------------------|------------|---------|-----------------------------------------------------------------|
+| oneTouch(a, options)             |            |         |                                                                 |
+| twoTouch(a, b, [options])        |            |         |                                                                 |
+| **Passes and Shots**             |            |         |                                                                 |
+| passare(a, b [options])          |            |         |                                                                 |
+| passagioInverso(a, b, [options]) |            |         |                                                                 |
+| hoherTritt(a, b, [options])      |            |         |                                                                 |
+| niedrigerTritt(a, b, [options])  |            |         |                                                                 |
+| noLooker(a, b, [options])        |            |         |                                                                 |
+| butter(a, b, [options])          |            |         |                                                                 |
+| chapeu(a, b, [options])          |            |         |                                                                 |
+| chapeuInverso(a, b, [options])   |            |         |                                                                 |
+| rabona(a, b, [options])          |            |         |                                                                 |
+| bicicleta(a, b, [options])       |            |         |                                                                 |
+| **Dribbles**                     |            |         | All Dribbles are basically special  purpose filters on a buffer |
+| dribble(a, [options])            |            |         |                                                                 |
+| faux((result)=>{})               |            |         |                                                                 |
+| shimmy((result)=>{})             |            |         |                                                                 |
+| legWiggle((result)=>{})          |            |         |                                                                 |
+| marseilleTurn((result)=>{})      |            |         |                                                                 |
+| ronaldoChop((result)=>{})        |            |         |                                                                 |
+| nutmeg((result)=>{})             |            |         |                                                                 |
+| aurelio((result)=>{})            |            |         |                                                                 |
+| cruyffTurn((result)=>{})         |            |         |                                                                 |
+| elastico((result)=>{})           |            |         |                                                                 |
+| okocha((result)=>{})             |            |         |                                                                 |
+| revelino((result)=>{})           |            |         |                                                                 |
+| fakePullBack((result)=>{})       |            |         |                                                                 |
+| cutback((result)=>{})            |            |         |                                                                 |
+| cuauhteminha((result)=>{})       |            |         |                                                                 |
+| **Tiki Taka**                    |            |         |                                                                 |
+| tiki()                           |            |         |                                                                 |
+| taka()                           |            |         |                                                                 |
+
 
 ## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
 
