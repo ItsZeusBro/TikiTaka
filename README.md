@@ -29,13 +29,12 @@ Or
 | overwrite(p, data) | takes a file path and some data you wish to write over the file         | null           | If file does not exist, this doesn't overwrite, otherwise it truncates then writes to the file |
 | read(p)            | takes a file path that you want to read from                            | data from file | and reads from it                                                                              |
 # Compound actions 
-## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
-I believe that using this type of scheme we would eventually see terminals with graphical replays one day (just for fun)
 
 ### One Touch:
 This is when you touch the ball to set up a pass or shot. A good touch is one that results in separation from the defender, and allows for the successful delivery of a pass or shot on goal.
 
 ![oneTouch](https://github.com/ItsZeusBro/TikiTaka/blob/1403fc033a9b761058e16070c8ed324665eaf92b/Gifs/FirstTouch.gif)
+
 
 ### Two Touch:
 Sometimes one touch is not enough to separate the defender. Two good touches should be enough.
