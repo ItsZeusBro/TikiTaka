@@ -213,16 +213,19 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 
 
 ## Game Modes:
-1. Race Mode: The goal in this game is to kick the ball into the restricted zone (the goal) before the opponents are able to do so. 
+1. ***Race Mode***: The goal in this game is to kick the ball into the restricted zone (the goal) before the opponents are able to do so. 
   - What this means is that you need to complete certain objectives in some creative way using the above functions available. 
   - You need to kick the ball (the data file that represents the ball) into a variety of checkpoints successfully using the above functions (which are funny but useful file system and data manipulation tools). 
   - Each checkpoint has some objective in the way of data manipulation. 
   - The player to do the task successfully first, wins the match.
   - This game does not punish you for doing something wrong, you have time to get it right.
   
-2. Futbol Mode: The goal is the same in this game, but the rules are much harsher. 
+2. ***Futbol Mode***: The goal is the same in this game, but the rules are much harsher. 
   - There are certain things that you cannot do in this mode, and if you do them you must start from the beginining. 
   - It's like losing the posession of the ball in futbol. 
   -   When you do, bad things usually happen. Same thing here. 
   -   You lose points off your score, and have a less chance of winning as a result. 
 -   This is a qualitative race game measured in "efficiency points" (speed) and "style points" (not losing the ball too much). 
+
+## The larger Goal:
+- We want to make the game fun first. Then we want to sharpen these tools to actually use them for productivity where possible.
