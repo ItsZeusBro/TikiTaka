@@ -3,6 +3,7 @@ WARNINGS:
 1. Please do not invest time in the names of these functions yet, as they are subject to change. Its too early. It's just to give you an idea.
 2. TikiTaka takes an "Offensive Programming" style. Meaning, a lot of safeguards are removed in an otherwise defensive programming world. This also means we don't return feedback from functions to let you know if your move succeeds. This is designed to enforce player performance and sport like behavior.
 3. TikiTaka is a sport first and foremost. However, we think (with time) you might end up more productive when you get really good at it.
+4. The idea here is to find the right futbol move analogy for some silly but still oddly productive file moves. As you get better at using the futbol moves, you should be able to justify using it in production environments.
 
 
 ## Playing Spanish Futbol with Files and Data
