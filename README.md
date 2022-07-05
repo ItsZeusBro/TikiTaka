@@ -196,26 +196,6 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 3. Exclusivity      (data can be shared or exculsive after an interaction)
 4. Positionality    (from what position data comes and to what position it goes)
 
-### Examples:
-
-#### a:A:b TO B:e (inclusive)
-
-1. Directionality (A to B)
-2. Quantification (All of A)
-3. Exclusivity    (Inclusive, data is not removed from A)
-4. Positionality  (move all bytes from begining A, append to end of B)
-
-<img src="https://github.com/ItsZeusBro/TikiTaka/blob/ea8f142fd5f2db39a6ae1149d9d7781b16286413/Docs/All_AtoB_Inclusive_End_.jpg" height=245 width=350/>
-
-
-#### n:A:b TO B:e (inclusive)
-
-1. Directionality (A to B)
-2. Quantification (n from A)
-3. Exclusivity    (Inclusive, data is not removed from A)
-4. Positionality  (move n bytes from begining of A, to end of B)
-
-<img src="https://github.com/ItsZeusBro/TikiTaka/blob/f53569b5d7b809d207fbb2910a8cefe410745faf/Docs/b_N_AtoB_Inclusive_End_.jpg" height=245 width=350/>
 
 ## Interface Protocol (for games and productivity) [coming soon]
 
