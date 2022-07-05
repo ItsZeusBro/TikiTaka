@@ -2,16 +2,19 @@
 This is a new specification that I am developing to use for TikiTaka and other programs
 
 ## We can begin with the 10 Main Concepts:
-1. Directionality
-2. Quantality
-3. Exclusivity
-4. Positionality
-5. Conditionals (and Mitigation)
-6. Looping
-7. Pre-actions
-8. Post-actions
-9. Syncronicity
-10. Chaining
+1. Flow
+2. Stream
+3. Directionality
+4. Quantality
+5. Exclusivity
+6. Positionality
+7. Conditionals (and Mitigation)
+8. Looping
+9. Pre-actions
+10. Post-actions
+11. Syncronicity
+12. Chaining
+
 
 
 
@@ -65,8 +68,9 @@ Chaining is a modeling technique that demonstrates a compound flow model, where 
 
 
 ## Abstract Methods
-1. a.Flow(b.pre(script1), quant, exclsv, p1, p2).post(script2)  //flow
-2. a.Flow(b).Flow(c)                                            //chaining
-3. pre(script)                                                  //pre action
-4. post(script)                                                 //post action
+1. a.Flow(b.pre(script1), quant, exclsv, p1, p2).post(script2)    //flow
+2. a.Flow(b).Flow(c)                                              //chaining
+3. pre(script)                                                    //pre action
+4. post(script)                                                   //post action
+5. a.Stream(b.pre(script1), quant, exclsv, p1, p2).post(script2)  //Continuous Stream
 
