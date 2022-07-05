@@ -19,9 +19,9 @@ Directionality simply means what direction belongs to the flow of data. It is re
 <img src="https://github.com/ItsZeusBro/TikiTaka/blob/7a46a5a074f1d58712f3777b1dd8c30cac52aa38/Docs/Directionality.jpg" height=245 width=350/>
 
 ### Quantality
-Quantality defines the constraints upon the flow which defaults to "all data" when not constrained. The quantity of data in the flow matters for all kinds of situations in manipulating files.
+Quantality defines the constraints upon the flow which defaults to "all data" when not constrained. The quantity of data in the flow matters for all kinds of situations in manipulating files. Different keywords such as All, Half, N, [1, 2, ...N], are used to represent the amount of data (in bits, bytes, or  chunks of arbitrary size) flowing from one file to the other. Don't worry about the other stuff on the diagram here for now.
 
-<img src="https://github.com/ItsZeusBro/TikiTaka/blob/6059eb2b845604e5ed930264b453303ea2c04b8d/Docs/Quantality.jpg" height=280 width=400/>
+<img src="https://github.com/ItsZeusBro/TikiTaka/blob/6059eb2b845604e5ed930264b453303ea2c04b8d/Docs/Quantality1.png" height=280 width=400/>
 
 
 ### Exclusivity
