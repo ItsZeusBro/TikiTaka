@@ -16,7 +16,11 @@ This is a new specification that I am developing to use for TikiTaka and other p
 12. Chaining
 
 
+### Flow
+A Flow in this context is a terminating execution that runs on a File Interaction.
 
+### Stream
+A Stream in this context is a non-terminating execution (watcher) that runs on a File Interaction.
 
 ### Directionality
 Directionality simply means what direction belongs to the flow of data. It is represented by an arrow. This is the most simple idea in the specification and cannot be mistaken because its abstractual. The only things that matter here is the fact that its an arrow. This is because all arrows have a direction, and its direction determines the flow of data. When added the FIM specification, it should come from a node and to another. If you have a bidirectional arrow without constraints, you can mirror one files behavior to that of the other (from left to right).
@@ -51,13 +55,11 @@ Mitigation specifies what happens to an interaction when the initial interaction
 
 This is an iterator that runs a statement or statement block until the boolean conditional statement is no longer valid
 
-
 ### Pre-Actions
 These are actions you specify that are to take place on the data before it is inserted into the file at its given position
 
 ### Post-Actions
 These are actions you specify that are to take place on the file (as a whole) after data is inserted into it at some position
-
 
 
 ### Syncronicity
