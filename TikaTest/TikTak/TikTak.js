@@ -2,11 +2,11 @@ import * as fs from "node:fs";
 import * as assert from "node:assert";
 import { TikaTest } from '../TikaTest.js';
 
-export class TikaPrimsTest extends TikaTest{
+export class TikTakTest extends TikaTest{
     constructor(){
         super();
         this.comet(
-            "TikiPrimsTest()\n",
+            "TikTakTest()\n",
             "constructuor()\n",
             "initiates super() TikaTest parent\n",
             "Test each testFunction()\n"
@@ -41,10 +41,10 @@ export class TikaPrimsTest extends TikaTest{
         ];
 
         paths.forEach(element => {
-            this.tp.mkdr(element);
+            this.tk.mkdr(element);
         });
 
-        this.tp.create(this.tests+"test.4", this.tests+"test1/test.5");
+        this.tk.create(this.tests+"test.4", this.tests+"test1/test.5");
 
         this.assertFileDoesExist(
             this.tests+"test.4", 
@@ -58,7 +58,7 @@ export class TikaPrimsTest extends TikaTest{
             this.tests+"test1/test.5"+" does exist in testMkdir()"
         );
 
-        this.tp.mkdr(this.tests, this.tests+"test1");
+        this.tk.mkdr(this.tests, this.tests+"test1");
 
         this.assertFileDoesExist(
             this.tests+"test.4", 
@@ -86,12 +86,12 @@ export class TikaPrimsTest extends TikaTest{
         );
         this.prepare(this.tests);
 
-        this.tp.create(this.tests+"some.test");
+        this.tk.create(this.tests+"some.test");
 
         fs.writeFileSync(fs.openSync(this.tests+"some.test", 'a'), "this is 14 byt");
         assert.equal(fs.statSync(this.tests+'some.test').size, 14);
 
-        this.tp.create(this.tests+"some.test");
+        this.tk.create(this.tests+"some.test");
 
         fs.writeFileSync(fs.openSync(this.tests+"some.test", 'a'), "this 13 bytes");
 
@@ -116,17 +116,17 @@ export class TikaPrimsTest extends TikaTest{
 
         var sometest1 = this.tests+"some.test1";
         var sometest2 = this.tests+"some.test2";
-        this.tp.create(sometest1);
+        this.tk.create(sometest1);
 
 
         fs.writeFileSync(fs.openSync(sometest1, 'a'), "this is 14 byt");
         assert.equal(fs.statSync(sometest1).size, 14);
 
-        this.tp.rename(sometest1, sometest2);
+        this.tk.rename(sometest1, sometest2);
         assert.ok(fs.existsSync(sometest2));
         assert.ok(!fs.existsSync(sometest1));
 
-        this.tp.rename(sometest2, sometest1);
+        this.tk.rename(sometest2, sometest1);
         assert.ok(fs.existsSync(sometest1));
         assert.ok(!fs.existsSync(sometest2));
 
@@ -147,14 +147,14 @@ export class TikaPrimsTest extends TikaTest{
 
         var a = this.tests+'a.foo';
         var b = this.tests+'b.baz';
-        this.tp.create(a, b);
+        this.tk.create(a, b);
 
         fs.writeFileSync(fs.openSync(a, 'a'), "this 14 bytess");
-        this.tp.copyAppend(a, b);
+        this.tk.copyAppend(a, b);
         assert.equal(fs.statSync(a).size, 14);
         assert.equal(fs.statSync(b).size, 14);
 
-        this.tp.copyAppend(b, a);
+        this.tk.copyAppend(b, a);
         assert.equal(fs.statSync(a).size, 28);
         assert.equal(fs.statSync(b).size, 14);
 
@@ -175,14 +175,14 @@ export class TikaPrimsTest extends TikaTest{
         var a = this.tests+'a.foo';
         var b = this.tests+'b.bar';
         var c = this.tests+'c.baz';
-        this.tp.create(a, b, c);
+        this.tk.create(a, b, c);
 
         fs.writeFileSync(fs.openSync(a, 'a'), "this 14 bytess");
         fs.writeFileSync(fs.openSync(b, 'a'), "this 14 bytess");
         fs.writeFileSync(fs.openSync(c, 'a'), "this 14 bytess");
-        this.tp.truncate(a, 10)
-        this.tp.truncate(b, 5)
-        this.tp.truncate(c, 1)
+        this.tk.truncate(a, 10)
+        this.tk.truncate(b, 5)
+        this.tk.truncate(c, 1)
         assert.equal(fs.statSync(a).size, 10);
         assert.equal(fs.statSync(b).size, 5);
         assert.equal(fs.statSync(c).size, 1);
@@ -201,10 +201,10 @@ export class TikaPrimsTest extends TikaTest{
         var a = 'a.foo';
         var b = 'b.baz';
 
-        this.tp.create(this.tests+a, this.tests+b);
+        this.tk.create(this.tests+a, this.tests+b);
         assert.deepEqual(fs.readdirSync(this.tests).sort(), [a, b]);
 
-        this.tp.del(false, a, b);
+        this.tk.del(false, a, b);
         assert.notEqual(fs.readdirSync(this.tests).sort(), [a, b]);
 
         this.clean(this.tests);
@@ -226,15 +226,15 @@ export class TikaPrimsTest extends TikaTest{
         var wickedString = "some wicked string";
         var wickedBuffer = Buffer.from("some wicked buffer");
 
-        this.tp.write(wsf, wickedString);
-        this.tp.write(wbf, wickedBuffer);
+        this.tk.write(wsf, wickedString);
+        this.tk.write(wbf, wickedBuffer);
         var wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'});
         var wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"});
         assert.equal(wickedString, wickedStringRead);
         assert.equal(wickedBuffer, wickedBufferRead);
         
-        this.tp.write(wsf, wickedString);
-        this.tp.write(wbf, wickedBuffer);
+        this.tk.write(wsf, wickedString);
+        this.tk.write(wbf, wickedBuffer);
         wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'});
         wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"});
 
@@ -265,17 +265,17 @@ export class TikaPrimsTest extends TikaTest{
         var wickedBuffer = Buffer.from("some wicked buffer");
         var wickedString2 = "some wicked string 2";
         var wickedBuffer2 = Buffer.from("some wicked buffer 2");
-
-        this.tp.overwrite(wsf, wickedString);
-        this.tp.overwrite(wbf, wickedBuffer);
+        this.tk.create(wsf, wbf);
+        this.tk.overwrite(wsf, wickedString);
+        this.tk.overwrite(wbf, wickedBuffer);
         var wickedStringRead = fs.readFileSync(wsf, {encoding:'utf-8'});
         var wickedBufferRead = fs.readFileSync(wbf, {encoding:"binary"});
         assert.equal(wickedString, wickedStringRead);
         assert.equal(wickedBuffer, wickedBufferRead);
         
 
-        this.tp.overwrite(wsf, wickedString2);
-        this.tp.overwrite(wbf, wickedBuffer2);
+        this.tk.overwrite(wsf, wickedString2);
+        this.tk.overwrite(wbf, wickedBuffer2);
         wickedStringRead = fs.readFileSync(wsf, {encoding:'utf-8'});
         wickedBufferRead = fs.readFileSync(wbf, {encoding:"binary"});
         assert.equal(wickedString2, wickedStringRead);
@@ -314,16 +314,16 @@ export class TikaPrimsTest extends TikaTest{
         this.prepare(this.tests);
         var a = this.tests+"a.test"
         var b = this.tests+"b.test"
-        this.tp.create(a, b)
+        this.tk.create(a, b)
 
         var adat = "some string"
         var bdat = Buffer.from("some buffer from string")
 
-        this.tp.write(a, adat)
-        this.tp.write(b, bdat)
+        this.tk.write(a, adat)
+        this.tk.write(b, bdat)
 
-        var data = this.tp.read(a)
-        var datb = this.tp.read(b)
+        var data = this.tk.read(a)
+        var datb = this.tk.read(b)
 
         assert.deepEqual(data, Buffer.from(adat))
         assert.deepEqual(datb, bdat)

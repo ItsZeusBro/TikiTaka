@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test-verb": "node ./TikaTests.js --verbose",
+    "tika-tests": "node ./TikaTests.js --verbose",
     "reboot": "rm -rf node_modules/; rm package-lock.json; npm cache clean --force; npm install;",
     "comet-reboot": "cd ./Comet; npm run reboot; cd ..; rm -rf node_modules/; rm package-lock.json; npm cache clean --force; npm link Comet; npm install;"
   },

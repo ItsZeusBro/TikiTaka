@@ -1,11 +1,11 @@
-import * as path from "node:path"
 import * as fs from "node:fs"
 import {Comet} from "../Comet/Comet.js"
-export class TikaPrims extends Comet{
 
-    mkdr(...dirs){
-      this.comet('TikaPrims.mkdr')
-      for (const dir of dirs) {
+//TikTak are TikaTaka primitive functions
+export class TikTak extends Comet{
+    mkdr(...paths){
+      this.comet('TikTak.mkdr')
+      for (const dir of paths) {
         try{
           if(!fs.existsSync(dir)){
             fs.mkdirSync(dir)
@@ -17,7 +17,7 @@ export class TikaPrims extends Comet{
     }
 
     create(...paths){
-      this.comet('TikaPrims.create')
+      this.comet('TikTak.create')
       for (const p of paths) {
         try{
           fs.closeSync(fs.openSync(p, 'w'))
@@ -28,7 +28,7 @@ export class TikaPrims extends Comet{
     }
 
     rename(olP, newP){
-      this.comet('TikaPrims.rename')
+      this.comet('TikTak.rename')
       try{
         fs.renameSync(olP, newP)
       }catch{
@@ -37,7 +37,7 @@ export class TikaPrims extends Comet{
     }
 
     copyAppend(a, b){
-      this.comet('TikaPrims.copyAppend')
+      this.comet('TikTak.copyAppend')
       try{
         if(fs.existsSync(a)&&fs.existsSync(b)){
           var buff = fs.readFileSync(a)
@@ -49,7 +49,7 @@ export class TikaPrims extends Comet{
     }
 
     truncate(p, n){
-      this.comet('TikaPrims.truncate')
+      this.comet('TikTak.truncate')
         try{
           if(fs.existsSync(p)){
             fs.truncateSync(p, n)
@@ -60,12 +60,14 @@ export class TikaPrims extends Comet{
     }
 
     del(p){
-      this.comet('TikaPrims.del')
+      this.comet('TikTak.del')
         try{
           if(fs.lstatSync(p).isDirectory()){
             fs.rmSync(p, {recursive:true})
           }else{
-            fs.unlinkSync(p)
+            if (fs.existsSync(p)){
+              fs.unlinkSync(p)
+            }
           }
         }catch{
           return false
@@ -73,7 +75,7 @@ export class TikaPrims extends Comet{
     }
 
     write(p, data){
-      this.comet('TikaPrims.write')
+      this.comet('TikTak.write')
       if(Buffer.isBuffer(data)){
           fs.writeSync(fs.openSync(p, 'a'), data)
       }else{
@@ -82,21 +84,27 @@ export class TikaPrims extends Comet{
     }
 
     overwrite(p, data){
-      this.comet('TikaPrims.overwrite')
+      this.comet('TikTak.overwrite')
       if(Buffer.isBuffer(data)){
-          fs.writeSync(fs.openSync(p, 'w'), data)
+        if (fs.existsSync(p)){
+            fs.writeSync(fs.openSync(p, 'w'), data)
+        }
       }else{
+        if(fs.existsSync(p)){
           fs.writeSync(fs.openSync(p, 'w'), Buffer.from(data))
+        }
       }
     }
 
     read(p){
-      this.comet('TikaPrims.read')
-      return fs.readFileSync(p)
+      this.comet('TikTak.read')
+      if(fs.existsSync(p)){
+        return fs.readFileSync(p)
+      }
     }
 
     isObject(a){
-      this.comet('TikaPrims.isObject')
+      this.comet('TikTak.isObject')
       return (!!a) && (a.constructor === Object);
     };
 }
