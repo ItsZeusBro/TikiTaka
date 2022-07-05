@@ -16,8 +16,17 @@ Or
 ![TikiTaka1](https://github.com/ItsZeusBro/TikiTaka/blob/7ac57e42d912adeb70d8160b4dea3887d6b46c16/Gifs/TikiTaka.gif)
 
 ## File Operation Function Primitives:
-
-
+| Function           | params                                                                  | returns        | explanation                                                                                    |
+|--------------------|-------------------------------------------------------------------------|----------------|------------------------------------------------------------------------------------------------|
+| mkdir(...paths)    | takes n number of path arguments of type string                         | null           | creates empty directories with names specified in variadic arguments                           |
+| create(...paths)   | takes n number of path arguments of type string                         | null           | creates empty files with names specified in variadic arguments                                 |
+| rename(olP, newP)  | takes the old path that you wish to rename to the new path              | null           | renames a files name represented by argument a to argument b's file name                       |
+| copyAppend(a, b)   | takes two paths.                                                        | null           | 'a' is read from and a copy of its data is appended to 'b'                                     |
+| truncate(p, n)     | takes a path and n representing the number of bytes desired in the file | null           | truncates a file to the specified number of bytes n                                            |
+| del(p)             | a path to file                                                          | null           | deletes a directory or a file of a valid path                                                  |
+| write(p, data)     | takes a file path and some data you wish to write to it.                | null           | This function appends to the file by default.The file created if it doesn't exist              |
+| overwrite(p, data) | takes a file path and some data you wish to write over the file         | null           | If file does not exist, this doesn't overwrite, otherwise it truncates then writes to the file |
+| read(p)            | takes a file path that you want to read from                            | data from file | and reads from it                                                                              |
 # Compound actions 
 ## (These are TikiTaka and Futbol moves, that we want to hook up to a graphical physics replay engine oneday)
 I believe that using this type of scheme we would eventually see terminals with graphical replays one day (just for fun)
