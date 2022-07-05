@@ -36,18 +36,6 @@ Positionality defines from what position data flows out of a file, and to what p
 <img src="https://github.com/ItsZeusBro/TikiTaka/blob/352f46409d9d873aeaf20d5522e552e27dc08137/Docs/Positionality.jpg" height=280 width=400/>
 
 
-### Chaining, Forks, and Junctions
-Chaining is a modeling technique that demonstrates a compound flow model, where you have a starting node, and flow the data to other nodes syncronously or asyncronously, effectively piping the flow into another node or multiple nodes. Forks are when a file flow syncronously splits into two different asyncronous paths. Two asyncronous paths of execution can only converge on a Junction. They need to terminate on the junction that executes the end result of the flow of a fork. The junction can merge file results in a number of syncronous ways.
-
-### Pre-Actions
-These are actions you specify that are to take place on the data before it is inserted into the file at its given position
-
-### Post-Actions
-These are actions you specify that are to take place on the file (as a whole) after data is inserted into it at some position
-
-### Syncronicity
-If you have a bidriectional flow model, you can use the bidirectional arrow or a second arrow. A bidirectional arrow is evaluated (syncronously) left to right. A second arrow is evaluated top down (syncronously). A biderectional arrow restricts you to the same constraints going in both directions, but left to right flow is evaluated on B first. Then the same constraints are applied in reverse after the first constraints are finished.
-
 ### Conditionals and Mitigation
 
 Conditionals are basically IF ELSE blocks with boolean statements on the output of the previous statement or statement block. They require a statement or statement block in order to be executable.
@@ -57,3 +45,19 @@ Mitigation specifies what happens to an interaction when the initial interaction
 ### Looping
 
 This is an iterator that runs a statement or statement block until the boolean conditional statement is no longer valid
+
+
+### Pre-Actions
+These are actions you specify that are to take place on the data before it is inserted into the file at its given position
+
+### Post-Actions
+These are actions you specify that are to take place on the file (as a whole) after data is inserted into it at some position
+
+
+
+### Syncronicity
+If you have a bidriectional flow model, you can use the bidirectional arrow or a second arrow. A bidirectional arrow is evaluated (syncronously) left to right. A second arrow is evaluated top down (syncronously). A biderectional arrow restricts you to the same constraints going in both directions, but left to right flow is evaluated on B first. Then the same constraints are applied in reverse after the first constraints are finished.
+
+### Chaining, Forks, and Junctions
+Chaining is a modeling technique that demonstrates a compound flow model, where you have a starting node, and flow the data to other nodes syncronously or asyncronously, effectively piping the flow into another node or multiple nodes. Forks are when a file flow syncronously splits into two different asyncronous paths. Two asyncronous paths of execution can only converge on a Junction. They need to terminate on the junction that executes the end result of the flow of a fork. The junction can merge file results in a number of syncronous ways.
+
