@@ -27,8 +27,17 @@ Quantality defines the constraints upon the flow which defaults to "all data" wh
 ### Exclusivity
 Exclusivity defines whether the data is shared after its flow, or whether it becomes exclusive to a new owner.
 
+<img src="https://github.com/ItsZeusBro/TikiTaka/blob/0da184363446b48c4672771e5b8dc0924000c15c/Docs/Exclusivity.jpg" height=280 width=400/>
+
+
+
+
 ### Positionality
 Positionality defines from what position data flows out of a file, and to what position data flows into a file. These can be abstract concepts (like begining or end) or concrete positional integers (like 1 or 20 or 50).
+
+<img src="https://github.com/ItsZeusBro/TikiTaka/blob/352f46409d9d873aeaf20d5522e552e27dc08137/Docs/Positionality.jpg" height=280 width=400/>
+
+
 
 ### Mitigation
 Mitigation specifies what happens to an interaction when the initial interaction was too specific and wrong (when you specify the positionality of a read and the file is too small for the value) , or when it is not relevant (when files don't exist). Mitigation is a compound model, where one takes the place of another in case one fails.
