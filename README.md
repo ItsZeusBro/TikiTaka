@@ -168,6 +168,13 @@ Cuauhteminha is usually done while trying to split a double team while cornered.
 
 ![cuauhteminha](https://github.com/ItsZeusBro/TikiTaka/blob/dbc6547af36ea989003ff07ba25f9c60caa55bd5/Gifs/Cuauhteminha.gif)
 
+### Rainbow
+
+Everyones favorite futbol move. The rainbow is known for its flare and the pot of gold at the end of it. In this case, the pot of gold is getting past the defender. Like a leprachaun, the player with the ball uses trickery. They get the defender to look where they usually should, the ball, because their instincts tell them to allways keep there eye on it. But in this case, that is why the trick works. As the defender takes a moment to look at the ball, the player setting up the play breezes past them.
+
+![rainbow](https://github.com/ItsZeusBro/TikiTaka/blob/69eba8b4a8f187965bcef0d9e8ffc11e253ffc05/Gifs/rainbow.gif)
+
+
 ## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
 
 - An ***element*** is defined as a buffer, stream, or file
