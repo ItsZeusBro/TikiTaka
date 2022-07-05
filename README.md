@@ -189,12 +189,7 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 ![rainbow](https://github.com/ItsZeusBro/TikiTaka/blob/69eba8b4a8f187965bcef0d9e8ffc11e253ffc05/Gifs/rainbow.gif)
 
 
-## File Interaction Modeling (See https://github.com/ItsZeusBro/FileInteractionModel for details)
-### Abstract Concepts:
-1. Directionality   (flow of data)
-2. Quantification   (number of bytes)
-3. Exclusivity      (data can be shared or exculsive after an interaction)
-4. Positionality    (from what position data comes and to what position it goes)
+## File Interaction Modeling (See https://github.com/ItsZeusBro/FIST for details)
 
 
 ## Interface Protocol (for games and productivity) [coming soon]
