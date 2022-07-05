@@ -212,16 +212,17 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
 | taka()                           |            |         |                                                                 |
 
 
-## In the begning it will be a productivity first tool, then a game SHOULD be made with TikiTaka:
-
-- An ***element*** is defined as a buffer, stream, or file
-- Moving data (the ball) from one element to the other with protections is a ***pass***
-- Moving data (the ball) from one element to the other without protections is considered a ***shot***
-- ***Bad pass or shot*** is when you lose the ball to the other team. (only if your playing against someone) 
-- ***A Miss*** can be mitigated with subsequent behavior to further your objectives. It means an exception was not thrown because you knew how to use mitigators.
-- A ***Dribble move*** is a filter on a buffer, before a shot or pass.
-- A ***touch*** is an essential element to making sure you don't miss on the pass or the shot. 
-  - Buf if you take good touches, you can set yourself up for style points on subsequent shots and passes, that come much later 
-    - (which add up to moral victories and real secondary points)
-- ***Vertical***  passes and shots are determined by what depth in your file tree you pass or shoot to.
-- ***Horizontal*** passes (left or right) are done at the same level in your file tree. If you want to do a long cross you have to specifiy a location in your file tree that is at the same tree depth.  If you don't meet this criteria its a miss (which can be mitigated), but is not considered losing the ball. Losing the ball requires that it go out of bounds (exception), or that you are playing against someone (which is a miss against an oppnent).
+## Game Modes:
+1. Race Mode: The goal in this game is to kick the ball into the restricted zone (the goal) before the opponents are able to do so. 
+  - What this means is that you need to complete certain objectives in some creative way using the above functions available. 
+  - You need to kick the ball (the data file that represents the ball) into a variety of checkpoints successfully using the above functions (which are funny but useful file system and data manipulation tools). 
+  - Each checkpoint has some objective in the way of data manipulation. 
+  - The player to do the task successfully first, wins the match.
+  - This game does not punish you for doing something wrong, you have time to get it right.
+  
+2. Futbol Mode: The goal is the same in this game, but the rules are much harsher. 
+  - There are certain things that you cannot do in this mode, and if you do them you must start from the beginining. 
+  - It's like losing the posession of the ball in futbol. 
+  -   When you do, bad things usually happen. Same thing here. 
+  -   You lose points off your score, and have a less chance of winning as a result. 
+-   This is a qualitative race game measured in "efficiency points" (speed) and "style points" (not losing the ball too much). 
