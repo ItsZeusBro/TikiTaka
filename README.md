@@ -241,7 +241,7 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
           flow(b, quant, exclsv, pin, pout)
           stream(quant, pin, pout)
 
-### You should be able to chain them together like this to create your own moves:
+### You should be able to chain them together at some point (soon?) like this to create your own moves:
           a.pre(
                     (data)=>{
                     //pre script here
