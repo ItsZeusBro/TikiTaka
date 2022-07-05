@@ -259,25 +259,27 @@ export class TikaPrimsTest extends TikaTest{
         );
         this.prepare(this.tests);
         //we should be able to write many strings or buffers to files using the same function call
+        var wsf='./tests/wickedString'
+        var wbf='./tests/wickedBuffer'
         var wickedString = "some wicked string";
         var wickedBuffer = Buffer.from("some wicked buffer");
-        this.tp.overwrite({'./tests/wickedString':wickedString, './tests/wickedBuffer':wickedBuffer});
-        //check strings
-        var wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'});
-        var wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"});
+        var wickedString2 = "some wicked string 2";
+        var wickedBuffer2 = Buffer.from("some wicked buffer 2");
+
+        this.tp.overwrite(wsf, wickedString);
+        this.tp.overwrite(wbf, wickedBuffer);
+        var wickedStringRead = fs.readFileSync(wsf, {encoding:'utf-8'});
+        var wickedBufferRead = fs.readFileSync(wbf, {encoding:"binary"});
         assert.equal(wickedString, wickedStringRead);
         assert.equal(wickedBuffer, wickedBufferRead);
         
-        var wickedString2 = "some wicked string 2";
-        var wickedBuffer2 = Buffer.from("some wicked buffer 2");
-        this.tp.overwrite({'./tests/wickedString':wickedString2, './tests/wickedBuffer':wickedBuffer2});
 
-        wickedStringRead = fs.readFileSync('./tests/wickedString', {encoding:'utf-8'});
-        wickedBufferRead = fs.readFileSync('./tests/wickedBuffer', {encoding:"binary"});
-
+        this.tp.overwrite(wsf, wickedString2);
+        this.tp.overwrite(wbf, wickedBuffer2);
+        wickedStringRead = fs.readFileSync(wsf, {encoding:'utf-8'});
+        wickedBufferRead = fs.readFileSync(wbf, {encoding:"binary"});
         assert.equal(wickedString2, wickedStringRead);
         assert.equal(wickedBuffer2, wickedBufferRead);
-
 
         this.clean(this.tests);
     }
@@ -313,15 +315,19 @@ export class TikaPrimsTest extends TikaTest{
         var a = this.tests+"a.test"
         var b = this.tests+"b.test"
         this.tp.create(a, b)
+
         var adat = "some string"
         var bdat = Buffer.from("some buffer from string")
 
         this.tp.write(a, adat)
         this.tp.write(b, bdat)
 
-        var data = this.tp.read(a, b)
-        assert.deepEqual(data[a], Buffer.from(adat))
-        assert.deepEqual(data[b], bdat)
+        var data = this.tp.read(a)
+        var datb = this.tp.read(b)
+
+        assert.deepEqual(data, Buffer.from(adat))
+        assert.deepEqual(datb, bdat)
+
         this.clean(this.tests);
     }
 
