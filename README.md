@@ -260,6 +260,9 @@ a, b, and c are files. a.flow(b, //whatever) returns b so that you can do someth
                       
               ).stream( 
                       c,
+                      quant,
+                      p1,
+                      p2,
                       (data)=>{
                               //pre script here  
                       },
