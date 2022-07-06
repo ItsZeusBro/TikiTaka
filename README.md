@@ -242,30 +242,55 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
           stream(quant, pin, pout)
 
 ### You should be able to chain them together at some point (soon?) like this to create your own moves:
-          a.pre(b,
-                    (data)=>{
-                    //pre script here  
-                    }
-                    
-          ).post(b,
-                    (data)=>{
-                    //some post script
-                    //...
-                    }
-          )
-          .flow(b, quant, exclsv, p1, p2)
-          .pre(c,
-                    (data)=>{
-                      //pre script here
+              fist.pre(
+                       a, 
+                       b,
+                      (data)=>{
+                      //mitigations, conditionals, and looping can be done here for now.
+                      //Under the hood a virtual file structure is created for you
+                      //so you only have to write to the actual file if it completes
+                      //the job without throwing an error (which you can catch here)
+                      //You should be able to do asyncronous behavior here because pre
+                      //only returns "this" to the next chain if that async functionality
+                      //finishes the job.
+                      //pre script here  
+                      }
+            
+              ).post(
+                      a, 
+                      b,
+                      (data)=>{
+                      //some post script
                       //...
+                      }
+              )
+              .flow(
+                      a, 
+                      b, 
+                      quant, 
+                      exclsv, 
+                      p1, 
+                      p2
+              )
+              .pre(
+                      b, 
+                      c,
+                      (data)=>{
+                        //pre script here
+                        //...
 
-                    }
-          )
-          .post(c,
-                    (data)=>{
-                    //some post script
-                    //...
-                    }
-          ).stream(c) //then stream to c
+                      }
+              )
+              .post(
+                      b, 
+                      c,
+                      (data)=>{
+                      //some post script
+                      //...
+                      }
+              ).stream(
+                      b, 
+                      c
+              ) //then stream to c
 
 
