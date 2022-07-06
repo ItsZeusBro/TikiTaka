@@ -242,26 +242,27 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
           stream(quant, pin, pout)
 
 ### You should be able to chain them together at some point (soon?) like this to create your own moves:
+
               fist.pre(
                        a, 
                        b,
                       (data)=>{
-                      //mitigations, conditionals, and looping can be done here for now.
-                      //Under the hood a virtual file structure is created for you
-                      //so you only have to write to the actual file if it completes
-                      //the job without throwing an error (which you can catch here)
-                      //You should be able to do asyncronous behavior here because pre
-                      //only returns "this" to the next chain if that async functionality
-                      //finishes the job.
-                      //pre script here  
+                              //mitigations, conditionals, and looping can be done here for now.
+                              //Under the hood a virtual file structure is created for you
+                              //so you only have to write to the actual file if it completes
+                              //the job without throwing an error (which you can catch here)
+                              //You should be able to do asyncronous behavior here because pre
+                              //only returns "this" to the next chain if that async functionality
+                              //finishes the job.
+                              //pre script here  
                       }
             
               ).post(
                       a, 
                       b,
                       (data)=>{
-                      //some post script
-                      //...
+                              //some post script
+                              //...
                       }
               )
               .flow(
@@ -276,8 +277,8 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
                       b, 
                       c,
                       (data)=>{
-                        //pre script here
-                        //...
+                              //pre script here
+                              //...
 
                       }
               )
@@ -285,12 +286,11 @@ Everyones favorite futbol move. The rainbow is known for its flare and the pot o
                       b, 
                       c,
                       (data)=>{
-                      //some post script
-                      //...
+                              //some post script
+                              //...
                       }
               ).stream(
                       b, 
                       c
               ) //then stream to c
-
 
